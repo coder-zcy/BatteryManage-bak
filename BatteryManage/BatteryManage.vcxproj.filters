@@ -1,0 +1,957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Grid Control Header">
+      <UniqueIdentifier>{7c58cfbd-e5cf-4714-b5f6-cdb450d7e340}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\New Cell Header">
+      <UniqueIdentifier>{a6aaab45-5464-4d51-b72b-7f60c97e7b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Grid Control Source">
+      <UniqueIdentifier>{4d7bb48b-23b2-4d29-b1f6-6a60d36960aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\New Cell Source">
+      <UniqueIdentifier>{bc0bcd55-3263-47be-b0a8-0598756827d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Db Header">
+      <UniqueIdentifier>{51372d3f-3701-491e-bf40-fe48de8b737e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Db Source">
+      <UniqueIdentifier>{81ed483a-a8c4-42ee-a724-0926e2755bf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Comm Header">
+      <UniqueIdentifier>{3f2cb15a-e234-4028-b74a-cae2678412fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Comm Source">
+      <UniqueIdentifier>{ed1b0508-e245-4ff0-88ff-f1a066fa6f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Lower Header">
+      <UniqueIdentifier>{055f6f53-52de-4c46-a601-86c1795ce565}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Lower Source">
+      <UniqueIdentifier>{083feccb-82fa-4481-8651-d0cd8061f27c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Chart Header">
+      <UniqueIdentifier>{5b398682-3a74-4dc3-bc6a-1b4ef4ac63d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Chart Source">
+      <UniqueIdentifier>{7bf94d1a-d15e-45d0-b770-797d3f017af7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Work Conf Header">
+      <UniqueIdentifier>{7722d9b7-4e34-4dc5-a3de-8f02a596793f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Work Conf Source">
+      <UniqueIdentifier>{068e9882-a3ec-4feb-aaa7-440474e297f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Data Open Header">
+      <UniqueIdentifier>{976158c4-e572-4d8b-91b1-5d6f055bb424}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Data Open Source">
+      <UniqueIdentifier>{a1beb88c-ca4c-4e70-a926-457d0f76834a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\TeeChart Header">
+      <UniqueIdentifier>{6ae48228-87bc-4a4f-933a-5b25c947113a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ControlTest Header">
+      <UniqueIdentifier>{f33d905c-3685-43bf-8b2d-e8a4147c7fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ControlTest Source">
+      <UniqueIdentifier>{2904b547-9536-432a-b7f9-00debbf6748f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Utils Header">
+      <UniqueIdentifier>{c7755ba2-6bc6-4658-a550-5ba42e5bed41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Utils Source">
+      <UniqueIdentifier>{e9bcdbf1-26dc-4923-a4b2-8bafbf3411bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\MainSet Header">
+      <UniqueIdentifier>{18b5397b-0471-405c-8bfa-d71f690e87ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\MainSet Source">
+      <UniqueIdentifier>{7cea2268-7f3d-45ef-9ba0-9fa716483713}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BatteryManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceSetInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PbatterysDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CurveDataDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryPane.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TbatterysDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InitDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpLoginDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpManageDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SetNumDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OpLogDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminLoginDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UserDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OtherDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InitCopyDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugLoginDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ScreenSelDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcepRemoveDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchEngineCreater.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CapCompareDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CapExportDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChkBatteryDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchEngine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellCheck.h">
+      <Filter>头文件\New Cell Header</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellCombo.h">
+      <Filter>头文件\New Cell Header</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellDateTime.h">
+      <Filter>头文件\New Cell Header</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridCellNumeric.h">
+      <Filter>头文件\New Cell Header</Filter>
+    </ClInclude>
+    <ClInclude Include="NewCellTypes\GridURLCell.h">
+      <Filter>头文件\New Cell Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TraceLog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DbColumn.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DbSql.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ChannelCurve.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ChannelInfo.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ChannelStep.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Battery.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CabBatterys.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessUtils.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryMessage.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StepMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="VaChargeMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="AchargeMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="AdischargeMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="LoopMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="LayMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="OverMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DbUtils.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LowerCabs.h">
+      <Filter>头文件\Lower Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CabBattery.h">
+      <Filter>头文件\Lower Header</Filter>
+    </ClInclude>
+    <ClInclude Include="LowerUtils.h">
+      <Filter>头文件\Lower Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ObtainModelMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CabConMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="HeartBeatMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ObtainBatMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CommConf.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgComm.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CabUtils.h">
+      <Filter>头文件\Lower Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Dbatterys.h">
+      <Filter>头文件\Lower Header</Filter>
+    </ClInclude>
+    <ClInclude Include="bat_chart.h">
+      <Filter>头文件\Chart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkProc.h">
+      <Filter>头文件\Work Conf Header</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkStep.h">
+      <Filter>头文件\Work Conf Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ObtainBeatMsg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CbatterysDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BatWorkDetailDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DtestInfo.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DcabinetInfo.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TestInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DworkProcInfo.h">
+      <Filter>头文件\Db Header</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkProcInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StartLedMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StopLedMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="LightLedMsg.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\CellRange.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridCell.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridCellBase.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridCtrl.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\GridDropTarget.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\InPlaceEdit.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\MemDC.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl_src\TitleTip.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GridUtils.h">
+      <Filter>头文件\Grid Control Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFileView.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DataFileFrame.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PartDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PartBattery.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CompDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticMenuDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PartCapCondDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CapShowType.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SloopMenuDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="LoopDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CurveDlg.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CAxes.h">
+      <Filter>头文件\TeeChart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CAxis.h">
+      <Filter>头文件\TeeChart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CLegend.h">
+      <Filter>头文件\TeeChart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CMarks.h">
+      <Filter>头文件\TeeChart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CSeries.h">
+      <Filter>头文件\TeeChart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CTChart.h">
+      <Filter>头文件\TeeChart Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatCapGradeDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BCG_DrawingCircleDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GradeContentDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcludeExceptionDLG.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BCG_ImportResistanceDLG.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BCG_OptionDLG.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BCG_PairDLG.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoAdapt.h">
+      <Filter>头文件\Utils Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StartWorkDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SW_AddRowNumDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SW_CopyParameterDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SW_CycleDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SW_DelRowNumDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SW_NumberingDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SW_SendDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StepUtils.h">
+      <Filter>头文件\Utils Header</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>头文件\Utils Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryMainFrame.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryMainView.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryDetailDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatteryUtils.h">
+      <Filter>头文件\Utils Header</Filter>
+    </ClInclude>
+    <ClInclude Include="FileUtils.h">
+      <Filter>头文件\Utils Header</Filter>
+    </ClInclude>
+    <ClInclude Include="mscomm1.h">
+      <Filter>头文件\Comm Header</Filter>
+    </ClInclude>
+    <ClInclude Include="EbatterysDlg.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="FileStepData.h">
+      <Filter>头文件\Work Conf Header</Filter>
+    </ClInclude>
+    <ClInclude Include="FileCabData.h">
+      <Filter>头文件\Work Conf Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorDlg.h">
+      <Filter>头文件\MainSet Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CabinetInfo.h">
+      <Filter>头文件\Lower Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BatCapInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CapGradeConf.h">
+      <Filter>头文件\ControlTest Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GradeDetailInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BatStepInfo.h">
+      <Filter>头文件\Data Open Header</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkStateStr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BatteryManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceSetInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryDetailDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CurveDataDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryPane.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InitDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OpLoginDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OpManageDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SetNumDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OpLogDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminLoginDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UserDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InitCopyDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugLoginDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenSelDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcepRemoveDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchEngineCreater.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CapCompareDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CapExportDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChkBatteryDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchEngine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcludeExceptionDLG.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellCheck.cpp">
+      <Filter>源文件\New Cell Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellCombo.cpp">
+      <Filter>源文件\New Cell Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellDateTime.cpp">
+      <Filter>源文件\New Cell Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridCellNumeric.cpp">
+      <Filter>源文件\New Cell Source</Filter>
+    </ClCompile>
+    <ClCompile Include="NewCellTypes\GridURLCell.cpp">
+      <Filter>源文件\New Cell Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryMainFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryMainView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TraceLog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DbSql.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ChannelCurve.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DbColumn.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ChannelInfo.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ChannelStep.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Battery.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CabBatterys.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessUtils.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryMessage.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StepMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="VaChargeMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AchargeMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AdischargeMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LayMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LoopMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="OverMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DbUtils.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LowerCabs.cpp">
+      <Filter>源文件\Lower Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CabBattery.cpp">
+      <Filter>源文件\Lower Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LowerUtils.cpp">
+      <Filter>源文件\Lower Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ObtainModelMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CabConMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="HeartBeatMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ObtainBatMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CommConf.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgComm.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CabUtils.cpp">
+      <Filter>源文件\Lower Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Dbatterys.cpp">
+      <Filter>源文件\Lower Source</Filter>
+    </ClCompile>
+    <ClCompile Include="bat_chart.cpp">
+      <Filter>源文件\Chart Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkProc.cpp">
+      <Filter>源文件\Work Conf Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkStep.cpp">
+      <Filter>源文件\Work Conf Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ObtainBeatMsg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CbatterysDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BatWorkDetailDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DcabinetInfo.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DtestInfo.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DworkProcInfo.cpp">
+      <Filter>源文件\Db Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StartLedMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StopLedMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LightLedMsg.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridCell.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridCellBase.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridCtrl.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\GridDropTarget.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\InPlaceEdit.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl_src\TitleTip.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GridUtils.cpp">
+      <Filter>源文件\Grid Control Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PartDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PartBattery.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFileView.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DataFileFrame.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticMenuDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PartCapCondDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CapShowType.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SloopMenuDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CompDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LoopDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CurveDlg.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BatCapGradeDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BCG_DrawingCircleDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GradeContentDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoAdapt.cpp">
+      <Filter>源文件\Utils Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FileUtils.cpp">
+      <Filter>源文件\Utils Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SW_AddRowNumDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SW_CopyParameterDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SW_CycleDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SW_DelRowNumDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SW_NumberingDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SW_SendDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StepUtils.cpp">
+      <Filter>源文件\Utils Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtils.cpp">
+      <Filter>源文件\Utils Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BatteryUtils.cpp">
+      <Filter>源文件\Utils Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PbatterysDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="OtherDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TbatterysDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="StartWorkDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeUtils.cpp">
+      <Filter>源文件\Utils Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkProcInfo.cpp">
+      <Filter>源文件\Work Conf Source</Filter>
+    </ClCompile>
+    <ClCompile Include="TestInfo.cpp">
+      <Filter>源文件\Work Conf Source</Filter>
+    </ClCompile>
+    <ClCompile Include="mscomm1.cpp">
+      <Filter>源文件\Comm Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BCG_ImportResistanceDLG.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BCG_OptionDLG.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BCG_PairDLG.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="EbatterysDlg.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FileStepData.cpp">
+      <Filter>源文件\Work Conf Source</Filter>
+    </ClCompile>
+    <ClCompile Include="FileCabData.cpp">
+      <Filter>源文件\Work Conf Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorDlg.cpp">
+      <Filter>源文件\MainSet Source</Filter>
+    </ClCompile>
+    <ClCompile Include="CabinetInfo.cpp">
+      <Filter>源文件\Lower Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BatCapInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CapGradeConf.cpp">
+      <Filter>源文件\ControlTest Source</Filter>
+    </ClCompile>
+    <ClCompile Include="GradeDetailInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BatStepInfo.cpp">
+      <Filter>源文件\Data Open Source</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkStateStr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BatteryManage.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BatteryManage.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\BatteryManage.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\lj.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\sel.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\Debug\config\images\sel.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\Debug\config\images\sel2.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\sel2.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\sel.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\sel.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2663 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#include ""res\\BatteryManage.rc2""  // 非 Microsoft Visual C++ 编辑的资源\r\n"
+    "#include ""l.CHS\\afxres.rc""      // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\lj.ico"
+IDI_SEL_ICON            ICON                    "res\\sel.ico"
+IDI_SEL2_ICON           ICON                    "res\\sel2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_SEL_BMP             BITMAP                  "res\\sel.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "关闭(&C)",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "主要设置(&S)"
+    BEGIN
+        MENUITEM "初始设置(&I)",                    ID_INIT_DIALOG
+        MENUITEM "设定工位编号(&C)",                  ID_SET_NUM
+        MENUITEM "操作员管理(&U)",                   ID_OP_MANAGE
+        MENUITEM "操作日志(&G)",                    ID_OP_LOG
+        MENUITEM "操作员登录(&L)",                   ID_OP_LOGIN
+        MENUITEM "锁定(&S)",                      ID_LOCK
+        MENUITEM "独占系统(&E)",                    ID_EXC_SYSTEM
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "控制测试(&C)"
+    BEGIN
+        MENUITEM "启动工作(&S)",                    ID_START_WORK
+        MENUITEM "电池巡检(&B)",                    ID_BATTERY_CHECK
+        MENUITEM "电池分容(E)",                     ID_BATTERY_GRADING
+        MENUITEM "联机(&N)",                      32779
+        MENUITEM "脱机(&F)",                      32780
+        MENUITEM "联机脱机设置(&T)",                  32781
+        MENUITEM "立即读数(&Q)",                    32782
+        MENUITEM "复位(&R)",                      32783
+        MENUITEM "异常电圧排除(&E)",                  32784
+        MENUITEM "调试窗口(&D)",                    32785
+        MENUITEM "重现断电现场(&C)",                  32786
+        MENUITEM "异常工位记录(&H)",                  32787
+    END
+    POPUP "数据文件(&F)"
+    BEGIN
+        MENUITEM "打开(&O)\tCtrl+O",              32788
+        MENUITEM "测试(&L)",                      32789
+        MENUITEM "关闭当前窗口(&C)",                  32790
+        MENUITEM "关闭数据文件(&D)",                  32791
+        MENUITEM "复制到剪切板(&T)",                  32792
+        MENUITEM "发送到Word(&W)",                 32793
+        MENUITEM "发送到Excel(&E)",                32794
+        MENUITEM "生成MDB(&M)",                   32795
+        MENUITEM "页面设置(&U)",                    32796
+        MENUITEM "打印选项(&S)",                    32797
+        MENUITEM "打印预览(&V)",                    32806
+        MENUITEM "打印(&P)",                      32807
+    END
+    POPUP "数据工具(&T)"
+    BEGIN
+        MENUITEM "导出成MDB文件(&M)",                32798
+        MENUITEM "制作电池搜索引擎(&L)",                32799
+        MENUITEM "打开电池搜索引擎(&F)",                32800
+        MENUITEM "容量对比(&C)",                    32801
+        MENUITEM "容量导出设置(&O)",                  32802
+        MENUITEM "更新或检查电池编号(&U)",               32803
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "层叠(&C)",                      ID_WINDOW_CASCADE
+        MENUITEM "平铺(&T)",                      ID_WINDOW_TILE_HORZ
+        MENUITEM "排列图标(&A)",                    ID_WINDOW_ARRANGE
+    END
+END
+
+IDR_BatteryManageTYPE MENU
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
+        MENUITEM "关闭(&C)",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "主要设置(&S)"
+    BEGIN
+        MENUITEM "初始设置(&I)",                    ID_INIT_DIALOG
+        MENUITEM "设定工位编号(&C)",                  ID_SET_NUM
+        MENUITEM "操作员管理(&U)",                   ID_OPERTOR_MANAGE
+        MENUITEM "操作日志(&G)",                    ID_OP_LOG
+        MENUITEM "操作员登录(&L)",                   ID_OP_LOGIN
+        MENUITEM "锁定(&S)",                      ID_LOCK
+        MENUITEM "独占系统(&E)",                    ID_EXC_SYSTEM
+        MENUITEM "退出(&X)",                      ID_APP_EXIT
+    END
+    POPUP "控制测试(&C)"
+    BEGIN
+        MENUITEM "启动工作(&S)",                    ID_START_WORK
+        MENUITEM "电池巡检(&B)",                    ID_BATTERY_CHECK
+        MENUITEM "电池分容(E)",                     ID_BATTERY_GRADING
+        MENUITEM "联机(&N)",                      ID_BATTERY_CONN
+        MENUITEM "脱机(&F)",                      ID_BATTERY_DIS_CONN
+        MENUITEM "联机脱机设置(&T)",                  ID_CONN_DIS_SET
+        MENUITEM "立即读数(&Q)",                    ID_READ_DATA
+        MENUITEM "复位(&R)",                      ID_SCREEN_RESET
+        MENUITEM "异常电圧排除(&E)",                  ID_EXCEP_REMOVE
+        MENUITEM "调试窗口(&D)",                    ID_DEBUG_WINDOW
+        MENUITEM "重现断电现场(&C)",                  ID_RECUR_POWER_CUT
+        MENUITEM "异常工位记录(&H)",                  ID_EXCEP_STEP_RECORD
+    END
+    POPUP "数据文件(&F)"
+    BEGIN
+        MENUITEM "打开(&O)\tCtrl+O",              ID_DATAFILE_OPEN
+        MENUITEM "测试(&L)",                      ID_TEST
+        MENUITEM "关闭当前窗口(&C)",                  ID_CLOSE_CUR_WND
+        MENUITEM "关闭数据文件(&D)",                  ID_CLOSE_DATA_FILE
+        MENUITEM "复制到剪切板(&T)",                  ID_COPY_TO_CLIPPER
+        MENUITEM "发送到Word(&W)",                 ID_SEND_TO_WORD
+        MENUITEM "发送到Excel(&E)",                ID_SEND_TO_EXCEL
+        MENUITEM "生成MDB(&M)",                   ID_CREATE_MDB
+        MENUITEM "页面设置(&U)",                    ID_PAGE_SET
+        MENUITEM "打印选项(&S)",                    ID_PRINT_SELECT
+        MENUITEM "打印预览(&V)",                    ID_32806
+        MENUITEM "打印(&P)",                      ID_WINDOW_TILE_VERTICAL
+    END
+    POPUP "数据工具(&T)"
+    BEGIN
+        MENUITEM "导出成MDB文件(&M)",                ID_EXPORT_TO_MDB
+        MENUITEM "制作电池搜索引擎(&L)",                ID_BATTERY_SEARCH_CREATER
+        MENUITEM "打开电池搜索引擎(&F)",                ID_OPEN_SEARCH_ENGINE
+        MENUITEM "容量对比(&C)",                    ID_CAP_COMPARE
+        MENUITEM "容量导出设置(&O)",                  ID_CAP_EXPORT_SET
+        MENUITEM "更新或检查电池编号(&U)",               ID_CHK_BATTERY_ID
+    END
+    POPUP "窗口(&W)"
+    BEGIN
+        MENUITEM "层叠(&C)",                      ID_WINDOW_CASCADE
+        MENUITEM "横向平铺(&T)",                    ID_WINDOW_TILE_HORZ
+        MENUITEM "纵向平铺(&H)",                    ID_WINDOW_TILE_VERT
+        MENUITEM "排列图标(&A)",                    ID_WINDOW_ARRANGE
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 BatteryManage(&A)...",     ID_APP_ABOUT
+    END
+    MENUITEM SEPARATOR
+END
+
+IDR_SW_RIGHTCLICK MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "增加一条",                        ID_SW_RC_ADDONEROW
+        MENUITEM "增加多条",                        ID_SW_RC_ADDMULROW
+        MENUITEM "删除",                          ID_SW_RC_DELROW
+        MENUITEM "复制",                          ID_SW_RC_COPY
+        MENUITEM "剪切",                          ID_SW_RC_CUT
+        MENUITEM "粘贴",                          ID_SW_RC_PASTE
+    END
+END
+
+IDR_SPEC_CONTROL_MENU MENU
+BEGIN
+    POPUP "特殊控制"
+    BEGIN
+        MENUITEM "点寄存控制(&J)",                   ID_POINT_CTL
+        MENUITEM "屏复位(&R)",                     32908
+        MENUITEM "屏暂停(&P)",                     32908
+        MENUITEM "屏继续(&X)",                     ID_SCREEN_XU
+        MENUITEM "组暂停(&B)",                     ID_GROUP_BREAK
+        MENUITEM "组继续(&C)",                     ID_GROUP_CONTINUE
+    END
+END
+
+IDR_LEFT_MOUSE_MENU MENU
+BEGIN
+    POPUP "鼠标左键"
+    BEGIN
+        MENUITEM "显示曲线(&V)",                    ID_SHOW_CURVE
+        MENUITEM "寄存控制(&J)",                    ID_REG_CONTROL
+        MENUITEM "显示组数据(&S)",                   ID_SHOW_GROUP_DATA
+        MENUITEM "显示工步数据(&H)",                  ID_SHOW_STEP_DATA
+    END
+END
+
+IDR_CONTROL_MENU MENU
+BEGIN
+    POPUP "控制测试"
+    BEGIN
+        MENUITEM "启动工作(&S)",                    32774
+        MENUITEM "电池分选(&E)",                    ID_BATTERY_SELECT
+        POPUP "鼠标左键功能(&U)"
+        BEGIN
+            MENUITEM "显示曲线(&V)",                    ID_SHOW_CURVE
+            MENUITEM "寄存控制(&J)",                    ID_REG_CONTROL
+            MENUITEM "显示组数据(&S)",                   ID_SHOW_GROUP_DATA
+            MENUITEM "显示工步数据(&H)",                  ID_SHOW_STEP_DATA
+        END
+        POPUP "显示方式"
+        BEGIN
+            MENUITEM "图形方式(&P)",                    ID_BAT_PIC_STYLE
+            MENUITEM "表格方式(&T)",                    ID_BAT_TABLE_STYLE
+            MENUITEM "综合数据(&F)",                    ID_BAT_COMP_STYLE
+            MENUITEM "异常显示(&E)",                    ID_EXCP_SHOW
+        END
+        POPUP "控制方式"
+        BEGIN
+            MENUITEM "点寄存控制(&J)",                   ID_POINT_CTL
+            MENUITEM SEPARATOR
+            MENUITEM "屏复位(&R)",                     32908
+            MENUITEM SEPARATOR
+            MENUITEM "屏暂停(&P)",                     32908
+            MENUITEM "屏继续(&X)",                     ID_SCREEN_XU
+            MENUITEM SEPARATOR
+            MENUITEM "组暂停(&B)",                     ID_GROUP_BREAK
+            MENUITEM "组继续(&C)",                     ID_GROUP_CONTINUE
+        END
+    END
+END
+
+IDR_BATTERY_SHOW_STYLE MENU
+BEGIN
+    POPUP "Bat"
+    BEGIN
+        MENUITEM "图形方式(&P)",                    ID_BAT_PIC_STYLE
+        MENUITEM "表格方式(&T)",                    ID_BAT_TABLE_STYLE
+        MENUITEM "综合数据(&C)",                    ID_BAT_COMP_STYLE
+        MENUITEM "异常显示(&E)",                    ID_EXCP_SHOW
+    END
+END
+
+IDR_PART_MENU MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "自动分容量显示(&A)",                 ID_AUTO_PART_CAP
+        MENUITEM "分容显示条件(&C)",                  ID_PART_CAP_COND
+        MENUITEM "显示电池编号(&S)",                  ID_PART_SHOW_BATID
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 BatteryManage"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "BatteryManage，1.0 版",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2017",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "确定",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_BATTERY_MAIN_VIEW DIALOGEX 0, 0, 741, 426
+STYLE DS_SYSMODAL | DS_SETFONT | DS_SETFOREGROUND | WS_CHILD | WS_CLIPSIBLINGS | WS_CLIPCHILDREN
+EXSTYLE WS_EX_CONTROLPARENT
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_BATTERYS_PANE,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,93,41,645,384
+    GROUPBOX        "Function",IDC_STATIC,10,37,75,89,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Parameter",IDC_STATIC,9,5,75,31,0,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_PARA_COM,18,15,58,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP,WS_EX_TRANSPARENT
+    CONTROL         "设定信息",IDC_SET_INFO_STATIC,"SysLink",WS_TABSTOP,30,50,33,9,WS_EX_TRANSPARENT
+    CONTROL         "历史数据",IDC_PRE_DATA_STATIC,"SysLink",WS_TABSTOP,30,65,33,9,WS_EX_TRANSPARENT
+    CONTROL         "显示方式",IDC_SHOW_STYLE_STATIC,"SysLink",WS_TABSTOP,30,80,33,9,WS_EX_TRANSPARENT
+    CONTROL         "鼠标左键",IDC_LEFT_MOUSE_STATIC,"SysLink",WS_TABSTOP,30,95,33,9,WS_EX_TRANSPARENT
+    CONTROL         "特殊控制",IDC_SPEC_CTL_STATIC,"SysLink",WS_TABSTOP,30,111,33,9,WS_EX_TRANSPARENT
+    GROUPBOX        "Show",IDC_STATIC,9,132,75,284,0,WS_EX_TRANSPARENT
+    LTEXT           "S",IDC_CAB_ID,195,7,36,8,0,WS_EX_TRANSPARENT
+    LTEXT           "State",IDC_STATE_STATIC,273,7,17,8,0,WS_EX_TRANSPARENT
+    CONTROL         "<a>1  未联机</a>",IDC_CAB_LINK1,"SysLink",LWS_RIGHT | WS_TABSTOP,24,145,37,9
+    CONTROL         "<a>2  未联机</a>",IDC_CAB_LINK2,"SysLink",LWS_RIGHT | WS_TABSTOP,25,157,36,9
+    CONTROL         "<a>3  未联机</a>",IDC_CAB_LINK3,"SysLink",LWS_RIGHT | WS_TABSTOP,25,170,36,9
+    CONTROL         "<a>4  未联机</a>",IDC_CAB_LINK4,"SysLink",LWS_RIGHT | WS_TABSTOP,24,182,37,9
+    CONTROL         "<a>5  未联机</a>",IDC_CAB_LINK5,"SysLink",LWS_RIGHT | WS_TABSTOP,23,194,38,9
+    CONTROL         "<a>6  未联机</a>",IDC_CAB_LINK6,"SysLink",LWS_RIGHT | WS_TABSTOP,24,205,37,9
+    CONTROL         "<a>7  未联机</a>",IDC_CAB_LINK7,"SysLink",LWS_RIGHT | WS_TABSTOP,24,217,37,9
+    CONTROL         "<a>8  未联机</a>",IDC_CAB_LINK8,"SysLink",LWS_RIGHT | WS_TABSTOP,24,229,37,9
+    CONTROL         "<a>9  未联机</a>",IDC_CAB_LINK9,"SysLink",LWS_RIGHT | WS_TABSTOP,24,241,37,9
+    CONTROL         "<a>10 未联机</a>",IDC_CAB_LINK10,"SysLink",LWS_RIGHT | WS_TABSTOP,25,253,36,9
+    CONTROL         "<a>11 未联机</a>",IDC_CAB_LINK11,"SysLink",LWS_RIGHT | WS_TABSTOP,25,264,36,9
+    CONTROL         "<a>12 未联机</a>",IDC_CAB_LINK12,"SysLink",LWS_RIGHT | WS_TABSTOP,23,276,38,9
+    CONTROL         "<a>13 未联机</a>",IDC_CAB_LINK13,"SysLink",LWS_RIGHT | WS_TABSTOP,25,288,36,9
+    CONTROL         "<a>14 未联机</a>",IDC_CAB_LINK14,"SysLink",LWS_RIGHT | WS_TABSTOP,24,300,37,9
+    CONTROL         "<a>15 未联机</a>",IDC_CAB_LINK15,"SysLink",LWS_RIGHT | WS_TABSTOP,24,312,37,9
+    CONTROL         "<a>16 未联机</a>",IDC_CAB_LINK16,"SysLink",LWS_RIGHT | WS_TABSTOP,24,324,37,9
+    CONTROL         "<a>17 未联机</a>",IDC_CAB_LINK17,"SysLink",LWS_RIGHT | WS_TABSTOP,24,336,37,9
+    CONTROL         "<a>18 未联机</a>",IDC_CAB_LINK18,"SysLink",LWS_RIGHT | WS_TABSTOP,23,348,38,9
+    CONTROL         "<a>19 未联机</a>",IDC_CAB_LINK19,"SysLink",LWS_RIGHT | WS_TABSTOP,24,360,37,9
+    CONTROL         "<a>20 未联机</a>",IDC_CAB_LINK20,"SysLink",LWS_RIGHT | WS_TABSTOP,24,372,37,9
+    CONTROL         "",IDC_MSCOMM1,"{648A5600-2C6E-101B-82B6-000000000014}",WS_TABSTOP,405,24,25,25
+    EDITTEXT        IDC_EDIT_RECV_DATA,295,5,27,18,ES_AUTOHSCROLL
+    CONTROL         "面板：<a>A</a>",IDC_PANE_ID,"SysLink",WS_TABSTOP,235,7,31,8
+    LTEXT           "S",IDC_MODEL_STATIC,93,7,99,8,0,WS_EX_TRANSPARENT
+    ICON            IDI_SEL_ICON,IDC_CAB_SEL,11,145,21,21,WS_GROUP
+    LTEXT           "Static",IDC_WORK_STATE_DESC,327,9,403,8
+END
+
+IDD_DEVICE_SETINFO_DLG DIALOGEX 0, 0, 529, 306
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "显示设定值"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,231,272,50,14
+    EDITTEXT        IDC_DEVICE_INFO_EDIT,7,7,515,178,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+    EDITTEXT        IDC_DEVICE_PATH_EDIT,7,214,515,45,ES_MULTILINE | ES_AUTOHSCROLL
+END
+
+IDD_PBATTERYS_DLG DIALOGEX 0, 0, 375, 167
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_BATTERY_DETAIL_DLG DIALOGEX 0, 0, 709, 430
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "曲线"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Position",IDC_STATIC,10,14,72,50
+    GROUPBOX        "Function",IDC_STATIC,10,64,72,40
+    GROUPBOX        "Mode",IDC_STATIC,9,104,72,46
+    GROUPBOX        "Show",IDC_STATIC,9,154,72,40
+    GROUPBOX        "Output",IDC_STATIC,9,197,72,40
+    PUSHBUTTON      "关闭",IDCANCEL,14,239,63,20
+    COMBOBOX        IDC_BAT_ID_COM,16,26,59,14,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "<",IDC_ID_DESC,25,43,20,14
+    PUSHBUTTON      ">",IDC_ID_ASC,44,43,20,14
+    PUSHBUTTON      "具体数据",IDC_DETAIL_BTN,14,78,63,19
+    CONTROL         "单选",IDC_SINGLE_RAD,"Button",BS_AUTORADIOBUTTON,22,119,32,10
+    CONTROL         "多选",IDC_MULTI_RAD,"Button",BS_AUTORADIOBUTTON,22,134,32,10
+    CONTROL         "全部",IDC_ALL_RAD,"Button",BS_AUTORADIOBUTTON,23,165,32,10
+    CONTROL         "当前",IDC_CUR_RAD,"Button",BS_AUTORADIOBUTTON,23,180,32,10
+    PUSHBUTTON      "导出数据",IDC_EXP_DATA_BTN,14,210,63,19
+    CONTROL         "",IDC_DETAIL_PIC,"Static",SS_BLACKFRAME | SS_NOTIFY | NOT WS_VISIBLE,85,24,573,388,WS_EX_TRANSPARENT
+    LTEXT           "电池编号：",IDC_STATIC,88,13,41,8
+    LTEXT           "",IDC_BAT_ID,133,13,8,8
+    CONTROL         "",IDC_BAT_CHART,"{B6C10489-FB89-11D4-93C9-006008A7EED4}",WS_TABSTOP,92,28,560,380
+    CONTROL         "电压",IDC_VCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,663,39,32,10
+    CONTROL         "电流",IDC_ACHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,663,60,32,10
+END
+
+IDD_CURVE_DATA_DLG DIALOGEX 0, 0, 409, 247
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "曲线数据"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CURVE_DATA_EDIT,7,7,395,233,ES_AUTOHSCROLL
+END
+
+IDD_TBATTERYS_DLG DIALOGEX 0, 0, 451, 259
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TABLE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,4,4,439,247
+END
+
+IDD_EBATTERYS_DLG DIALOGEX 0, 0, 442, 256
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_EXCEP_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,0,0,439,255
+END
+
+IDD_INIT_DLG DIALOGEX 0, 0, 497, 381
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "初始设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_INIT_TAB,"SysTabControl32",0x0,7,7,483,331
+    PUSHBUTTON      "保存设置",IDC_SAVE_SET,403,347,60,17
+END
+
+IDD_OP_LOGIN_DLG DIALOGEX 0, 0, 241, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "操作员登录"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "操作员",IDC_STATIC,49,20,34,10
+    LTEXT           "密码",IDC_STATIC,50,48,17,8
+    EDITTEXT        IDC_OP_PWD,82,45,107,16,ES_PASSWORD | ES_AUTOHSCROLL
+    COMBOBOX        IDC_OP_ACCOUNT,81,18,108,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "确定",ID_OP_LOG_OK,49,75,50,14
+    PUSHBUTTON      "取消",ID_OP_LOG_CANCEL,139,75,50,14
+END
+
+IDD_SET_NUM_DLG DIALOGEX 0, 0, 311, 266
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设定工位编号"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",ID_OP_NO_SET_OK,198,245,50,14
+    PUSHBUTTON      "取消",ID_OP_NO_SET_CANCEL,254,245,50,14
+    GROUPBOX        "选项设置",IDC_STATIC,7,7,138,56
+    CONTROL         "无设置",IDC_NO_SET_RADIO,"Button",BS_AUTORADIOBUTTON,15,21,40,10
+    CONTROL         "需要使用工位编号",IDC_NEED_OPNO_RADIO,"Button",BS_AUTORADIOBUTTON,15,35,80,10
+    CONTROL         "只需要使用组编号",IDC_JUST_NO_RADIO,"Button",BS_AUTORADIOBUTTON,15,49,80,10
+    GROUPBOX        "设置无效电池编号",IDC_STATIC,152,7,152,55
+    GROUPBOX        "工位编号列表",IDC_STATIC,7,68,297,171
+    COMBOBOX        IDC_OP_NO_COMBO,56,80,124,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_NOMP,205,79,16,14
+    PUSHBUTTON      "<",IDC_NOMM,189,79,16,14
+    COMBOBOX        IDC_FROM_NO_COMBO,129,113,33,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "应用",IDC_APPLY_BTN,172,112,50,14
+    EDITTEXT        IDC_INVALIDSET_NO_EDIT,26,112,85,14,ES_AUTOHSCROLL
+    LTEXT           "——",IDC_STATIC,113,115,14,8
+    LTEXT           "设置无效编号(8个数字）",IDC_STATIC,28,100,88,8
+    LTEXT           "序号",IDC_STATIC,27,82,17,8
+    LTEXT           "起始号",IDC_STATIC,131,100,25,8
+    LTEXT           "工位编号列表",IDC_STATIC,30,132,49,8
+    CONTROL         "",IDC_OP_NO_LIST,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,29,144,253,93
+    EDITTEXT        IDC_INVALID_NO_EDIT,166,28,119,15,ES_AUTOHSCROLL
+END
+
+IDD_OP_MANAGE_DLG DIALOGEX 0, 0, 369, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "操作员管理"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",ID_OP_OK,230,179,50,14
+    PUSHBUTTON      "取消",ID_OP_CANCEL,292,179,50,14
+    PUSHBUTTON      "添加",IDC_OP_ADD_BTN,43,16,50,14
+    PUSHBUTTON      "删除",IDC_OP_DEL_BTN,148,16,50,14
+    PUSHBUTTON      "更改",IDC_OP_ALTER_BTN,254,15,50,14
+    CONTROL         "",IDC_OP_MANAGE_LIST,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,25,42,316,124
+END
+
+IDD_ADMIN_LOGIN_DLG DIALOGEX 0, 0, 241, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "管理员登录"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "操作员",IDC_STATIC,49,21,34,10
+    LTEXT           "密码",IDC_STATIC,50,45,17,8
+    EDITTEXT        IDC_OP_PWD,82,42,107,16,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",ID_OP_LOG_OK,48,74,50,14
+    PUSHBUTTON      "取消",ID_OP_LOG_CANCEL,138,74,50,14
+    LTEXT           "管理员",IDC_STATIC,84,21,25,8
+END
+
+IDD_OP_LOG_DLG DIALOGEX 0, 0, 369, 199
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "操作日志"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "导出到Excel",IDC_EXPORT_EXCEL_BTN,27,15,79,16
+    CONTROL         "",IDC_OP_MANAGE_LIST,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,25,42,316,124
+    PUSHBUTTON      "删除当前之前的记录",IDC_DEL_PREOP_BTN,140,15,84,16
+    PUSHBUTTON      "关闭",IDC_CLOSE_BTN,293,16,47,16
+END
+
+IDD_SCREEN_DLG DIALOGEX 0, 0, 459, 347
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "现有柜号",IDC_STATIC,29,7,409,44
+    GROUPBOX        "每屏参数",IDC_STATIC,30,62,410,263
+    CONTROL         "",IDC_SCREEN1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,17,16,10
+    LTEXT           "#1",IDC_STATIC,43,17,10,8
+    CONTROL         "",IDC_SCREEN2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,97,17,16,10
+    LTEXT           "#2",IDC_STATIC,80,17,10,8
+    CONTROL         "",IDC_SCREEN3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,135,17,16,10
+    LTEXT           "#3",IDC_STATIC,117,17,10,8
+    CONTROL         "",IDC_SCREEN4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,17,16,10
+    LTEXT           "#4",IDC_STATIC,155,17,10,8
+    CONTROL         "",IDC_SCREEN5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,209,17,16,10
+    LTEXT           "#5",IDC_STATIC,193,17,10,8
+    CONTROL         "",IDC_SCREEN6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,249,17,16,10
+    LTEXT           "#6",IDC_STATIC,230,17,10,8
+    CONTROL         "",IDC_SCREEN7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,285,17,16,10
+    LTEXT           "#7",IDC_STATIC,268,17,10,8
+    CONTROL         "",IDC_SCREEN8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,323,17,16,10
+    LTEXT           "#8",IDC_STATIC,304,17,10,8
+    CONTROL         "",IDC_SCREEN9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,359,17,16,10
+    LTEXT           "#9",IDC_STATIC,342,17,10,8
+    CONTROL         "",IDC_SCREEN10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,397,17,16,10
+    LTEXT           "#10",IDC_STATIC,378,17,14,8
+    CONTROL         "",IDC_SCREEN11,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,61,30,16,10
+    LTEXT           "#11",IDC_STATIC,43,30,14,8
+    CONTROL         "",IDC_SCREEN12,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,97,30,16,10
+    LTEXT           "#12",IDC_STATIC,79,30,14,8
+    CONTROL         "",IDC_SCREEN13,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,135,30,16,10
+    LTEXT           "#13",IDC_STATIC,117,30,14,8
+    CONTROL         "",IDC_SCREEN14,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,171,30,16,10
+    LTEXT           "#14",IDC_STATIC,155,30,14,8
+    CONTROL         "",IDC_SCREEN15,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,209,30,16,10
+    LTEXT           "#15",IDC_STATIC,193,30,14,8
+    CONTROL         "",IDC_SCREEN16,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,249,30,16,10
+    LTEXT           "#16",IDC_STATIC,229,30,14,8
+    CONTROL         "",IDC_SCREEN17,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,285,30,16,10
+    LTEXT           "#17",IDC_STATIC,267,30,14,8
+    CONTROL         "",IDC_SCREEN18,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,323,30,16,10
+    LTEXT           "#18",IDC_STATIC,303,30,14,8
+    CONTROL         "",IDC_SCREEN19,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,359,30,16,10
+    LTEXT           "#19",IDC_STATIC,341,30,14,8
+    CONTROL         "",IDC_SCREEN20,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,397,30,16,10
+    LTEXT           "#20",IDC_STATIC,377,30,14,8
+    PUSHBUTTON      "读取下位机型号",IDC_READLOW,208,58,66,14
+    LTEXT           "柜号",IDC_STATIC,48,79,17,8
+    COMBOBOX        IDC_COMBO_SCRNUM,101,77,48,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "参数拷贝",IDC_PARACOPY,228,74,66,18
+    PUSHBUTTON      ">",IDC_SCRNUMP,184,76,16,14
+    PUSHBUTTON      "<",IDC_SCRNUMM,169,76,16,14
+    LTEXT           "设备名称",IDC_STATIC,48,98,33,8
+    COMBOBOX        IDC_COMBO_DEVICENAME,101,95,128,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "设备标识",IDC_STATIC,244,97,33,8
+    EDITTEXT        IDC_DEVICEID,295,94,89,14,ES_AUTOHSCROLL
+    LTEXT           "每列组数",IDC_STATIC,49,116,33,8
+    EDITTEXT        IDC_GROUPNUM_PERCOL,101,113,59,14,ES_AUTOHSCROLL
+    LTEXT           "每列显示",IDC_STATIC,49,138,33,8
+    EDITTEXT        IDC_COL_SHOWNUM,101,135,60,14,ES_AUTOHSCROLL
+    LTEXT           "每组个数",IDC_STATIC,49,160,33,8
+    EDITTEXT        IDC_NUM_PERGROUP,101,157,60,14,ES_AUTOHSCROLL
+    LTEXT           "恒压范围(mV)",IDC_STATIC,203,117,48,8
+    EDITTEXT        IDC_CONST_VMAX,292,114,59,14,ES_AUTOHSCROLL
+    LTEXT           "恒流范围(mA)",IDC_STATIC,203,158,48,8
+    EDITTEXT        IDC_CONST_AMAX,292,155,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CONST_VMIN,292,134,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CONST_AMIN,292,175,60,14,ES_AUTOHSCROLL
+    LTEXT           "最大",IDC_STATIC,266,118,17,8
+    LTEXT           "最小",IDC_STATIC,266,138,17,8
+    LTEXT           "最大",IDC_STATIC,265,160,17,8
+    LTEXT           "最小",IDC_STATIC,265,178,17,8
+    LTEXT           "带恒压充电？",IDC_STATIC,49,196,49,8
+    CONTROL         "",IDC_CONST_VCHG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,101,196,16,10
+    LTEXT           "带内阻测试？",IDC_STATIC,154,197,49,8
+    CONTROL         "",IDC_OM_TEST,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,206,197,16,10
+    LTEXT           "保存具体曲线到数据文件？",IDC_STATIC,49,212,97,8
+    CONTROL         "",IDC_SAVETO_FILE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,206,210,16,10
+    LTEXT           "曲线？",IDC_STATIC,51,227,25,8
+    CONTROL         "",IDC_VDIS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,123,227,16,10
+    LTEXT           "电压差(mV)",IDC_STATIC,80,227,40,8
+    EDITTEXT        IDC_VDIS_VAL,139,226,38,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_ADIS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,231,227,16,10
+    LTEXT           "电流差(mA)",IDC_STATIC,187,227,40,8
+    EDITTEXT        IDC_ADIS_VAL,247,225,38,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_TIMEDIS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,339,227,16,10
+    LTEXT           "时间差(min)",IDC_STATIC,295,227,41,8
+    EDITTEXT        IDC_TIMEDIS_VAL,355,225,38,12,ES_AUTOHSCROLL
+    LTEXT           "电池显示电压",IDC_STATIC,51,245,49,8
+    LTEXT           "最高(mV)",IDC_STATIC,104,245,32,8
+    EDITTEXT        IDC_VSHOW_MAX,140,243,38,12,ES_AUTOHSCROLL
+    LTEXT           "最低",IDC_STATIC,211,244,17,8
+    EDITTEXT        IDC_VSHOW_MIN,247,242,38,12,ES_AUTOHSCROLL
+    LTEXT           "曲线显示电压",IDC_STATIC,51,263,49,8
+    LTEXT           "最高(mV)",IDC_STATIC,104,263,32,8
+    EDITTEXT        IDC_SVSHOW_MAX,140,262,38,12,ES_AUTOHSCROLL
+    LTEXT           "最低",IDC_STATIC,211,263,17,8
+    EDITTEXT        IDC_SVSHOW_MIN,247,260,38,12,ES_AUTOHSCROLL
+    LTEXT           "曲线显示电流",IDC_STATIC,51,281,49,8
+    LTEXT           "最高(mA)",IDC_STATIC,104,281,32,8
+    EDITTEXT        IDC_SASHOW_MAX,140,279,38,12,ES_AUTOHSCROLL
+    LTEXT           "最低",IDC_STATIC,211,281,17,8
+    EDITTEXT        IDC_SASHOW_MIN,247,278,38,12,ES_AUTOHSCROLL
+    LTEXT           "曲线显示容量",IDC_STATIC,51,299,49,8
+    LTEXT           "最高(mAh)",IDC_STATIC,104,299,36,8
+    EDITTEXT        IDC_SRSHOW_MAX,140,298,38,12,ES_AUTOHSCROLL
+    LTEXT           "最低",IDC_STATIC,211,299,17,8
+    EDITTEXT        IDC_SRSHOW_MIN,247,297,38,12,ES_AUTOHSCROLL
+END
+
+IDD_COMM_DLG DIALOGEX 0, 0, 459, 303
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "端口设置",IDC_STATIC,29,7,409,57
+    CONTROL         "   定时测试现有设备是否联机，如果是，则纳入巡检屏号。",IDC_CHK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,121,222,10
+    LTEXT           "跟踪通讯时间（秒）",IDC_STATIC,48,101,73,8
+    GROUPBOX        "通讯时间间隔",IDC_STATIC,30,81,409,57
+    GROUPBOX        "程序出入口事项",IDC_STATIC,31,158,409,132
+    LTEXT           "通讯端口",IDC_STATIC,47,23,33,8
+    LTEXT           "通讯波特率",IDC_STATIC,47,44,41,8
+    COMBOBOX        IDC_COMMPORT,125,20,100,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMMBAUD,125,42,100,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMM_TIME,125,97,100,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "   本程序需要用户登录",IDC_NEED_LOGIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,49,182,94,10
+    CONTROL         "   禁止在工作过程中修改工作设定值",IDC_FORBD_MODIFY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,49,203,142,10
+    CONTROL         "   进入本程序后马上联机读数",IDC_ONLINE_READ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,49,224,118,10
+    CONTROL         "   退出本程序前先联机读数",IDC_EXIT_READ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,49,245,110,10
+    CONTROL         "   运行本程序时防止运行其它程序",IDC_FORBD_OTHER,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,49,266,134,10
+END
+
+IDD_COLOR_DLG DIALOGEX 0, 0, 460, 237
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "恒流充电",IDC_STATIC,28,34,33,8
+    LTEXT           "恒流恒压充电",IDC_STATIC,28,49,49,8
+    LTEXT           "搁置",IDC_STATIC,27,65,17,8
+    LTEXT           "恒流放电",IDC_STATIC,27,81,33,8
+    GROUPBOX        "工作状态",IDC_STATIC,17,18,411,80
+    GROUPBOX        "告警色",IDC_STATIC,18,111,411,62
+    LTEXT           "循环",IDC_STATIC,180,34,17,8
+    LTEXT           "寄存",IDC_STATIC,180,50,17,8
+    LTEXT           "未寄存",IDC_STATIC,179,65,25,8
+    LTEXT           "暂停",IDC_STATIC,180,81,17,8
+    LTEXT           "开路电压超范围",IDC_STATIC,172,154,57,8
+    LTEXT           "接触不良",IDC_STATIC,173,137,33,8
+    LTEXT           "漏电流报警",IDC_STATIC,173,121,41,8
+    LTEXT           "电池显示窗口",IDC_STATIC,29,204,49,8
+    LTEXT           "过容量报警",IDC_STATIC,29,156,41,8
+    LTEXT           "电流异常",IDC_STATIC,29,140,33,8
+    LTEXT           "电压异常",IDC_STATIC,29,123,33,8
+    GROUPBOX        "背景色",IDC_STATIC,18,189,410,33
+    PUSHBUTTON      "还原默认值",IDC_DEFAULT_BTN,338,199,83,14
+    CONTROL         "",IDC_CHARGE_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,31,33,14
+    CONTROL         "",IDC_VA_CHARGE_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,47,33,14
+    CONTROL         "",IDC_LAY_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,63,33,14
+    CONTROL         "",IDC_DISCHARGE_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,79,33,14
+    CONTROL         "",IDC_RECYCLE_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,237,30,33,14
+    CONTROL         "",IDC_STOR_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,237,46,33,14
+    CONTROL         "",IDC_UNSTOR_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,237,62,33,14
+    CONTROL         "",IDC_STOP_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,237,78,33,14
+    CONTROL         "",IDC_V_ERROR_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,119,33,14
+    CONTROL         "",IDC_LEAK_ALARM_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,238,119,33,14
+    CONTROL         "",IDC_BAD_CONT_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,238,135,33,14
+    CONTROL         "",IDC_A_ERROR_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,135,33,14
+    CONTROL         "",IDC_OVER_ALARM_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,151,33,14
+    CONTROL         "",IDC_V_OVER_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,238,150,33,14
+    CONTROL         "",IDC_BACTTERY_WIN_PIC,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,82,200,33,14
+END
+
+IDD_OTHER_DLG DIALOGEX 0, 0, 459, 347
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "分容方式",IDC_STATIC,29,7,410,96
+    CONTROL         "   对于有异常的工位，取消执行当前工步之后的所有工步。",IDC_STEP_EXCEPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,120,222,10
+    GROUPBOX        "异常处理",IDC_STATIC,30,108,411,81
+    GROUPBOX        "文件设置",IDC_STATIC,31,195,410,50
+    CONTROL         "   文件名按日期和时间自动生成(格式:[起始路径_月_时分秒_屏号])",IDC_CREATE_BYTIME,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,49,208,269,10
+    GROUPBOX        "其它文件位置",IDC_STATIC,32,252,409,66
+    CONTROL         "   需要生成分选数据的文本文件到指定目录，供用户自己处理。",IDC_NEED_PARTDATA,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,268,238,10
+    CONTROL         "   保存数据时同时生成MDB数据库文件",IDC_SAVE_CREATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,284,148,10
+    CONTROL         "   把指定的终止容量分选工步号及其后的连续放电(充电)工步容量相加后进行分选。",IDC_ADD_PART,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,20,307,10
+    CONTROL         "   取指定工步及其后的两个相同工步中的最小容量进行分选(此功能对冷分选无效)。",IDC_TWO_PART,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,34,307,10
+    CONTROL         "   取指定工步及其后的一个相同工步的容量进行分选(此功能对冷分选无效)。",IDC_ONE_PART,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,47,283,10
+    CONTROL         "   增加终止电流作为分选参数(此功能对冷分选无效)。",IDC_STOP_PART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,60,203,10
+    CONTROL         "   增加恒流充电比例作为分选参数(此功能对冷分选无效)。",IDC_CONST_PART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,73,219,10
+    CONTROL         "   增加最后搁置工步的电压差作为分选参数(此功能对冷分选无效)。",IDC_LAY_PART,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,86,251,10
+    CONTROL         "   对于开路电压超出整屏电池平均值的正负200mV的电池，不进行检测。",IDC_VAVGPM_EXCEPT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,133,267,10
+    CONTROL         "   对于实时电压超出整屏平均电压",IDC_VAVG_EXCEPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,146,134,10
+    CONTROL         "   对于电压在制定时间内超出正常范围的电池，取消执行当前工步。",IDC_VOVER_EXCEPT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,159,254,10
+    CONTROL         "   如果有严重异常，控制LPT1端口的输出报警信号。",IDC_ALERT_EXCEPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,48,172,197,10
+    EDITTEXT        IDC_INIT_PATH,102,224,188,14,ES_AUTOHSCROLL
+    LTEXT           "起始路径",IDC_STATIC,50,226,33,8
+    CONTROL         "修改路径为...",IDC_FILE_BROWSE,"MfcLink",WS_TABSTOP,298,227,52,13
+    CONTROL         "   生成MDB文件时产生附加的曲线点数据TXT文件",IDC_MDB_POINT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,204,285,184,10
+    CONTROL         "   需要复制到指定目录",IDC_COPYTO_CATALOG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,300,94,10
+    EDITTEXT        IDC_VAVG_VAL,183,144,29,14,ES_AUTOHSCROLL
+    LTEXT           "mV的电池，停止充电检测。",IDC_STATIC,219,147,98,8
+END
+
+IDD_USER_DLG DIALOGEX 0, 0, 459, 347
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "修改密码",IDC_STATIC,29,7,410,62
+    GROUPBOX        "用户信息",IDC_STATIC,30,77,411,73
+    GROUPBOX        "参数单位选择",IDC_STATIC,31,162,410,50
+    GROUPBOX        "其它",IDC_STATIC,32,261,411,63
+    CONTROL         "  启动工作时自动清除原来的电池编号。",IDC_INIT_REMOVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,273,156,10
+    CONTROL         "  完成工作时自动清除原来的电池编号。",IDC_OVER_REMOVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,288,156,10
+    CONTROL         "  显示连续充电或连续放电的累计容量和累计电量。",IDC_SHOW_CAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,50,302,196,10
+    LTEXT           "密码：",IDC_STATIC,42,36,25,8
+    LTEXT           "原密码",IDC_STATIC,82,19,25,8
+    LTEXT           "新密码",IDC_STATIC,170,20,25,8
+    LTEXT           "确认密码",IDC_STATIC,264,20,33,8
+    EDITTEXT        IDC_COM_PWD,263,33,77,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PRE_PWD,81,33,77,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NEW_PWD,168,33,77,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "新密码生效",IDC_USE_PWD,367,31,64,14
+    LTEXT           "单位名称",IDC_STATIC,41,97,33,8
+    LTEXT           "操作员",IDC_STATIC,41,124,25,8
+    EDITTEXT        IDC_COM_NAME,77,94,269,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OPERATOR,78,121,270,14,ES_AUTOHSCROLL
+    CONTROL         "mA,mAh,mWh",IDC_MA_RAD,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,125,184,61,10
+    CONTROL         "A,Ah,Wh",IDC_A_RAD,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,204,184,78,10
+    LTEXT           "电流，容量，电量：",IDC_STATIC,39,184,75,8
+    GROUPBOX        "打印设置：字体大小",IDC_STATIC,31,221,409,34
+    EDITTEXT        IDC_CHART_NAME,68,234,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BODY,162,233,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DATA,253,233,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_REMARK,344,233,40,14,ES_AUTOHSCROLL
+    LTEXT           "图表名",IDC_STATIC,41,236,25,8
+    LTEXT           "正文",IDC_STATIC,138,235,17,8
+    LTEXT           "数据",IDC_STATIC,229,235,17,8
+    LTEXT           "备注",IDC_STATIC,324,235,17,8
+END
+
+IDD_INIT_COPYDLG DIALOGEX 0, 0, 239, 250
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数复制"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "确    定",IDOK,85,212,60,19
+    GROUPBOX        "",IDC_STATIC,27,15,174,191,0,WS_EX_STATICEDGE
+    LISTBOX         IDC_LOWER_LIST,55,34,116,129,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "全选",IDC_SELALL,55,178,50,14
+    PUSHBUTTON      "清除",IDC_DELALL,122,178,50,14
+END
+
+IDD_STARTWORK_DLG DIALOGEX 0, 0, 673, 424
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "启动"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Function",IDC_STATIC,22,21,60,150
+    PUSHBUTTON      "载入工序",IDC_BTN_SW_OPENPROC,28,45,50,14
+    PUSHBUTTON      "保存工序",IDC_BTN_SW_SAVEPROC,28,70,50,14
+    PUSHBUTTON      "复制参数",IDC_BTN_SW_COPYPARAMETER,28,95,50,14
+    PUSHBUTTON      "电芯编号",IDC_BTN_SW_BATTERY_NUM,28,120,50,14
+    PUSHBUTTON      "发送",IDC_BTN_SW_SEND,28,144,50,14
+    LTEXT           "参数单位： 时间：分钟     电压：mV      电流：mA",IDC_STATIC_SW_PARUNIT,482,15,177,9
+    LTEXT           "工序名称",IDC_STATIC_SW_WORKPROCNAME,115,50,50,14
+    EDITTEXT        IDC_EDIT_SW_WORKPROCNAME,157,48,217,14,ES_AUTOHSCROLL
+    LTEXT           "型号",IDC_STATIC_SW_TYPE,416,50,50,14
+    EDITTEXT        IDC_EDIT_SW_MODEL,442,47,132,14,ES_AUTOHSCROLL
+    CONTROL         "Custom1",IDC_SW_GIRD,"MFCGridCtrl",WS_TABSTOP,115,67,478,145
+    LTEXT           "电池额定容量(mAh)",IDC_STATIC_SW_BATCAP,118,223,77,15
+    EDITTEXT        IDC_EDIT_SW_BATCAP,193,220,78,14,ES_AUTOHSCROLL
+    LTEXT           "工作报警容量(mAh)",IDC_STATIC_SW_WARNCAP,283,223,77,15
+    EDITTEXT        IDC_EDIT_SW_WARNCAP,360,220,48,14,ES_AUTOHSCROLL
+    LTEXT           "开路电压分选工步号",IDC_STATIC_SW_VOLTSEPERATION,117,246,77,15
+    EDITTEXT        IDC_EDIT_SW_VOLTSEPERATION,193,244,78,14,ES_AUTOHSCROLL
+    LTEXT           "循环号",IDC_STATIC_SW_CYCLE_VOLT,283,248,28,9
+    EDITTEXT        IDC_EDIT_SW_CYCLE_VOLT,320,244,48,14,ES_AUTOHSCROLL
+    LTEXT           "终止容量分选工步号",IDC_STATIC_SW_CAPSEPERATION,117,265,77,15
+    EDITTEXT        IDC_EDIT_SW_CAPSEPERATION,193,263,78,14,ES_AUTOHSCROLL
+    LTEXT           "循环号",IDC_STATIC_SW_CYCLE_CAP,283,266,33,10
+    EDITTEXT        IDC_STOP_CYCLE_EDIT,320,262,48,14,ES_AUTOHSCROLL
+    LTEXT           "放电特征点：",IDC_STATIC_SW_DISCHARGE_FEATURE,117,289,52,15
+    CONTROL         "电压（mV）",IDC_RADIO_SW_VOLT,"Button",BS_AUTORADIOBUTTON,165,289,49,10
+    CONTROL         "时间（min）",IDC_RADIO_SW_TIME,"Button",BS_AUTORADIOBUTTON,223,290,49,10
+    EDITTEXT        IDC_EDIT_SW_FEATURE1,279,288,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SW_FEATURE2,336,288,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SW_FEATURE3,390,288,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SW_FEATURE4,445,288,48,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SW_FEATURE5,500,288,48,14,ES_AUTOHSCROLL
+    LTEXT           "数据文件名",IDC_STATIC_SW_DATAFILE_NAME,117,310,77,15
+    EDITTEXT        IDC_EDIT_SW_DATAFILE_NAME,191,307,310,14,ES_AUTOHSCROLL
+    LTEXT           "文件备注",IDC_STATIC_SW_FILELOG,117,331,77,15
+    EDITTEXT        IDC_EDIT_SW_FILEREMARKS,191,329,310,60,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BUTTON7,513,307,50,14
+    PUSHBUTTON      "关闭",IDC_BTN_SW_CLOSE,28,184,50,14
+    CONTROL         "<a># 1</a>",IDC_CAB_LINK1,"SysLink",WS_TABSTOP,107,26,21,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 2</a>",IDC_CAB_LINK2,"SysLink",WS_TABSTOP,143,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 3</a>",IDC_CAB_LINK3,"SysLink",WS_TABSTOP,165,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 4</a>",IDC_CAB_LINK4,"SysLink",WS_TABSTOP,187,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 5</a>",IDC_CAB_LINK5,"SysLink",WS_TABSTOP,209,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 6</a>",IDC_CAB_LINK6,"SysLink",WS_TABSTOP,231,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 7</a>",IDC_CAB_LINK7,"SysLink",WS_TABSTOP,254,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 8</a>",IDC_CAB_LINK8,"SysLink",WS_TABSTOP,275,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 9</a>",IDC_CAB_LINK9,"SysLink",WS_TABSTOP,297,27,13,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 10</a>",IDC_CAB_LINK10,"SysLink",WS_TABSTOP,318,27,18,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 11</a>",IDC_CAB_LINK11,"SysLink",WS_TABSTOP,345,27,15,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 12</a>",IDC_CAB_LINK12,"SysLink",WS_TABSTOP,369,27,17,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 13</a>",IDC_CAB_LINK13,"SysLink",WS_TABSTOP,395,27,19,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 14</a>",IDC_CAB_LINK14,"SysLink",WS_TABSTOP,423,27,17,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 15</a>",IDC_CAB_LINK15,"SysLink",WS_TABSTOP,449,27,17,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 16</a>",IDC_CAB_LINK16,"SysLink",WS_TABSTOP,477,27,16,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 17</a>",IDC_CAB_LINK17,"SysLink",WS_TABSTOP,502,27,18,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 18</a>",IDC_CAB_LINK18,"SysLink",WS_TABSTOP,529,27,16,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 19</a>",IDC_CAB_LINK19,"SysLink",WS_TABSTOP,554,27,17,9,WS_EX_TRANSPARENT
+    CONTROL         "<a># 20</a>",IDC_CAB_LINK20,"SysLink",WS_TABSTOP,581,27,16,9,WS_EX_TRANSPARENT
+    PUSHBUTTON      "创建数据库",IDC_CREATE_DATABASE,513,330,50,14
+    ICON            "",IDC_CAB_SEL,89,38,21,20
+END
+
+IDD_EXCEP_REMOVE_DLG DIALOGEX 0, 0, 309, 256
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "异常电圧排除"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,118,222,53,17
+    GROUPBOX        "选择屏号",IDC_STATIC,17,8,267,100
+    CONTROL         "1",IDC_SCREEN_CHECK1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,35,25,20,10
+    CONTROL         "2",IDC_SCREEN_CHECK2,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,35,41,20,10
+    CONTROL         "3",IDC_SCREEN_CHECK3,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,35,57,20,10
+    CONTROL         "4",IDC_SCREEN_CHECK4,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,35,73,20,10
+    CONTROL         "5",IDC_SCREEN_CHECK5,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,35,89,20,10
+    CONTROL         "6",IDC_SCREEN_CHECK6,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,97,25,20,10
+    CONTROL         "7",IDC_SCREEN_CHECK7,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,97,41,20,10
+    CONTROL         "8",IDC_SCREEN_CHECK8,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,97,57,20,10
+    CONTROL         "9",IDC_SCREEN_CHECK9,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,97,73,20,10
+    CONTROL         "10",IDC_SCREEN_CHECK10,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,93,89,24,10
+    CONTROL         "11",IDC_SCREEN_CHECK11,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,171,25,24,10
+    CONTROL         "12",IDC_SCREEN_CHECK12,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,171,41,24,10
+    CONTROL         "13",IDC_SCREEN_CHECK13,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,171,57,24,10
+    CONTROL         "14",IDC_SCREEN_CHECK14,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,171,73,24,10
+    CONTROL         "15",IDC_SCREEN_CHECK15,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,171,89,24,10
+    CONTROL         "16",IDC_SCREEN_CHECK16,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,241,25,24,10
+    CONTROL         "17",IDC_SCREEN_CHECK17,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,241,41,24,10
+    CONTROL         "18",IDC_SCREEN_CHECK18,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,241,57,24,10
+    CONTROL         "19",IDC_SCREEN_CHECK19,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,241,73,24,10
+    CONTROL         "20",IDC_SCREEN_CHECK20,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,241,89,24,10
+    GROUPBOX        "电压合格范围",IDC_STATIC,18,111,267,99
+    EDITTEXT        IDC_VLOW_BOUND,49,129,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VUP_BOUND,168,130,60,14,ES_AUTOHSCROLL
+    LTEXT           "mv",IDC_STATIC,238,133,10,8
+    LTEXT           "——",IDC_STATIC,133,132,12,8
+    LTEXT           "提示：请在【复位】或【结束】状态下进行发送操作，发送完后，下位机巡检一次电压，亮灯的工位表示电压超出设定的合格范围，即电压异常。",IDC_EXCEP_REMOVE_STATIC,49,152,202,29
+    PUSHBUTTON      "发送",IDC_EXCEP_SEND,93,184,102,19
+END
+
+IDD_DEBUG_LOGIN_DLG DIALOGEX 0, 0, 241, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请输入密码"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "操作员",IDC_STATIC,49,21,34,10
+    LTEXT           "密码",IDC_STATIC,50,45,17,8
+    EDITTEXT        IDC_DEBUGER_PWD,82,42,107,16,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定",ID_DEBUG_LOGIN_OK,48,74,50,14
+    PUSHBUTTON      "取消",ID_DEBUG_LOGIN_CANCEL,138,74,50,14
+    LTEXT           "调试员",IDC_STATIC,84,21,25,8
+END
+
+IDD_SCREEN_SEL_DLG DIALOGEX 0, 0, 159, 200
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "屏号选择"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,42,169,68,19
+    LTEXT           "注意:此功能在脱机状态下操作!",IDC_STATIC,23,11,110,8
+    LISTBOX         IDC_SCREEN_LIST,23,29,112,133,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_DATAFILE_VIEW DIALOGEX 0, 0, 559, 346
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_DATA_PANE,"Static",SS_BLACKFRAME,99,1,458,343
+    GROUPBOX        "Mode",IDC_STATIC,10,7,75,99,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Function",IDC_STATIC,10,107,75,31,0,WS_EX_TRANSPARENT
+    PUSHBUTTON      "文件信息",IDC_FILE_INFO_BTN,21,118,50,14
+    CONTROL         "",IDC_DATA_MENU_PIC,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,0,139,98,205
+    CONTROL         "综合数据",IDC_COMP_LINK,"SysLink",WS_TABSTOP,34,19,32,9
+    CONTROL         "分类数据",IDC_PART_LINK,"SysLink",WS_TABSTOP,38,37,32,9
+    CONTROL         "统计报表",IDC_STATISTIC_LINK,"SysLink",WS_TABSTOP,37,54,32,9
+    CONTROL         "曲线数据",IDC_CURVE_LINK,"SysLink",WS_TABSTOP,37,72,32,9
+    CONTROL         "循环图",IDC_LOOP_LINK,"SysLink",WS_TABSTOP,37,90,32,9
+    ICON            IDI_SEL_ICON,IDC_WIN_SEL,10,12,20,20,WS_GROUP
+END
+
+IDD_SEARCH_ENGINE_CREATER DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "制作电池搜索引擎"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,14,3,281,144
+    PUSHBUTTON      "上一步",IDC_PRE_STEP_BTN,34,149,50,14
+    PUSHBUTTON      "下一步",IDC_NEXT_STEP_BTN,111,149,50,14
+    PUSHBUTTON      "取消",IDCANCEL,191,149,50,14
+    EDITTEXT        IDC_OPEN_EDIT,25,74,199,14,ES_AUTOHSCROLL
+    LTEXT           "请指定电池搜索引擎数据库,可以新建一个或打开一个,要求输入全路径和文件名。",IDC_STATIC,27,47,200,17
+    PUSHBUTTON      "浏览",IDC_BROWSE_BTN,237,74,50,14
+END
+
+IDD_SEARCH_ENGINE DIALOGEX 0, 0, 309, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择电池编号搜索引擎数据库"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,57,86,50,14
+    PUSHBUTTON      "取消",IDCANCEL,179,86,50,14
+    EDITTEXT        IDC_OPEN_EDIT,51,52,180,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BROWSE_BTN,239,52,50,14
+    LTEXT           "请选择电池编号搜索引擎数据库",IDC_STATIC,52,31,113,8
+END
+
+IDD_CAP_COMPARE_DLG DIALOGEX 0, 0, 329, 251
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "容量对比"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,254,15,50,14
+    PUSHBUTTON      "添加文件",IDC_ADD_FILE_BN,22,15,50,14
+    PUSHBUTTON      "导出表格",IDC_EXPORT_TABLE_BTN,83,15,50,14
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,22,34,283,197
+END
+
+IDD_CAP_EXPORT_DLG DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,126,139,50,14
+    GROUPBOX        "",IDC_STATIC,18,16,274,117
+    CONTROL         "  分容结束后自动进行容量导出",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,44,43,124,10
+    LTEXT           "数据导出路径",IDC_STATIC,45,62,49,8
+    EDITTEXT        IDC_PATH_EDIT,45,77,186,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BROWSE_BTN,238,76,50,14
+    LTEXT           "无效电池编号",IDC_STATIC,45,96,49,8
+    EDITTEXT        IDC_INVALID_ID_EDIT,45,111,93,14,ES_AUTOHSCROLL
+END
+
+IDD_CHK_BATTERY_DLG DIALOGEX 0, 0, 443, 342
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "更新或检查电池编号"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,190,319,50,14
+    GROUPBOX        "",IDC_STATIC,17,10,409,32
+    CONTROL         "  从指定目录按照设备标识载入文件。文件所在目录：",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,22,196,10
+    EDITTEXT        IDC_EDIT1,219,20,157,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BROWSE_BTN,380,20,43,14
+    GROUPBOX        "",IDC_STATIC,17,45,409,269
+    LTEXT           "屏号",IDC_STATIC,24,61,17,8
+    COMBOBOX        IDC_COMBO_SCRNUM,50,59,48,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_SCRNUMP,133,58,16,14
+    PUSHBUTTON      "<",IDC_SCRNUMM,118,58,16,14
+    LTEXT           "电池编号列表",IDC_STATIC,24,78,49,8
+    PUSHBUTTON      "从文件载入电池编号",IDC_LOAD_BATTERY_BTN,24,92,81,14
+    PUSHBUTTON      "清除原来的电池编号",IDC_CLEAR_BATTERY_BTN,116,92,85,14
+    PUSHBUTTON      "按照确认编号更新",IDC_UPDATE_BATTERY_BTN,336,92,85,14
+    CONTROL         "",IDC_BATTERY_STATION_LIST,"SysListView32",LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,25,112,395,179
+    PUSHBUTTON      "查找未扫描的工位",IDC_SEARCH_UNCHECKED_BTN,24,294,81,14
+    PUSHBUTTON      "查找需要更新的工位",IDC_SEARCH_UPDATE_BTN,116,294,85,14
+END
+
+IDD_COMP_DLG DIALOGEX 0, 0, 417, 224
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_ATTR_COMBO,34,2,56,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STEP_COMBO,120,2,121,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DATETIME_COMBO,274,2,118,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Custom1",IDC_COMP_GRID,"MFCGridCtrl",WS_TABSTOP,74,47,50,14
+END
+
+IDD_CURVE_DLG DIALOGEX 0, 0, 417, 224
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_STEP_COMBO,14,2,107,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BATID_COMBO,141,2,84,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DATETIME_COMBO,271,2,108,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_BAT_TCHART,"{B6C10489-FB89-11D4-93C9-006008A7EED4}",WS_TABSTOP,157,37,207,105
+    EDITTEXT        IDC_WORK_DES_EDIT,36,161,341,37,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+END
+
+IDD_LOOP_DLG DIALOGEX 0, 0, 417, 224
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_ATTR_COMBO,34,2,56,13,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SEQ_COMBO,120,2,121,13,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DATETIME_COMBO,274,2,118,13,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,7,18,390,199,WS_GROUP,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    LTEXT           "循环",IDC_STATIC,161,95,17,8
+END
+
+IDD_STATISTIC_DLG DIALOGEX 0, 0, 753, 399
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,139,2,40,14,ES_AUTOHSCROLL
+    LTEXT           "Static",IDC_BATNUM_STATIC,12,4,53,8
+    LTEXT           "合格容量(mAh)",IDC_STATIC,77,4,53,8
+    LTEXT           "Static",IDC_CHECKOUT_NUM_STATIC,189,4,46,8
+    LTEXT           "Static",IDC_CHECKOUT_RATIO_STATIC,247,4,46,8
+    LTEXT           "Static",IDC_MAX_STATIC,311,5,46,8
+    LTEXT           "Static",IDC_MIN_STATIC,375,6,46,8
+    LTEXT           "Static",IDC_AVG_STATIC,442,7,46,8
+    CONTROL         "Custom1",IDC_SEG_CUSTOM,"MFCGridCtrl",0x0,27,144,50,14
+    CONTROL         "Custom2",IDC_CAP_CUSTOM,"MFCGridCtrl",0x0,105,147,50,14
+    CONTROL         "",IDC_TCHART1,"{B6C10489-FB89-11D4-93C9-006008A7EED4}",WS_TABSTOP,422,133,297,173
+END
+
+IDD_STATISTIC_MENU_DLG DIALOGEX 0, 0, 89, 178
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "数据来源",IDC_DATA_SRC_BTN,21,33,50,13
+    PUSHBUTTON      "载入区段",IDC_LOAD_SEG_BTN,21,50,50,13
+    PUSHBUTTON      "保存区段",IDC_SAVE_SEG_BTN,21,67,50,13
+    PUSHBUTTON      "刷新",ID_REFRESH_BTN,21,16,50,13
+    GROUPBOX        "Function",IDC_STATIC,10,6,75,81,0,WS_EX_TRANSPARENT
+END
+
+IDD_SLOOP_MENU_DLG DIALOGEX 0, 0, 87, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "单条",IDC_SIGNLE_BTN,21,32,50,13
+    PUSHBUTTON      "多条",IDC_MULTI_BTN,21,48,50,13
+    PUSHBUTTON      "整屏导出",IDC_EXPORT_FULL_BTN,22,77,50,13
+    PUSHBUTTON      "刷新",ID_REFRESH_BTN,21,16,50,13
+    GROUPBOX        "Function",-1,10,6,74,88,0,WS_EX_TRANSPARENT
+    CONTROL         "数据",IDC_DATA_CHK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,25,64,32,10
+END
+
+IDD_BCG_PairDlg DIALOGEX 0, 0, 345, 348
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,327,50,14
+    PUSHBUTTON      "取消",IDCANCEL,288,327,50,14
+    LTEXT           "配对电池个数",IDC_STATIC,33,24,49,12
+    LTEXT           "主排序参数",IDC_STATIC,34,54,49,12
+    LTEXT           "各项参数的配组差值范围",IDC_STATIC,34,81,91,12
+    COMBOBOX        IDC_BCG_PDlg_COMBO1,116,20,48,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BCG_PDlg_COMBO2,116,52,123,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "容量",IDC_STATIC,64,105,17,8
+    LTEXT           "定点数据4",IDC_STATIC,231,105,37,8
+    LTEXT           "定点数据5",IDC_STATIC,231,129,37,8
+    LTEXT           "最后电压",IDC_STATIC,231,153,33,8
+    LTEXT           "内阻",IDC_STATIC,231,178,17,8
+    LTEXT           "终止电流",IDC_STATIC,231,201,33,8
+    LTEXT           "恒流比例",IDC_STATIC,231,227,33,8
+    LTEXT           "恒流时间",IDC_STATIC,231,250,33,8
+    LTEXT           "时间",IDC_STATIC,64,127,17,8
+    LTEXT           "开路电压",IDC_STATIC,64,151,33,8
+    LTEXT           "平均电压",IDC_STATIC,64,177,33,8
+    LTEXT           "定点数据1",IDC_STATIC,64,202,37,8
+    LTEXT           "定点数据2",IDC_STATIC,64,226,37,8
+    LTEXT           "定点数据3",IDC_STATIC,64,250,37,8
+    EDITTEXT        IDC_BCG_PDlg_EDIT1,104,103,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT2,104,126,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,104,148,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT4,104,174,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT5,104,199,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT6,104,222,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT7,104,246,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT8,271,249,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT9,271,200,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT10,271,225,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT11,271,175,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT12,271,152,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT13,271,128,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_PDlg_EDIT14,271,101,40,14,ES_AUTOHSCROLL
+    LTEXT           "(mAh)",IDC_STATIC,146,105,20,8
+    LTEXT           "(min)",IDC_STATIC,147,129,17,8
+    LTEXT           "(mV)",IDC_STATIC,147,150,16,8
+    LTEXT           "(mV)",IDC_STATIC,147,177,16,8
+    LTEXT           "(mΩ)",IDC_STATIC,315,178,23,8
+    LTEXT           "(mA)",IDC_STATIC,315,202,23,8
+    LTEXT           "(%)",IDC_STATIC,315,227,23,8
+    LTEXT           "(min)",IDC_STATIC,315,250,23,8
+    LTEXT           "(mV)",IDC_STATIC,315,155,23,8
+END
+
+IDD_BCG_OptionDlg DIALOGEX 0, 0, 453, 422
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "分容选项"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,186,378,50,14
+    GROUPBOX        "分容机号",IDC_STATIC,26,23,398,53
+    CONTROL         "#1",IDC_CAB1_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,54,35,25,10
+    CONTROL         "#2",IDC_CAB2_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,89,35,25,10
+    CONTROL         "#3",IDC_CAB3_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,121,35,25,10
+    CONTROL         "#4",IDC_CAB4_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,35,25,10
+    CONTROL         "#5",IDC_CAB5_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,186,35,25,10
+    CONTROL         "#6",IDC_CAB6_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,216,35,25,10
+    CONTROL         "#7",IDC_CAB7_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,247,35,25,10
+    CONTROL         "#8",IDC_CAB8_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,278,35,25,10
+    CONTROL         "#9",IDC_CAB9_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,309,35,25,10
+    CONTROL         "#10",IDC_CAB10_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,339,35,29,10
+    CONTROL         "#11",IDC_CAB11_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,54,52,29,10
+    CONTROL         "#12",IDC_CAB12_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,89,52,29,10
+    CONTROL         "#13",IDC_CAB13_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,121,52,29,10
+    CONTROL         "#14",IDC_CAB14_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,155,52,29,10
+    CONTROL         "#15",IDC_CAB15_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,186,52,29,10
+    CONTROL         "#16",IDC_CAB16_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,215,52,29,10
+    CONTROL         "#17",IDC_CAB17_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,247,52,29,10
+    CONTROL         "#18",IDC_CAB18_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,277,52,29,10
+    CONTROL         "#19",IDC_CAB19_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,309,52,29,10
+    CONTROL         "#20",IDC_CAB20_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,339,52,29,10
+    GROUPBOX        "分选条件",IDC_STATIC,25,80,397,183
+    COMBOBOX        IDC_BCG_CODE_COMBO,82,98,65,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "分容代号",IDC_STATIC,35,100,33,8
+    PUSHBUTTON      "保存",IDC_BCG_SAVE_BTN,191,98,50,14
+    PUSHBUTTON      "删除",IDC_BCG_DEL_BTN,258,98,50,14
+    LTEXT           "有效等级",IDC_STATIC,35,121,33,8
+    COMBOBOX        IDC_BCG_GRADE_COMBO,81,119,35,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "有效参数",IDC_STATIC,35,138,33,8
+    LTEXT           "有效条件",IDC_STATIC,147,138,33,8
+    CONTROL         "容量",IDC_BCG_CAP_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,153,32,10
+    CONTROL         "时间",IDC_BCG_TIME_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,169,32,10
+    CONTROL         "开路电压",IDC_BCG_OPEN_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,185,48,10
+    CONTROL         "平均电压",IDC_BCG_AVG_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,200,48,10
+    CONTROL         "定点数据1",IDC_BCG_POINT_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,214,52,10
+    CONTROL         "定点数据2",IDC_BCG_POINT_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,228,52,10
+    CONTROL         "定点数据4",IDC_BCG_POINT_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,153,52,10
+    CONTROL         "定点数据5",IDC_BCG_POINT_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,170,52,10
+    CONTROL         "最终电压",IDC_BCG_END_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,184,48,10
+    CONTROL         "内阻",IDC_BCG_INNER_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,200,32,10
+    CONTROL         "SD(%)",IDC_BCG_SD_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,215,37,10
+    CONTROL         "中值电压",IDC_BCG_MID_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,92,229,48,10
+    CONTROL         "定点数据3",IDC_BCG_POINT_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,37,243,52,10
+    CONTROL         "Custom1",IDC_BCG_CONDITION_GRID,"MFCGridCtrl",WS_TABSTOP,151,151,262,103
+    CONTROL         "退出分选前保存分选结果到指定文件（附带文件为*.txt）",IDC_BCG_SAVE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,281,283,10
+    LTEXT           "文件名",IDC_STATIC,27,303,25,8
+    LTEXT           "备注",IDC_STATIC,27,327,17,8
+    EDITTEXT        IDC_BCG_FILENAME_EDIT,60,300,319,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_BCG_BROWSE_BTN,380,300,37,14
+    EDITTEXT        IDC_BCG_REMARKS_EDIT,59,321,317,34,ES_AUTOHSCROLL
+    GROUPBOX        "设置保存分选结果",IDC_STATIC,25,267,398,100
+END
+
+IDD_BCG_ImportResistanceDlg DIALOGEX 0, 0, 371, 417
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,95,396,50,14
+    PUSHBUTTON      "取消",IDCANCEL,193,396,50,14
+    LTEXT           "屏号",IDC_STATIC,28,37,17,8
+    LTEXT           "内阻文件",IDC_STATIC,102,37,33,8
+    EDITTEXT        IDC_BCG_IRDlg_EDIT1,102,56,248,14,ES_AUTOHSCROLL
+    LTEXT           "1",IDC_STATIC,29,58,8,8
+    LTEXT           "2",IDC_STATIC,29,73,8,8
+    LTEXT           "3",IDC_STATIC,29,90,8,8
+    LTEXT           "4",IDC_STATIC,29,106,8,8
+    LTEXT           "5",IDC_STATIC,29,119,8,8
+    LTEXT           "6",IDC_STATIC,29,137,8,8
+    LTEXT           "7",IDC_STATIC,29,151,8,8
+    LTEXT           "8",IDC_STATIC,29,167,8,8
+    LTEXT           "9",IDC_STATIC,29,183,8,8
+    LTEXT           "10",IDC_STATIC,29,199,8,8
+    LTEXT           "11",IDC_STATIC,29,214,8,8
+    LTEXT           "12",IDC_STATIC,29,229,8,8
+    LTEXT           "13",IDC_STATIC,29,245,8,8
+    LTEXT           "14",IDC_STATIC,29,261,8,8
+    LTEXT           "15",IDC_STATIC,29,278,8,8
+    LTEXT           "16",IDC_STATIC,29,292,8,8
+    LTEXT           "17",IDC_STATIC,29,309,8,8
+    LTEXT           "18",IDC_STATIC,29,324,8,8
+    LTEXT           "19",IDC_STATIC,29,338,9,8
+    LTEXT           "20",IDC_STATIC,29,354,8,8
+    EDITTEXT        IDC_BCG_IRDlg_EDIT13,102,72,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT15,102,87,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT16,102,102,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT17,102,117,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT18,102,133,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT19,102,148,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT20,102,164,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT21,101,180,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT22,101,196,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT23,101,211,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT24,101,226,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT25,101,241,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT26,101,257,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT27,101,273,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT28,101,289,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT29,101,304,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT30,101,320,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT31,101,335,248,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BCG_IRDlg_EDIT32,101,351,248,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON1,44,55,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON2,44,70,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON3,44,87,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON4,44,104,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON5,44,119,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON7,44,135,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON8,44,149,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON6,44,165,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON9,44,181,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON10,44,197,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON11,44,212,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON12,44,227,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON13,44,242,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON14,44,256,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON15,44,272,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON16,44,288,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON17,44,304,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON18,44,319,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON19,44,334,50,14
+    PUSHBUTTON      "＞",IDC_BCG_IRDlg_BUTTON20,44,351,50,14
+END
+
+IDD_BCG_ExcludeExceptionDlg DIALOGEX 0, 0, 243, 255
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,92,226,50,14
+    CONTROL         "电流异常",IDC_BCG_EEDlg_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,39,48,10
+    GROUPBOX        "异常项目",IDC_STATIC,16,18,206,199
+    CONTROL         "充电△I报警",IDC_BCG_EEDlg_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,59,57,10
+    CONTROL         "漏电流报警",IDC_BCG_EEDlg_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,76,56,10
+    CONTROL         "电压异常",IDC_BCG_EEDlg_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,96,48,10
+    CONTROL         "开路电压超范围",IDC_BCG_EEDlg_CHECK5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,114,72,10
+    CONTROL         "充电△V报警",IDC_BCG_EEDlg_CHECK6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,59,134,58,10
+    CONTROL         "放电△V报警",IDC_BCG_EEDlg_CHECK7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,131,39,58,10
+    CONTROL         "OCV异常",IDC_BCG_EEDlg_CHECK8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,131,58,46,10
+    CONTROL         "电压过高报警",IDC_BCG_EEDlg_CHECK9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,131,78,64,10
+    CONTROL         "过容量报警",IDC_BCG_EEDlg_CHECK10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,131,97,56,10
+    CONTROL         "接触不良",IDC_BCG_EEDlg_CHECK21,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,114,48,10
+    CONTROL         "全选",IDC_BCG_EEDlg_RADIO1,"Button",BS_AUTORADIOBUTTON,33,172,32,10
+    CONTROL         "清空",IDC_BCG_EEDlg_RADIO2,"Button",BS_AUTORADIOBUTTON,76,172,32,10
+    CONTROL         "电流异常",IDC_BCG_EEDlg_RADIO3,"Button",BS_AUTORADIOBUTTON,117,173,48,10
+    CONTROL         "电压异常",IDC_BCG_EEDlg_RADIO4,"Button",BS_AUTORADIOBUTTON,166,173,48,10
+    PUSHBUTTON      "发送",IDC_BCG_EEDlg_BUTTON1,92,193,50,14
+END
+
+IDD_BCG_DrawingCircleDlg DIALOGEX 0, 0, 407, 419
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "1",IDC_BCG_StaticNum1,75,28,8,8
+    LTEXT           "2",IDC_BCG_StaticNum2,85,37,8,8
+    LTEXT           "3",IDC_BCG_StaticNum3,94,46,8,8
+    LTEXT           "4",IDC_BCG_StaticNum4,103,54,8,8
+    LTEXT           "5",IDC_BCG_StaticNum5,113,63,8,8
+    LTEXT           "6",IDC_BCG_StaticNum6,122,71,8,8
+    LTEXT           "7",IDC_BCG_StaticNum7,131,80,8,8
+    LTEXT           "8",IDC_BCG_StaticNum8,141,89,8,8
+    LTEXT           "9",IDC_BCG_StaticNum9,150,97,8,8
+    LTEXT           "10",IDC_BCG_StaticNum10,159,106,8,8
+    LTEXT           "11",IDC_BCG_StaticNum11,169,114,8,8
+    LTEXT           "12",IDC_BCG_StaticNum12,178,123,8,8
+    LTEXT           "13",IDC_BCG_StaticNum13,187,132,8,8
+    LTEXT           "14",IDC_BCG_StaticNum14,197,140,8,8
+    LTEXT           "15",IDC_BCG_StaticNum15,206,149,8,8
+    LTEXT           "16",IDC_BCG_StaticNum16,215,158,8,8
+END
+
+IDD_BatteryCapacityGradingDlg DIALOGEX 0, 0, 757, 430
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "容量分选"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "选项",IDC_BCG_BtnOption,16,29,50,14
+    PUSHBUTTON      "冷分选",IDC_BCG_BtnColdGrading,16,52,50,14
+    PUSHBUTTON      "配对分选",IDC_BCG_BtnPair,16,75,50,14
+    PUSHBUTTON      "导入内阻",IDC_BCG_BtnImportResistance,16,98,50,14
+    PUSHBUTTON      "排除异常",IDC_BCG_BtnExcludeException,16,121,50,14
+    COMBOBOX        IDC_GRADENAME_COMB,16,202,49,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "发送",IDC_BCG_BtnSend,16,237,50,14
+    CONTROL         "",IDC_DrawCircle_Rect,"Static",SS_BLACKFRAME,82,25,362,391
+    EDITTEXT        IDC_NUM_EDIT,170,10,40,13,ES_CENTER | ES_AUTOHSCROLL
+    EDITTEXT        IDC_RATIO_EDIT,223,10,40,13,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "机柜",IDC_STATIC,86,12,17,8
+    COMBOBOX        IDC_CAB_COMB,108,10,48,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "结束",1127,16,260,50,14
+    CONTROL         "Custom1",IDC_GRADE_CUSTOM,"MFCGridCtrl",WS_TABSTOP,445,24,303,193
+    CONTROL         "Custom1",IDC_STEPDATA_CUSTOM,"MFCGridCtrl",WS_TABSTOP,445,220,303,196
+    PUSHBUTTON      "<",IDC_BCG_MIN,15,217,20,14
+    PUSHBUTTON      ">",IDC_BCG_ADD,46,217,20,14
+END
+
+IDD_SW_SEND DIALOGEX 0, 0, 209, 202
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "发送"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,43,176,50,14
+    PUSHBUTTON      "取消",IDCANCEL,107,176,50,14
+    LISTBOX         IDC_SW_SEND_LISTCHECKBOX,39,25,95,106,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "全选",IDC_SW_SEND_FULLCHECK,143,44,50,14
+    PUSHBUTTON      "移除",IDC_SW_SEND_CANFULLCHECK,143,78,50,14
+END
+
+IDD_SW_NUMBERING_DLG DIALOGEX 0, 0, 289, 318
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "电芯编号"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,114,278,50,14
+    PUSHBUTTON      "取消",IDCANCEL,185,279,50,14
+    COMBOBOX        IDC_SW_NUM_COM,55,40,48,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "柜号",IDC_STATIC,24,42,17,8
+    LTEXT           "从工位",IDC_STATIC,24,66,25,8
+    LTEXT           "到工位",IDC_STATIC,120,66,25,8
+    LTEXT           "起始编号",IDC_STATIC,24,87,33,8
+    EDITTEXT        IDC_SW_EDIT_FROM,57,65,49,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SW_EDIT_TO,149,64,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SW_EDIT_START,60,85,106,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "应用",IDC_SW_NUM_APPLY,195,86,50,14
+    CONTROL         "",IDC_SW_NUMBERINGLIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,25,110,221,154
+    PUSHBUTTON      "从文件载入",IDC_SW_NUM_LOAD,45,277,50,14
+END
+
+IDD_SW_DELROWNUM DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+    LTEXT           "删除行数",IDC_STATIC_SW_DELROWNUM,88,66,41,8
+    EDITTEXT        IDC_EDIT_SW_DELROWNUM,126,63,81,14,ES_AUTOHSCROLL
+END
+
+IDD_SW_CPPARAMETER_DLG DIALOGEX 0, 0, 217, 197
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数复制"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,34,161,50,14
+    PUSHBUTTON      "取消",IDCANCEL,124,162,50,14
+    LISTBOX         IDC_SW_CP_LISTBOX,47,15,84,112,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "全选",IDC_SW_FULLCHECK,141,45,50,14
+    PUSHBUTTON      "移除",IDC_SW_CANCEL_FULLCHECK,141,80,50,14
+END
+
+IDD_SW_ADDROW_DLG DIALOGEX 0, 0, 309, 144
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,123,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,123,50,14
+    LTEXT           "增加行数",IDC_STATIC_SW_ADDROW,82,64,36,10
+    EDITTEXT        IDC_EDIT_SW_ADDROWNUM,121,62,66,14,ES_AUTOHSCROLL
+END
+
+IDD_SW_CYCLE_DLG DIALOGEX 0, 0, 149, 154
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "循环属性"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,49,119,50,14
+    EDITTEXT        IDC_EDIT1,53,25,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SW_CYCLE_ENDSTEP,53,50,61,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT4,54,74,60,14,ES_AUTOHSCROLL
+    LTEXT           "起始工步",IDC_STATIC,16,28,33,8
+    LTEXT           "终止工步",IDC_STATIC,16,53,33,8
+    LTEXT           "循环次数",IDC_STATIC,16,76,33,8
+END
+
+IDD_GRADE_CONTENT_DLG DIALOGEX 0, 0, 435, 315
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "分选内容"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,184,278,54,18
+    GROUPBOX        "Static",IDC_FILEPATH_STATIC,33,15,368,253
+    LISTBOX         IDC_STEP_LIST,46,48,343,214,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    CONTROL         "开路电压",IDC_OPEN_RADIO,"Button",BS_AUTORADIOBUTTON,73,33,48,10
+    CONTROL         "容量、平均电压、定点数据",IDC_CAP_RADIO,"Button",BS_AUTORADIOBUTTON,204,33,112,10
+END
+
+IDD_CBATTERYS_DLG DIALOGEX 0, 0, 451, 259
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_TRANSPARENT
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_COMP_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,4,4,439,247
+END
+
+IDD_BATWORK_DETAIL_DLG DIALOGEX 0, 0, 575, 333
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "电池工作详细信息"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关闭",IDCANCEL,231,303,50,14
+    EDITTEXT        IDC_WORK_DETAIL_EDIT,7,7,549,208,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+    EDITTEXT        IDC_WORK_OTHER_EDIT,7,245,561,45,ES_MULTILINE | ES_AUTOHSCROLL
+END
+
+IDD_PART_DLG DIALOGEX 0, 0, 417, 224
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_ATTR_COMBO,34,2,56,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STEP_COMBO,120,2,121,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DATETIME_COMBO,274,2,118,13,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Custom1",IDC_PART_CUSTOM,"MFCGridCtrl",WS_TABSTOP,101,45,217,121
+END
+
+IDD_PART_CAP_COND_DIALOG DIALOGEX 0, 0, 311, 401
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "分容显示条件"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "应用",IDOK,71,372,50,14
+    PUSHBUTTON      "取消",IDCANCEL,180,372,50,14
+    LTEXT           "容量分选代号",IDC_STATIC,52,13,49,8
+    COMBOBOX        IDC_PART_CODE_COMBO,147,11,101,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,15,24,272,344
+    LTEXT           "序号",IDC_SEQ_STATIC,25,36,17,8
+    LTEXT           "下限值",IDC_MIN_STATIC,64,36,25,8
+    LTEXT           "上限值",IDC_MAX_STATIC,124,35,25,8
+    LTEXT           "颜色",IDC_COLOR_STATIC,187,35,17,8
+    LTEXT           "标识符",IDC_FLAG_STATIC,243,35,25,8
+    LTEXT           "1",IDC_SEQ_ID1,30,51,8,8
+    LTEXT           "2",IDC_SEQ_ID2,46,68,8,8
+    LTEXT           "3",IDC_SEQ_ID3,45,82,8,8
+    LTEXT           "4",IDC_SEQ_ID4,43,94,8,8
+    LTEXT           "5",IDC_SEQ_ID5,43,108,8,8
+    LTEXT           "6",IDC_SEQ_ID6,43,119,8,8
+    LTEXT           "7",IDC_SEQ_ID7,43,131,8,8
+    LTEXT           "8",IDC_SEQ_ID8,42,143,8,8
+    LTEXT           "9",IDC_SEQ_ID9,40,156,8,8
+    LTEXT           "10",IDC_SEQ_ID10,40,170,9,8
+    LTEXT           "11",IDC_SEQ_ID11,41,182,9,8
+    LTEXT           "12",IDC_SEQ_ID12,41,195,9,8
+    LTEXT           "13",IDC_SEQ_ID13,41,206,9,8
+    LTEXT           "14",IDC_SEQ_ID14,41,217,9,8
+    LTEXT           "15",IDC_SEQ_ID15,41,228,9,8
+    LTEXT           "16",IDC_SEQ_ID16,41,242,9,8
+    EDITTEXT        IDC_MIN_EDIT1,55,49,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT1,116,49,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT1,235,48,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT2,55,70,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT3,55,89,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT4,55,106,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT5,55,124,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT6,55,140,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT7,55,157,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT8,55,177,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT9,54,196,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT10,54,214,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT11,53,231,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT12,53,247,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT13,53,265,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT14,53,280,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT15,53,298,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT16,53,316,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT2,105,71,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT3,106,88,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT4,106,103,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT5,105,120,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT6,105,138,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT7,105,154,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT8,106,171,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT9,106,183,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT10,106,200,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT11,106,218,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT12,105,234,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT13,105,250,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT14,105,263,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT15,105,281,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT16,105,300,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT2,233,74,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT3,234,92,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT4,234,110,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT5,233,129,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT6,233,148,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT7,233,166,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT8,233,183,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT9,233,201,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT10,233,215,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT11,232,231,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT12,232,249,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT13,232,268,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT14,230,283,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT15,231,299,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FLAG_EDIT16,229,315,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_COLOR_PIC1,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,178,48,33,14
+    CONTROL         "",IDC_COLOR_PIC2,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,178,69,33,14
+    CONTROL         "",IDC_COLOR_PIC3,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,178,84,33,14
+    CONTROL         "",IDC_COLOR_PIC4,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,177,103,33,14
+    CONTROL         "",IDC_COLOR_PIC5,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,178,122,33,14
+    CONTROL         "",IDC_COLOR_PIC6,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,139,33,14
+    CONTROL         "",IDC_COLOR_PIC7,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,156,33,14
+    CONTROL         "",IDC_COLOR_PIC8,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,175,33,14
+    CONTROL         "",IDC_COLOR_PIC9,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,194,33,14
+    CONTROL         "",IDC_COLOR_PIC10,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,178,210,33,14
+    CONTROL         "",IDC_COLOR_PIC11,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,178,228,33,14
+    CONTROL         "",IDC_COLOR_PIC12,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,246,33,14
+    CONTROL         "",IDC_COLOR_PIC13,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,264,33,14
+    CONTROL         "",IDC_COLOR_PIC14,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,282,33,14
+    CONTROL         "",IDC_COLOR_PIC15,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,302,33,14
+    CONTROL         "",IDC_COLOR_PIC16,"Static",SS_WHITEFRAME | SS_NOTIFY | SS_CENTERIMAGE,179,319,33,14
+END
+
+IDD_STATISTIC_MENU_DLG1 DIALOGEX 0, 0, 93, 178
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "数据来源",IDC_DATA_SRC_BTN,23,32,50,13
+    PUSHBUTTON      "载入区段",IDC_LOAD_SEG_BTN,23,48,50,13
+    PUSHBUTTON      "保存区段",IDC_SAVE_SEG_BTN,23,64,50,13
+    PUSHBUTTON      "刷新",ID_REFRESH_BTN,23,16,50,13
+    GROUPBOX        "Function",IDC_STATIC,12,6,76,75,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Aix",IDC_STATIC,12,88,75,72,0,WS_EX_TRANSPARENT
+    LTEXT           "最大",IDC_STATIC,16,102,17,8
+    LTEXT           "最小",IDC_STATIC,16,122,17,8
+    LTEXT           "间隔",IDC_STATIC,16,142,17,8
+    EDITTEXT        IDC_MAX_AIX,35,99,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_AIX,35,119,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_STEP_AIX,35,139,40,14,ES_AUTOHSCROLL
+END
+
+IDD_SLOOP_MENU_DLG1 DIALOGEX 0, 0, 87, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "单条",IDC_SIGNLE_BTN,21,32,50,13
+    PUSHBUTTON      "多条",IDC_MULTI_BTN,21,48,50,13
+    PUSHBUTTON      "整屏导出",IDC_EXPORT_FULL_BTN,22,77,50,13
+    PUSHBUTTON      "刷新",ID_REFRESH_BTN,21,16,50,13
+    GROUPBOX        "Function",-1,10,6,74,88,0,WS_EX_TRANSPARENT
+    GROUPBOX        "Aix",-1,10,98,75,83,0,WS_EX_TRANSPARENT
+    LTEXT           "最大",-1,32,109,17,8
+    LTEXT           "最小",-1,60,108,17,8
+    EDITTEXT        IDC_MAX_AIX1,28,120,24,12,ES_AUTOHSCROLL
+    CONTROL         "数据",IDC_DATA_CHK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,25,64,32,10
+    EDITTEXT        IDC_MIN_AIX1,56,120,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_AIX2,28,135,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_AIX2,56,135,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_AIX3,28,149,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_AIX3,56,149,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_AIX4,28,163,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_AIX4,56,163,24,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_AIX_CHK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,122,10,10,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_AIX_CHK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,136,11,10,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_AIX_CHK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,150,10,10,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_AIX_CHK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,164,10,10,WS_EX_TRANSPARENT
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDP_OLE_INIT_FAILED,198,155,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,155,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "TODO:  <公司名>"
+            VALUE "FileDescription", "BatteryManage"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "BatteryManage.exe"
+            VALUE "LegalCopyright", "TODO:  (C) <公司名>。  保留所有权利。"
+            VALUE "OriginalFilename", "BatteryManage.exe"
+            VALUE "ProductName", "TODO:  <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_BATTERY_MAIN_VIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 738
+        BOTTOMMARGIN, 425
+    END
+
+    IDD_DEVICE_SETINFO_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 522
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 299
+    END
+
+    IDD_PBATTERYS_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_BATTERY_DETAIL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 702
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 423
+    END
+
+    IDD_CURVE_DATA_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_TBATTERYS_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 448
+        BOTTOMMARGIN, 258
+    END
+
+    IDD_EBATTERYS_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 429
+        VERTGUIDE, 337
+        BOTTOMMARGIN, 255
+    END
+
+    IDD_INIT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 490
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 374
+    END
+
+    IDD_OP_LOGIN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_SET_NUM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 304
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 259
+    END
+
+    IDD_OP_MANAGE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_ADMIN_LOGIN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_OP_LOG_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_SCREEN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 452
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 340
+    END
+
+    IDD_COMM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 452
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 296
+    END
+
+    IDD_COLOR_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 457
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_OTHER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 452
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 340
+    END
+
+    IDD_USER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 452
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 340
+    END
+
+    IDD_INIT_COPYDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 232
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_STARTWORK_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 666
+        VERTGUIDE, 610
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 417
+    END
+
+    IDD_EXCEP_REMOVE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 249
+    END
+
+    IDD_DEBUG_LOGIN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 234
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+
+    IDD_SCREEN_SEL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DATAFILE_VIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 558
+    END
+
+    IDD_SEARCH_ENGINE_CREATER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_SEARCH_ENGINE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_CAP_COMPARE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 322
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 244
+    END
+
+    IDD_CAP_EXPORT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_CHK_BATTERY_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 436
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 339
+    END
+
+    IDD_COMP_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_CURVE_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_LOOP_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_STATISTIC_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 750
+        BOTTOMMARGIN, 396
+    END
+
+    IDD_STATISTIC_MENU_DLG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_SLOOP_MENU_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_BCG_PairDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 338
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 341
+    END
+
+    IDD_BCG_OptionDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 415
+    END
+
+    IDD_BCG_ImportResistanceDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 364
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 410
+    END
+
+    IDD_BCG_ExcludeExceptionDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_BCG_DrawingCircleDlg, DIALOG
+    BEGIN
+    END
+
+    IDD_BatteryCapacityGradingDlg, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 750
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 423
+    END
+
+    IDD_SW_SEND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_SW_NUMBERING_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 311
+    END
+
+    IDD_SW_DELROWNUM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_SW_CPPARAMETER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_SW_ADDROW_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 137
+    END
+
+    IDD_SW_CYCLE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_GRADE_CONTENT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 428
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 308
+    END
+
+    IDD_CBATTERYS_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 448
+        BOTTOMMARGIN, 258
+    END
+
+    IDD_BATWORK_DETAIL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 568
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 326
+    END
+
+    IDD_PART_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_PART_CAP_COND_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 304
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 394
+    END
+
+    IDD_STATISTIC_MENU_DLG1, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_SLOOP_MENU_DLG1, DIALOG
+    BEGIN
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BATTERY_MAIN_VIEW DLGINIT
+BEGIN
+    IDC_PARA_COM, 0x403, 2, 0
+0x0056, 
+    IDC_PARA_COM, 0x403, 2, 0
+0x0049, 
+    IDC_PARA_COM, 0x403, 2, 0
+0x0054, 
+    IDC_PARA_COM, 0x403, 2, 0
+0x0043, 
+    IDC_MSCOMM1, 0x376, 102, 0
+0x0013, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0031, 0x0039, 
+0x0039, 0x0034, 0x0020, 0x4321, 0x1234, 0x0008, 0x0000, 0x03ed, 0x0000, 
+0x03ed, 0x0000, 0x5601, 0x648a, 0x0000, 0x0006, 0x0000, 0x0001, 0x0400, 
+0x0000, 0x0200, 0x0000, 0x2580, 0x0000, 0x0000, 0x0008, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x003f, 0x0000, 0x0001, 0x0000, 
+    0
+END
+
+IDD_OP_LOGIN_DLG DLGINIT
+BEGIN
+    IDC_OP_ACCOUNT, 0x403, 4, 0
+0x494c, 0x004e, 
+    IDC_OP_ACCOUNT, 0x403, 5, 0
+0x485a, 0x4f41, "\000" 
+    IDC_OP_ACCOUNT, 0x403, 4, 0
+0x5547, 0x004f, 
+    IDC_OP_ACCOUNT, 0x403, 6, 0
+0x4441, 0x494d, 0x004e, 
+    0
+END
+
+IDD_SET_NUM_DLG DLGINIT
+BEGIN
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0031, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0032, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0033, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0034, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0035, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0036, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0037, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0038, 
+    IDC_OP_NO_COMBO, 0x403, 2, 0
+0x0039, 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_OP_NO_COMBO, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0031, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0032, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0033, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0034, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0035, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0036, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0037, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0038, 
+    IDC_FROM_NO_COMBO, 0x403, 2, 0
+0x0039, 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_FROM_NO_COMBO, 0x403, 3, 0
+0x3032, "\000" 
+    0
+END
+
+IDD_SCREEN_DLG DLGINIT
+BEGIN
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0031, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0032, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0033, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0034, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0036, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0037, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0038, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0039, 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3032, "\000" 
+    0
+END
+
+IDD_COMM_DLG DLGINIT
+BEGIN
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x354d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x364d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x374d, "\000" 
+    IDC_COMMPORT, 0x403, 5, 0
+0x4f43, 0x384d, "\000" 
+    IDC_COMMBAUD, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_COMM_TIME, 0x403, 2, 0
+0x0035, 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3532, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3033, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3533, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3034, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3534, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3035, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3535, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3036, "\000" 
+    IDC_COMM_TIME, 0x403, 3, 0
+0x3039, "\000" 
+    IDC_COMM_TIME, 0x403, 4, 0
+0x3231, 0x0030, 
+    0
+END
+
+IDD_OTHER_DLG DLGINIT
+BEGIN
+    IDC_FILE_BROWSE, 0x37c, 157, 0
+0x4d3c, 0x4346, 0x694c, 0x6b6e, 0x555f, 0x6c72, 0x3c3e, 0x4d2f, 0x4346, 
+0x694c, 0x6b6e, 0x555f, 0x6c72, 0x3c3e, 0x464d, 0x4c43, 0x6e69, 0x5f6b, 
+0x7255, 0x506c, 0x6572, 0x6966, 0x3e78, 0x2f3c, 0x464d, 0x4c43, 0x6e69, 
+0x5f6b, 0x7255, 0x506c, 0x6572, 0x6966, 0x3e78, 0x4d3c, 0x4346, 0x694c, 
+0x6b6e, 0x545f, 0x6f6f, 0x746c, 0x7069, 0x3c3e, 0x4d2f, 0x4346, 0x694c, 
+0x6b6e, 0x545f, 0x6f6f, 0x746c, 0x7069, 0x3c3e, 0x464d, 0x4c43, 0x6e69, 
+0x5f6b, 0x7546, 0x6c6c, 0x6554, 0x7478, 0x6f54, 0x6c6f, 0x6974, 0x3e70, 
+0x4146, 0x534c, 0x3c45, 0x4d2f, 0x4346, 0x694c, 0x6b6e, 0x465f, 0x6c75, 
+0x546c, 0x7865, 0x5474, 0x6f6f, 0x746c, 0x7069, "\076" 
+    0
+END
+
+IDD_CHK_BATTERY_DLG DLGINIT
+BEGIN
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0031, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0032, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0033, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0034, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0035, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0036, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0037, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0038, 
+    IDC_COMBO_SCRNUM, 0x403, 2, 0
+0x0039, 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_COMBO_SCRNUM, 0x403, 3, 0
+0x3032, "\000" 
+    0
+END
+
+IDD_BATTERY_DETAIL_DLG DLGINIT
+BEGIN
+    IDC_BAT_CHART, 0x376, 1378, 0
+0x0000, 0x0000, 0x5054, 0x3046, 0x540b, 0x6843, 0x7261, 0x4374, 0x6168, 
+0x7472, 0x0400, 0x654c, 0x7466, 0x0002, 0x5403, 0x706f, 0x0002, 0x5705, 
+0x6469, 0x6874, 0x4803, 0x0603, 0x6548, 0x6769, 0x7468, 0x6a03, 0x1002, 
+0x7553, 0x5462, 0x7469, 0x656c, 0x562e, 0x7369, 0x6269, 0x656c, 0x1208, 
+0x6954, 0x6c74, 0x2e65, 0x6554, 0x7478, 0x532e, 0x7274, 0x6e69, 0x7367, 
+0x0601, 0x5408, 0x6565, 0x6843, 0x7261, 0x0074, 0x540d, 0x7469, 0x656c, 
+0x562e, 0x7369, 0x6269, 0x656c, 0x1808, 0x6f42, 0x7474, 0x6d6f, 0x7841, 
+0x7369, 0x542e, 0x7469, 0x656c, 0x432e, 0x7061, 0x6974, 0x6e6f, 0x0906, 
+0xb1ca, 0xe4bc, 0x4d28, 0x6e69, 0x1229, 0x654c, 0x7466, 0x7841, 0x7369, 
+0x412e, 0x7475, 0x6d6f, 0x7461, 0x6369, 0x1908, 0x654c, 0x7466, 0x7841, 
+0x7369, 0x412e, 0x7475, 0x6d6f, 0x7461, 0x6369, 0x614d, 0x6978, 0x756d, 
+0x086d, 0x4c19, 0x6665, 0x4174, 0x6978, 0x2e73, 0x7541, 0x6f74, 0x616d, 
+0x6974, 0x4d63, 0x6e69, 0x6d69, 0x6d75, 0x1608, 0x654c, 0x7466, 0x7841, 
+0x7369, 0x452e, 0x6178, 0x7463, 0x6144, 0x6574, 0x6954, 0x656d, 0x1508, 
+0x654c, 0x7466, 0x7841, 0x7369, 0x472e, 0x6972, 0x2e64, 0x6956, 0x6973, 
+0x6c62, 0x0865, 0x4c13, 0x6665, 0x4174, 0x6978, 0x2e73, 0x6954, 0x6b63, 
+0x654c, 0x676e, 0x6874, 0x0602, 0x4c16, 0x6665, 0x4174, 0x6978, 0x2e73, 
+0x6954, 0x6c74, 0x2e65, 0x6143, 0x7470, 0x6f69, 0x066e, 0xb508, 0xd1e7, 
+0x28b9, 0x566d, 0x1029, 0x654c, 0x6567, 0x646e, 0x412e, 0x696c, 0x6e67, 
+0x656d, 0x746e, 0x0507, 0x616c, 0x6f54, 0x1170, 0x654c, 0x6567, 0x646e, 
+0x432e, 0x6c6f, 0x726f, 0x6957, 0x7464, 0x0268, 0x1528, 0x654c, 0x6567, 
+0x646e, 0x432e, 0x7375, 0x6f74, 0x506d, 0x736f, 0x7469, 0x6f69, 0x096e, 
+0x4c12, 0x6765, 0x6e65, 0x2e64, 0x6f48, 0x6972, 0x4d7a, 0x7261, 0x6967, 
+0x026e, 0x0bfb, 0x654c, 0x6567, 0x646e, 0x4c2e, 0x6665, 0x0374, 0x015e, 
+0x4c11, 0x6765, 0x6e65, 0x2e64, 0x6853, 0x6461, 0x776f, 0x6953, 0x657a, 
+0x0002, 0x4c13, 0x6765, 0x6e65, 0x2e64, 0x7953, 0x626d, 0x6c6f, 0x572e, 
+0x6469, 0x6874, 0x2802, 0x4c10, 0x6765, 0x6e65, 0x2e64, 0x6554, 0x7478, 
+0x7453, 0x6c79, 0x0765, 0x6c0d, 0x7374, 0x6952, 0x6867, 0x5674, 0x6c61, 
+0x6575, 0x4c0a, 0x6765, 0x6e65, 0x2e64, 0x6f54, 0x0270, 0x0d05, 0x654c, 
+0x6567, 0x646e, 0x542e, 0x706f, 0x6f50, 0x0273, 0x1100, 0x654c, 0x6567, 
+0x646e, 0x562e, 0x7265, 0x4d74, 0x7261, 0x6967, 0x026e, 0x13ff, 0x6952, 
+0x6867, 0x4174, 0x6978, 0x2e73, 0x7541, 0x6f74, 0x616d, 0x6974, 0x0863, 
+0x521a, 0x6769, 0x7468, 0x7841, 0x7369, 0x412e, 0x7475, 0x6d6f, 0x7461, 
+0x6369, 0x614d, 0x6978, 0x756d, 0x086d, 0x521a, 0x6769, 0x7468, 0x7841, 
+0x7369, 0x412e, 0x7475, 0x6d6f, 0x7461, 0x6369, 0x694d, 0x696e, 0x756d, 
+0x086d, 0x5217, 0x6769, 0x7468, 0x7841, 0x7369, 0x452e, 0x6178, 0x7463, 
+0x6144, 0x6574, 0x6954, 0x656d, 0x1608, 0x6952, 0x6867, 0x4174, 0x6978, 
+0x2e73, 0x7247, 0x6469, 0x562e, 0x7369, 0x6269, 0x656c, 0x1508, 0x6952, 
+0x6867, 0x4174, 0x6978, 0x2e73, 0x6954, 0x6c74, 0x2e65, 0x6e41, 0x6c67, 
+0x0265, 0x175a, 0x6952, 0x6867, 0x4174, 0x6978, 0x2e73, 0x6954, 0x6c74, 
+0x2e65, 0x6143, 0x7470, 0x6f69, 0x066e, 0xb508, 0xc1e7, 0x28f7, 0x416d, 
+0x0629, 0x6956, 0x7765, 0x4433, 0x0b08, 0x6956, 0x7765, 0x4433, 0x6157, 
+0x6c6c, 0x0873, 0x500c, 0x6972, 0x746e, 0x614d, 0x6772, 0x6e69, 0x0173, 
+0x0f02, 0x1602, 0x0f02, 0x1602, 0x0000, 0x540f, 0x6146, 0x7473, 0x694c, 
+0x656e, 0x6553, 0x6972, 0x7365, 0x5307, 0x7265, 0x6569, 0x3073, 0x4d11, 
+0x7261, 0x736b, 0x412e, 0x7272, 0x776f, 0x654c, 0x676e, 0x6874, 0x0802, 
+0x4d0b, 0x7261, 0x736b, 0x532e, 0x7974, 0x656c, 0x0807, 0x6d73, 0x5673, 
+0x6c61, 0x6575, 0x4d0d, 0x7261, 0x736b, 0x562e, 0x7369, 0x6269, 0x656c, 
+0x0b08, 0x6553, 0x6972, 0x7365, 0x6f43, 0x6f6c, 0x0772, 0x6305, 0x526c, 
+0x6465, 0x4c0d, 0x6e69, 0x5065, 0x6e65, 0x432e, 0x6c6f, 0x726f, 0x0507, 
+0x6c63, 0x6552, 0x0d64, 0x694c, 0x656e, 0x6550, 0x2e6e, 0x6957, 0x7464, 
+0x0268, 0x1002, 0x694c, 0x656e, 0x6550, 0x2e6e, 0x6e45, 0x5364, 0x7974, 
+0x656c, 0x0607, 0x7365, 0x6c46, 0x7461, 0x5810, 0x6156, 0x756c, 0x7365, 
+0x442e, 0x7461, 0x5465, 0x6d69, 0x0865, 0x580c, 0x6156, 0x756c, 0x7365, 
+0x4e2e, 0x6d61, 0x0665, 0x5801, 0x580d, 0x6156, 0x756c, 0x7365, 0x4f2e, 
+0x6472, 0x7265, 0x0b07, 0x6f6c, 0x7341, 0x6563, 0x646e, 0x6e69, 0x1067, 
+0x5659, 0x6c61, 0x6575, 0x2e73, 0x6144, 0x6574, 0x6954, 0x656d, 0x0c08, 
+0x5659, 0x6c61, 0x6575, 0x2e73, 0x614e, 0x656d, 0x0106, 0x0d59, 0x5659, 
+0x6c61, 0x6575, 0x2e73, 0x724f, 0x6564, 0x0772, 0x6c06, 0x4e6f, 0x6e6f, 
+0x0065, 0x0f00, 0x4654, 0x7361, 0x4c74, 0x6e69, 0x5365, 0x7265, 0x6569, 
+0x0773, 0x6553, 0x6972, 0x7365, 0x1131, 0x614d, 0x6b72, 0x2e73, 0x7241, 
+0x6f72, 0x4c77, 0x6e65, 0x7467, 0x0268, 0x0d08, 0x614d, 0x6b72, 0x2e73, 
+0x6956, 0x6973, 0x6c62, 0x0865, 0x530b, 0x7265, 0x6569, 0x4373, 0x6c6f, 
+0x726f, 0x0707, 0x6c63, 0x7247, 0x6565, 0x086e, 0x6556, 0x7472, 0x7841, 
+0x7369, 0x0a07, 0x5261, 0x6769, 0x7468, 0x7841, 0x7369, 0x440d, 0x6172, 
+0x4177, 0x6c6c, 0x6f50, 0x6e69, 0x7374, 0x0d08, 0x694c, 0x656e, 0x6550, 
+0x2e6e, 0x6f43, 0x6f6c, 0x0772, 0x6307, 0x476c, 0x6572, 0x6e65, 0x4c0d, 
+0x6e69, 0x5065, 0x6e65, 0x572e, 0x6469, 0x6874, 0x0202, 0x4c10, 0x6e69, 
+0x5065, 0x6e65, 0x452e, 0x646e, 0x7453, 0x6c79, 0x0765, 0x6506, 0x4673, 
+0x616c, 0x1074, 0x5658, 0x6c61, 0x6575, 0x2e73, 0x6144, 0x6574, 0x6954, 
+0x656d, 0x0c08, 0x5658, 0x6c61, 0x6575, 0x2e73, 0x614e, 0x656d, 0x0106, 
+0x0d58, 0x5658, 0x6c61, 0x6575, 0x2e73, 0x724f, 0x6564, 0x0772, 0x6c0b, 
+0x416f, 0x6373, 0x6e65, 0x6964, 0x676e, 0x5910, 0x6156, 0x756c, 0x7365, 
+0x442e, 0x7461, 0x5465, 0x6d69, 0x0865, 0x590c, 0x6156, 0x756c, 0x7365, 
+0x4e2e, 0x6d61, 0x0665, 0x5901, 0x590d, 0x6156, 0x756c, 0x7365, 0x4f2e, 
+0x6472, 0x7265, 0x0607, 0x6f6c, 0x6f4e, 0x656e, 0x0000, 0x0000, 0x0000, 
+0x0200, 0x0000, 0x0000, 0xffff, 0xffff, 
+    0
+END
+
+IDD_STATISTIC_DLG DLGINIT
+BEGIN
+    IDC_TCHART1, 0x376, 375, 0
+0x0000, 0x0000, 0x5054, 0x3046, 0x540b, 0x6843, 0x7261, 0x4374, 0x6168, 
+0x7472, 0x0400, 0x654c, 0x7466, 0x0002, 0x5403, 0x706f, 0x0002, 0x5705, 
+0x6469, 0x6874, 0xbe03, 0x0601, 0x6548, 0x6769, 0x7468, 0x1903, 0x1201, 
+0x6954, 0x6c74, 0x2e65, 0x6554, 0x7478, 0x532e, 0x7274, 0x6e69, 0x7367, 
+0x0601, 0xb50e, 0xb3e7, 0xc8d8, 0xc1dd, 0xb7bf, 0xb2d6, 0xcdbc, 0x00bc, 
+0x5211, 0x6769, 0x7468, 0x7841, 0x7369, 0x562e, 0x7369, 0x6269, 0x656c, 
+0x0f08, 0x6f54, 0x4170, 0x6978, 0x2e73, 0x6956, 0x6973, 0x6c62, 0x0865, 
+0x5606, 0x6569, 0x3377, 0x0844, 0x0a00, 0x4254, 0x7261, 0x6553, 0x6972, 
+0x7365, 0x5307, 0x7265, 0x6569, 0x3073, 0x4d11, 0x7261, 0x736b, 0x412e, 
+0x7272, 0x776f, 0x654c, 0x676e, 0x6874, 0x1402, 0x4d0d, 0x7261, 0x736b, 
+0x562e, 0x7369, 0x6269, 0x656c, 0x0b09, 0x6553, 0x6972, 0x7365, 0x6f43, 
+0x6f6c, 0x0772, 0x6305, 0x526c, 0x6465, 0x4712, 0x6172, 0x6964, 0x6e65, 
+0x2e74, 0x6944, 0x6572, 0x7463, 0x6f69, 0x076e, 0x670b, 0x5464, 0x706f, 
+0x6f42, 0x7474, 0x6d6f, 0x5810, 0x6156, 0x756c, 0x7365, 0x442e, 0x7461, 
+0x5465, 0x6d69, 0x0865, 0x580c, 0x6156, 0x756c, 0x7365, 0x4e2e, 0x6d61, 
+0x0665, 0x5801, 0x580d, 0x6156, 0x756c, 0x7365, 0x4f2e, 0x6472, 0x7265, 
+0x0b07, 0x6f6c, 0x7341, 0x6563, 0x646e, 0x6e69, 0x1067, 0x5659, 0x6c61, 
+0x6575, 0x2e73, 0x6144, 0x6574, 0x6954, 0x656d, 0x0c08, 0x5659, 0x6c61, 
+0x6575, 0x2e73, 0x614e, 0x656d, 0x0306, 0x6142, 0x0d72, 0x5659, 0x6c61, 
+0x6575, 0x2e73, 0x724f, 0x6564, 0x0772, 0x6c06, 0x4e6f, 0x6e6f, 0x0065, 
+0x0000, 0x0000, 0x0000, 0x0002, 0x0000, 0xff00, 0xffff, "\377" 
+    0
+END
+
+IDD_CURVE_DLG DLGINIT
+BEGIN
+    IDC_BAT_TCHART, 0x376, 714, 0
+0x0000, 0x0000, 0x5054, 0x3046, 0x540b, 0x6843, 0x7261, 0x4374, 0x6168, 
+0x7472, 0x0400, 0x654c, 0x7466, 0x0002, 0x5403, 0x706f, 0x0002, 0x5705, 
+0x6469, 0x6874, 0x3703, 0x0601, 0x6548, 0x6769, 0x7468, 0xab03, 0x1200, 
+0x6954, 0x6c74, 0x2e65, 0x6554, 0x7478, 0x532e, 0x7274, 0x6e69, 0x7367, 
+0x0601, 0x5408, 0x6565, 0x6843, 0x7261, 0x0074, 0x540d, 0x7469, 0x656c, 
+0x562e, 0x7369, 0x6269, 0x656c, 0x1008, 0x654c, 0x6567, 0x646e, 0x412e, 
+0x696c, 0x6e67, 0x656d, 0x746e, 0x0507, 0x616c, 0x6f54, 0x1170, 0x654c, 
+0x6567, 0x646e, 0x432e, 0x6c6f, 0x726f, 0x6957, 0x7464, 0x0268, 0x151e, 
+0x654c, 0x6567, 0x646e, 0x432e, 0x7375, 0x6f74, 0x506d, 0x736f, 0x7469, 
+0x6f69, 0x096e, 0x4c0b, 0x6765, 0x6e65, 0x2e64, 0x654c, 0x7466, 0x5a02, 
+0x4c13, 0x6765, 0x6e65, 0x2e64, 0x7953, 0x626d, 0x6c6f, 0x572e, 0x6469, 
+0x6874, 0x1e02, 0x4c0a, 0x6765, 0x6e65, 0x2e64, 0x6f54, 0x0270, 0x0609, 
+0x6956, 0x7765, 0x4433, 0x0008, 0x540f, 0x6146, 0x7473, 0x694c, 0x656e, 
+0x6553, 0x6972, 0x7365, 0x5307, 0x7265, 0x6569, 0x3073, 0x4d11, 0x7261, 
+0x736b, 0x412e, 0x7272, 0x776f, 0x654c, 0x676e, 0x6874, 0x0802, 0x4d0d, 
+0x7261, 0x736b, 0x562e, 0x7369, 0x6269, 0x656c, 0x0b08, 0x6553, 0x6972, 
+0x7365, 0x6f43, 0x6f6c, 0x0772, 0x6305, 0x526c, 0x6465, 0x4c0d, 0x6e69, 
+0x5065, 0x6e65, 0x432e, 0x6c6f, 0x726f, 0x0507, 0x6c63, 0x6552, 0x1064, 
+0x5658, 0x6c61, 0x6575, 0x2e73, 0x6144, 0x6574, 0x6954, 0x656d, 0x0c08, 
+0x5658, 0x6c61, 0x6575, 0x2e73, 0x614e, 0x656d, 0x0106, 0x0d58, 0x5658, 
+0x6c61, 0x6575, 0x2e73, 0x724f, 0x6564, 0x0772, 0x6c0b, 0x416f, 0x6373, 
+0x6e65, 0x6964, 0x676e, 0x5910, 0x6156, 0x756c, 0x7365, 0x442e, 0x7461, 
+0x5465, 0x6d69, 0x0865, 0x590c, 0x6156, 0x756c, 0x7365, 0x4e2e, 0x6d61, 
+0x0665, 0x5901, 0x590d, 0x6156, 0x756c, 0x7365, 0x4f2e, 0x6472, 0x7265, 
+0x0607, 0x6f6c, 0x6f4e, 0x656e, 0x0000, 0x540f, 0x6146, 0x7473, 0x694c, 
+0x656e, 0x6553, 0x6972, 0x7365, 0x5307, 0x7265, 0x6569, 0x3173, 0x4d11, 
+0x7261, 0x736b, 0x412e, 0x7272, 0x776f, 0x654c, 0x676e, 0x6874, 0x0802, 
+0x4d0d, 0x7261, 0x736b, 0x562e, 0x7369, 0x6269, 0x656c, 0x0b08, 0x6553, 
+0x6972, 0x7365, 0x6f43, 0x6f6c, 0x0772, 0x6307, 0x476c, 0x6572, 0x6e65, 
+0x5608, 0x7265, 0x4174, 0x6978, 0x0773, 0x610a, 0x6952, 0x6867, 0x4174, 
+0x6978, 0x0d73, 0x7244, 0x7761, 0x6c41, 0x506c, 0x696f, 0x746e, 0x0873, 
+0x4c0d, 0x6e69, 0x5065, 0x6e65, 0x432e, 0x6c6f, 0x726f, 0x0707, 0x6c63, 
+0x7247, 0x6565, 0x106e, 0x5658, 0x6c61, 0x6575, 0x2e73, 0x6144, 0x6574, 
+0x6954, 0x656d, 0x0c08, 0x5658, 0x6c61, 0x6575, 0x2e73, 0x614e, 0x656d, 
+0x0106, 0x0d58, 0x5658, 0x6c61, 0x6575, 0x2e73, 0x724f, 0x6564, 0x0772, 
+0x6c0b, 0x416f, 0x6373, 0x6e65, 0x6964, 0x676e, 0x5910, 0x6156, 0x756c, 
+0x7365, 0x442e, 0x7461, 0x5465, 0x6d69, 0x0865, 0x590c, 0x6156, 0x756c, 
+0x7365, 0x4e2e, 0x6d61, 0x0665, 0x5901, 0x590d, 0x6156, 0x756c, 0x7365, 
+0x4f2e, 0x6472, 0x7265, 0x0607, 0x6f6c, 0x6f4e, 0x656e, 0x0000, 0x0000, 
+0x0000, 0x0200, 0x0000, 0x0000, 0xffff, 0xffff, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_SEL_PNG             PNG                     "res\\sel.png"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 初始化失败。  请确保 OLE 库是正确的版本。"
+END
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "LJ-BMS"
+    IDR_BatteryManageTYPE   "\n电池巡检\n电池巡检"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "LJ-BMS"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权信息\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_ARRANGE       "在窗口底部排列图标\n排列图标"
+    ID_WINDOW_CASCADE       "以重叠方式排列窗口\n层叠窗口"
+    ID_WINDOW_TILE_HORZ     "以不重叠的平铺方式排列窗口\n平铺窗口"
+    ID_WINDOW_TILE_VERT     "以不重叠的平铺方式排列窗口\n平铺窗口"
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "清除所选内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制所选内容，将其放入剪贴板\n复制"
+    ID_EDIT_CUT             "剪切所选内容，将其放入剪贴板\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "重做上次撤消的操作\n重做"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "将窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到上一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+    AFX_IDS_MDICHILD        "激活此窗口"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#include "res\BatteryManage.rc2"  // 非 Microsoft Visual C++ 编辑的资源
+#include "l.CHS\afxres.rc"      // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

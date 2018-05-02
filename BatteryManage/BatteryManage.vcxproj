@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{493781EF-AB0C-46B0-A6E7-65B6E2719188}</ProjectGuid>
+    <RootNamespace>BatteryManage</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AchargeMsg.h" />
+    <ClInclude Include="AdischargeMsg.h" />
+    <ClInclude Include="AdminLoginDlg.h" />
+    <ClInclude Include="AutoAdapt.h" />
+    <ClInclude Include="BatCapInfo.h" />
+    <ClInclude Include="BatStepInfo.h" />
+    <ClInclude Include="Battery.h" />
+    <ClInclude Include="BatCapGradeDlg.h" />
+    <ClInclude Include="BatteryColor.h" />
+    <ClInclude Include="BatteryMainFrame.h" />
+    <ClInclude Include="BatteryMainView.h" />
+    <ClInclude Include="BatteryDetailDlg.h" />
+    <ClInclude Include="BatteryManage.h" />
+    <ClInclude Include="BatteryMessage.h" />
+    <ClInclude Include="BatteryPane.h" />
+    <ClInclude Include="BatteryUtils.h" />
+    <ClInclude Include="BatWorkDetailDlg.h" />
+    <ClInclude Include="bat_chart.h" />
+    <ClInclude Include="BCG_DrawingCircleDlg.h" />
+    <ClInclude Include="BCG_ImportResistanceDLG.h" />
+    <ClInclude Include="BCG_OptionDLG.h" />
+    <ClInclude Include="BCG_PairDLG.h" />
+    <ClInclude Include="CabBattery.h" />
+    <ClInclude Include="CabBatterys.h" />
+    <ClInclude Include="CabConMsg.h" />
+    <ClInclude Include="CabinetInfo.h" />
+    <ClInclude Include="CabUtils.h" />
+    <ClInclude Include="CapCompareDlg.h" />
+    <ClInclude Include="CapExportDlg.h" />
+    <ClInclude Include="CapGradeConf.h" />
+    <ClInclude Include="CapShowType.h" />
+    <ClInclude Include="CAxes.h" />
+    <ClInclude Include="CAxis.h" />
+    <ClInclude Include="CbatterysDlg.h" />
+    <ClInclude Include="ChannelCurve.h" />
+    <ClInclude Include="ChannelInfo.h" />
+    <ClInclude Include="ChannelStep.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ChildView.h" />
+    <ClInclude Include="ChkBatteryDlg.h" />
+    <ClInclude Include="CLegend.h" />
+    <ClInclude Include="CMarks.h" />
+    <ClInclude Include="ColorDlg.h" />
+    <ClInclude Include="CommConf.h" />
+    <ClInclude Include="CommDlg.h" />
+    <ClInclude Include="CompDlg.h" />
+    <ClInclude Include="CSeries.h" />
+    <ClInclude Include="CTChart.h" />
+    <ClInclude Include="CurveDataDlg.h" />
+    <ClInclude Include="CurveDlg.h" />
+    <ClInclude Include="DataFileFrame.h" />
+    <ClInclude Include="DataFileView.h" />
+    <ClInclude Include="Dbatterys.h" />
+    <ClInclude Include="DbColumn.h" />
+    <ClInclude Include="DbSql.h" />
+    <ClInclude Include="DbUtils.h" />
+    <ClInclude Include="DcabinetInfo.h" />
+    <ClInclude Include="DebugLoginDlg.h" />
+    <ClInclude Include="DeviceSetInfoDlg.h" />
+    <ClInclude Include="DlgComm.h" />
+    <ClInclude Include="DtestInfo.h" />
+    <ClInclude Include="EbatterysDlg.h" />
+    <ClInclude Include="ExcepRemoveDlg.h" />
+    <ClInclude Include="ExcludeExceptionDLG.h" />
+    <ClInclude Include="FileCabData.h" />
+    <ClInclude Include="FileStepData.h" />
+    <ClInclude Include="FileUtils.h" />
+    <ClInclude Include="GradeContentDlg.h" />
+    <ClInclude Include="GradeDetailInfo.h" />
+    <ClInclude Include="GridCtrl_src\CellRange.h" />
+    <ClInclude Include="GridCtrl_src\GridCell.h" />
+    <ClInclude Include="GridCtrl_src\GridCellBase.h" />
+    <ClInclude Include="GridCtrl_src\GridCtrl.h" />
+    <ClInclude Include="GridCtrl_src\GridDropTarget.h" />
+    <ClInclude Include="GridCtrl_src\InPlaceEdit.h" />
+    <ClInclude Include="GridCtrl_src\MemDC.h" />
+    <ClInclude Include="GridCtrl_src\TitleTip.h" />
+    <ClInclude Include="GridUtils.h" />
+    <ClInclude Include="HeartBeatMsg.h" />
+    <ClInclude Include="InitCopyDlg.h" />
+    <ClInclude Include="InitDlg.h" />
+    <ClInclude Include="LayMsg.h" />
+    <ClInclude Include="LightLedMsg.h" />
+    <ClInclude Include="LoopDlg.h" />
+    <ClInclude Include="LoopMsg.h" />
+    <ClInclude Include="LowerCabs.h" />
+    <ClInclude Include="LowerUtils.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="mscomm1.h" />
+    <ClInclude Include="NewCellTypes\GridCellCheck.h" />
+    <ClInclude Include="NewCellTypes\GridCellCombo.h" />
+    <ClInclude Include="NewCellTypes\GridCellDateTime.h" />
+    <ClInclude Include="NewCellTypes\GridCellNumeric.h" />
+    <ClInclude Include="NewCellTypes\GridURLCell.h" />
+    <ClInclude Include="ObtainBatMsg.h" />
+    <ClInclude Include="ObtainBeatMsg.h" />
+    <ClInclude Include="ObtainModelMsg.h" />
+    <ClInclude Include="OpLogDlg.h" />
+    <ClInclude Include="OpLoginDlg.h" />
+    <ClInclude Include="OpManageDlg.h" />
+    <ClInclude Include="OtherDlg.h" />
+    <ClInclude Include="OverMsg.h" />
+    <ClInclude Include="PartBattery.h" />
+    <ClInclude Include="PartCapCondDlg.h" />
+    <ClInclude Include="PartDlg.h" />
+    <ClInclude Include="PbatterysDlg.h" />
+    <ClInclude Include="ProcessUtils.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ScreenDlg.h" />
+    <ClInclude Include="ScreenSelDlg.h" />
+    <ClInclude Include="SearchEngine.h" />
+    <ClInclude Include="SearchEngineCreater.h" />
+    <ClInclude Include="SetNumDlg.h" />
+    <ClInclude Include="SloopMenuDlg.h" />
+    <ClInclude Include="StartLedMsg.h" />
+    <ClInclude Include="StartWorkDlg.h" />
+    <ClInclude Include="StatisticDlg.h" />
+    <ClInclude Include="StatisticMenuDlg.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StepMsg.h" />
+    <ClInclude Include="StepUtils.h" />
+    <ClInclude Include="StopLedMsg.h" />
+    <ClInclude Include="StringUtils.h" />
+    <ClInclude Include="SW_AddRowNumDlg.h" />
+    <ClInclude Include="SW_CopyParameterDlg.h" />
+    <ClInclude Include="SW_CycleDlg.h" />
+    <ClInclude Include="SW_DelRowNumDlg.h" />
+    <ClInclude Include="SW_NumberingDlg.h" />
+    <ClInclude Include="SW_SendDlg.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TbatterysDlg.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="TestInfo.h" />
+    <ClInclude Include="TimeUtils.h" />
+    <ClInclude Include="TraceLog.h" />
+    <ClInclude Include="UserDlg.h" />
+    <ClInclude Include="VaChargeMsg.h" />
+    <ClInclude Include="WorkProc.h" />
+    <ClInclude Include="DworkProcInfo.h" />
+    <ClInclude Include="WorkProcInfo.h" />
+    <ClInclude Include="WorkStateStr.h" />
+    <ClInclude Include="WorkStep.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AchargeMsg.cpp" />
+    <ClCompile Include="AdischargeMsg.cpp" />
+    <ClCompile Include="AdminLoginDlg.cpp" />
+    <ClCompile Include="AutoAdapt.cpp" />
+    <ClCompile Include="BatCapInfo.cpp" />
+    <ClCompile Include="BatStepInfo.cpp" />
+    <ClCompile Include="Battery.cpp" />
+    <ClCompile Include="BatCapGradeDlg.cpp" />
+    <ClCompile Include="BatteryColor.cpp" />
+    <ClCompile Include="BatteryMainFrame.cpp" />
+    <ClCompile Include="BatteryMainView.cpp" />
+    <ClCompile Include="BatteryDetailDlg.cpp" />
+    <ClCompile Include="BatteryManage.cpp" />
+    <ClCompile Include="BatteryMessage.cpp" />
+    <ClCompile Include="BatteryPane.cpp" />
+    <ClCompile Include="BatteryUtils.cpp" />
+    <ClCompile Include="BatWorkDetailDlg.cpp" />
+    <ClCompile Include="bat_chart.cpp" />
+    <ClCompile Include="BCG_DrawingCircleDlg.cpp" />
+    <ClCompile Include="BCG_ImportResistanceDLG.cpp" />
+    <ClCompile Include="BCG_OptionDLG.cpp" />
+    <ClCompile Include="BCG_PairDLG.cpp" />
+    <ClCompile Include="CabBattery.cpp" />
+    <ClCompile Include="CabBatterys.cpp" />
+    <ClCompile Include="CabConMsg.cpp" />
+    <ClCompile Include="CabinetInfo.cpp" />
+    <ClCompile Include="CabUtils.cpp" />
+    <ClCompile Include="CapCompareDlg.cpp" />
+    <ClCompile Include="CapExportDlg.cpp" />
+    <ClCompile Include="CapGradeConf.cpp" />
+    <ClCompile Include="CapShowType.cpp" />
+    <ClCompile Include="CbatterysDlg.cpp" />
+    <ClCompile Include="ChannelCurve.cpp" />
+    <ClCompile Include="ChannelInfo.cpp" />
+    <ClCompile Include="ChannelStep.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="ChkBatteryDlg.cpp" />
+    <ClCompile Include="ColorDlg.cpp" />
+    <ClCompile Include="CommConf.cpp" />
+    <ClCompile Include="CommDlg.cpp" />
+    <ClCompile Include="CompDlg.cpp" />
+    <ClCompile Include="CurveDataDlg.cpp" />
+    <ClCompile Include="CurveDlg.cpp" />
+    <ClCompile Include="DataFileFrame.cpp" />
+    <ClCompile Include="DataFileView.cpp" />
+    <ClCompile Include="Dbatterys.cpp" />
+    <ClCompile Include="DbColumn.cpp" />
+    <ClCompile Include="DbSql.cpp" />
+    <ClCompile Include="DbUtils.cpp" />
+    <ClCompile Include="DcabinetInfo.cpp" />
+    <ClCompile Include="DebugLoginDlg.cpp" />
+    <ClCompile Include="DeviceSetInfoDlg.cpp" />
+    <ClCompile Include="DlgComm.cpp" />
+    <ClCompile Include="DtestInfo.cpp" />
+    <ClCompile Include="EbatterysDlg.cpp" />
+    <ClCompile Include="ExcepRemoveDlg.cpp" />
+    <ClCompile Include="ExcludeExceptionDLG.cpp" />
+    <ClCompile Include="FileCabData.cpp" />
+    <ClCompile Include="FileStepData.cpp" />
+    <ClCompile Include="FileUtils.cpp" />
+    <ClCompile Include="GradeContentDlg.cpp" />
+    <ClCompile Include="GradeDetailInfo.cpp" />
+    <ClCompile Include="GridCtrl_src\GridCell.cpp" />
+    <ClCompile Include="GridCtrl_src\GridCellBase.cpp" />
+    <ClCompile Include="GridCtrl_src\GridCtrl.cpp" />
+    <ClCompile Include="GridCtrl_src\GridDropTarget.cpp" />
+    <ClCompile Include="GridCtrl_src\InPlaceEdit.cpp" />
+    <ClCompile Include="GridCtrl_src\TitleTip.cpp" />
+    <ClCompile Include="GridUtils.cpp" />
+    <ClCompile Include="HeartBeatMsg.cpp" />
+    <ClCompile Include="InitCopyDlg.cpp" />
+    <ClCompile Include="InitDlg.cpp" />
+    <ClCompile Include="LayMsg.cpp" />
+    <ClCompile Include="LightLedMsg.cpp" />
+    <ClCompile Include="LoopDlg.cpp" />
+    <ClCompile Include="LoopMsg.cpp" />
+    <ClCompile Include="LowerCabs.cpp" />
+    <ClCompile Include="LowerUtils.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="mscomm1.cpp" />
+    <ClCompile Include="NewCellTypes\GridCellCheck.cpp" />
+    <ClCompile Include="NewCellTypes\GridCellCombo.cpp" />
+    <ClCompile Include="NewCellTypes\GridCellDateTime.cpp" />
+    <ClCompile Include="NewCellTypes\GridCellNumeric.cpp" />
+    <ClCompile Include="NewCellTypes\GridURLCell.cpp" />
+    <ClCompile Include="ObtainBatMsg.cpp" />
+    <ClCompile Include="ObtainBeatMsg.cpp" />
+    <ClCompile Include="ObtainModelMsg.cpp" />
+    <ClCompile Include="OpLogDlg.cpp" />
+    <ClCompile Include="OpLoginDlg.cpp" />
+    <ClCompile Include="OpManageDlg.cpp" />
+    <ClCompile Include="OtherDlg.cpp" />
+    <ClCompile Include="OverMsg.cpp" />
+    <ClCompile Include="PartBattery.cpp" />
+    <ClCompile Include="PartCapCondDlg.cpp" />
+    <ClCompile Include="PartDlg.cpp" />
+    <ClCompile Include="PbatterysDlg.cpp" />
+    <ClCompile Include="ProcessUtils.cpp" />
+    <ClCompile Include="ScreenDlg.cpp" />
+    <ClCompile Include="ScreenSelDlg.cpp" />
+    <ClCompile Include="SearchEngine.cpp" />
+    <ClCompile Include="SearchEngineCreater.cpp" />
+    <ClCompile Include="SetNumDlg.cpp" />
+    <ClCompile Include="SloopMenuDlg.cpp" />
+    <ClCompile Include="StartLedMsg.cpp" />
+    <ClCompile Include="StartWorkDlg.cpp" />
+    <ClCompile Include="StatisticDlg.cpp" />
+    <ClCompile Include="StatisticMenuDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StepMsg.cpp" />
+    <ClCompile Include="StepUtils.cpp" />
+    <ClCompile Include="StopLedMsg.cpp" />
+    <ClCompile Include="StringUtils.cpp" />
+    <ClCompile Include="SW_AddRowNumDlg.cpp" />
+    <ClCompile Include="SW_CopyParameterDlg.cpp" />
+    <ClCompile Include="SW_CycleDlg.cpp" />
+    <ClCompile Include="SW_DelRowNumDlg.cpp" />
+    <ClCompile Include="SW_NumberingDlg.cpp" />
+    <ClCompile Include="SW_SendDlg.cpp" />
+    <ClCompile Include="TbatterysDlg.cpp" />
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TestInfo.cpp" />
+    <ClCompile Include="TimeUtils.cpp" />
+    <ClCompile Include="TraceLog.cpp" />
+    <ClCompile Include="UserDlg.cpp" />
+    <ClCompile Include="VaChargeMsg.cpp" />
+    <ClCompile Include="WorkProc.cpp" />
+    <ClCompile Include="DworkProcInfo.cpp" />
+    <ClCompile Include="WorkProcInfo.cpp" />
+    <ClCompile Include="WorkStateStr.cpp" />
+    <ClCompile Include="WorkStep.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BatteryManage.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BatteryManage.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Debug\config\images\sel.ico" />
+    <Image Include="..\Debug\config\images\sel2.ico" />
+    <Image Include="res\BatteryManage.ico" />
+    <Image Include="res\icon1.ico" />
+    <Image Include="res\lj.ico" />
+    <Image Include="res\sel.bmp" />
+    <Image Include="res\sel.ico" />
+    <Image Include="res\sel.png" />
+    <Image Include="res\sel2.ico" />
+    <Image Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties _x007B_CDE57A43-8B86-11D0-B3C6-00A0C90AEA82_x007D_="CComp_grid" RESOURCE_FILE="BatteryManage.rc" _x007B_B6C10489-FB89-11D4-93C9-006008A7EED4_x007D_="CDetail_chart" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,1431 @@
+// StartWorkDlg.cpp : 实现文件
+//
+
+#include "stdafx.h"
+#include "BatteryManage.h"
+#include "StartWorkDlg.h"
+#include "afxdialogex.h"
+#include "NewCellTypes/GridCellCombo.h"
+
+#include "DbSql.h"
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+// CStartWorkDlg 对话框
+
+IMPLEMENT_DYNAMIC(CStartWorkDlg, CDialog)
+
+CStartWorkDlg::CStartWorkDlg(CWnd* pParent /*=NULL*/)
+	: CDialog(CStartWorkDlg::IDD, pParent)
+{
+	addrowNumDlg = NULL;
+	delrowNumDlg = NULL;
+	cpDlg = NULL;
+	sendDlg = NULL;
+	numberingDlg = NULL;
+
+	cabLinks.clear();
+	cabLinks.push_back(&cabLink1);
+	cabLinks.push_back(&cabLink2);
+	cabLinks.push_back(&cabLink3);
+	cabLinks.push_back(&cabLink4);
+	cabLinks.push_back(&cabLink5);
+
+	cabLinks.push_back(&cabLink6);
+	cabLinks.push_back(&cabLink7);
+	cabLinks.push_back(&cabLink8);
+	cabLinks.push_back(&cabLink9);
+	cabLinks.push_back(&cabLink10);
+
+	cabLinks.push_back(&cabLink11);
+	cabLinks.push_back(&cabLink12);
+	cabLinks.push_back(&cabLink13);
+	cabLinks.push_back(&cabLink14);
+	cabLinks.push_back(&cabLink15);
+
+	cabLinks.push_back(&cabLink16);
+	cabLinks.push_back(&cabLink17);
+	cabLinks.push_back(&cabLink18);
+	cabLinks.push_back(&cabLink19);
+	cabLinks.push_back(&cabLink20);
+
+	cabRects.clear();
+
+	// 初始化状态值
+	stepNames.clear();
+	stepNames.push_back(_T("恒流恒压充电"));
+	stepNames.push_back(_T("恒流充电"));
+	stepNames.push_back(_T("恒流放电"));
+	stepNames.push_back(_T("搁置"));
+	stepNames.push_back(_T("结束"));
+	stepNames.push_back(_T("循环"));
+
+	int idx;
+	linkNames.clear();
+	hoverLinkNames.clear();
+	CString str;
+
+	// color
+	defaultStepColor = RGB(0xFF, 0xFF, 0xE0);
+
+	for (idx = 0; idx < MAX_SCREEN_NUM; ++idx)
+	{
+		str.Format(_T("%d"), idx + 1);
+		linkNames.push_back(_T("# ") + str);
+		hoverLinkNames.push_back(_T("<a># ") + str +_T("</a>"));
+	}
+
+	curCabId = defaultCabId;
+}
+
+CStartWorkDlg::~CStartWorkDlg()
+{
+	if (addrowNumDlg != NULL) delete addrowNumDlg;
+	if (delrowNumDlg != NULL) delete delrowNumDlg;
+	if (cpDlg != NULL) delete cpDlg;
+	if (sendDlg != NULL) delete sendDlg;
+	if (numberingDlg != NULL) delete numberingDlg;
+
+}
+
+void CStartWorkDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialog::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_SW_GIRD, m_GridCtrl);
+	DDX_Control(pDX, IDC_CAB_LINK1, cabLink1);
+	DDX_Control(pDX, IDC_CAB_LINK2, cabLink2);
+	DDX_Control(pDX, IDC_CAB_LINK3, cabLink3);
+	DDX_Control(pDX, IDC_CAB_LINK4, cabLink4);
+	DDX_Control(pDX, IDC_CAB_LINK5, cabLink5);
+	DDX_Control(pDX, IDC_CAB_LINK6, cabLink6);
+	DDX_Control(pDX, IDC_CAB_LINK7, cabLink7);
+	DDX_Control(pDX, IDC_CAB_LINK8, cabLink8);
+	DDX_Control(pDX, IDC_CAB_LINK9, cabLink9);
+	DDX_Control(pDX, IDC_CAB_LINK10, cabLink10);
+	DDX_Control(pDX, IDC_CAB_LINK11, cabLink11);
+	DDX_Control(pDX, IDC_CAB_LINK12, cabLink12);
+	DDX_Control(pDX, IDC_CAB_LINK13, cabLink13);
+	DDX_Control(pDX, IDC_CAB_LINK14, cabLink14);
+	DDX_Control(pDX, IDC_CAB_LINK15, cabLink15);
+	DDX_Control(pDX, IDC_CAB_LINK16, cabLink16);
+	DDX_Control(pDX, IDC_CAB_LINK17, cabLink17);
+	DDX_Control(pDX, IDC_CAB_LINK18, cabLink18);
+	DDX_Control(pDX, IDC_CAB_LINK19, cabLink19);
+	DDX_Control(pDX, IDC_CAB_LINK20, cabLink20);
+	DDX_Control(pDX, IDC_CAB_SEL, cabSel);
+
+
+	DDX_Control(pDX, IDC_EDIT_SW_BATCAP, batCapEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_WARNCAP, warnCapEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_VOLTSEPERATION, vseperateEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_CAPSEPERATION, stopStepNumEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_FEATURE1, featureEdit1);
+	DDX_Control(pDX, IDC_EDIT_SW_FEATURE2, featureEdit2);
+	DDX_Control(pDX, IDC_EDIT_SW_FEATURE3, featureEdit3);
+	DDX_Control(pDX, IDC_EDIT_SW_FEATURE4, featureEdit4);
+	DDX_Control(pDX, IDC_EDIT_SW_FEATURE5, featureEdit5);
+	DDX_Control(pDX, IDC_EDIT_SW_DATAFILE_NAME, dataFileEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_FILEREMARKS, fileRemarkEdit);
+	DDX_Control(pDX, IDC_STOP_CYCLE_EDIT, stopCycleEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_CYCLE_VOLT, vcycleEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_WORKPROCNAME, workProcEdit);
+	DDX_Control(pDX, IDC_EDIT_SW_MODEL, modelEdit);
+}
+
+BOOL CStartWorkDlg::OnInitDialog(){
+	CDialog::OnInitDialog();
+
+	//m_ImageList.Create(MAKEINTRESOURCE(IDB_IMAGES), 16, 1, RGB(255, 255, 255));
+	//m_GridCtrl.SetImageList(&m_ImageList);
+	CreateTimePath();
+
+	InitColorSet();
+	InitCabLinks();
+	InitOtherInfo();
+
+	m_GridCtrl.SetEditable(true);
+	//m_GridCtrl.SetTextBkColor(RGB(0xFF, 0xFF, 0xE0));//黄色背景
+	//初始化列表，设定初始行列数，以及冻结的行列数
+	m_GridCtrl.SetRowCount(8);
+	m_GridCtrl.SetColumnCount(9);
+	m_GridCtrl.SetFixedRowCount(1);
+	m_GridCtrl.SetFixedColumnCount(1);
+	//初始化表头首行
+	for (int i_col = 0; i_col < m_GridCtrl.GetColumnCount(); i_col++){
+		GV_ITEM Item;
+		Item.mask = GVIF_TEXT | GVIF_FORMAT;
+		Item.row = 0;
+		Item.col = i_col;
+		
+		m_GridCtrl.SetRowHeight(0, GRID_ROW_HEIGHT); //设置各行高      
+		m_GridCtrl.SetColumnWidth(i_col, 100); //设置各列宽
+		Item.nFormat = DT_CENTER | DT_WORDBREAK;
+		switch (i_col){
+		case 0:
+			Item.strText.Format(_T("工步号")); break;
+		case 1:
+			Item.strText.Format(_T("工作状态")); break;
+		case 2:
+			Item.strText.Format(_T("时间")); break;
+		case 3:
+			Item.strText.Format(_T("电流")); break;
+		case 4:
+			Item.strText.Format(_T("上限电压")); break;
+		case 5:
+			Item.strText.Format(_T("下限电压")); break;
+		case 6:
+			Item.strText.Format(_T("△v（mv）")); break;
+		case 7:
+			Item.strText.Format(_T("终止电流")); break;
+		case 8:
+			Item.strText.Format(_T("终止容量")); break;
+		default:
+			Item.strText.Format(_T("ddd")); break;
+		}
+		m_GridCtrl.SetItem(&Item);
+	}
+	for (int row = 1; row < m_GridCtrl.GetRowCount(); row++)
+	for (int col = 0; col < m_GridCtrl.GetColumnCount(); col++)
+	{
+		//设置表格显示属性
+		GV_ITEM Item;
+		Item.mask = GVIF_TEXT | GVIF_FORMAT;
+		Item.row = row;
+		Item.col = col;
+
+		m_GridCtrl.SetRowHeight(row, GRID_ROW_HEIGHT); //设置各行高   
+		if (col == 1)
+			m_GridCtrl.SetColumnWidth(col, GRID_SEL_WIDTH); //设置1列宽 
+		else
+			m_GridCtrl.SetColumnWidth(col, GRID_COL_WIDTH);
+
+		if (col < 1)
+		{
+			//添加工序号
+			Item.nFormat = DT_CENTER | DT_WORDBREAK;
+			Item.strText.Format(_T("%d"), row);
+		}
+		else if (col < 2)
+		{
+			//添加下拉选项
+			//m_GridCtrl.SetCellType(row, col, RUNTIME_CLASS(CGridCell));
+			//m_GridCtrl.Invalidate();
+			m_GridCtrl.SetCellType(row, col, RUNTIME_CLASS(CGridCellCombo));
+			CStringArray options;
+			options.Add(_T("恒流恒压充电"));
+			options.Add(_T("恒流充电"));
+			options.Add(_T("恒流放电"));
+			options.Add(_T("搁置"));
+			options.Add(_T("结束"));
+			options.Add(_T("循环"));
+			CGridCellCombo *pCell = (CGridCellCombo*)m_GridCtrl.GetCell(row, col);
+			pCell->SetOptions(options);
+			pCell->SetStyle(CBS_DROPDOWN);
+
+			continue;
+		}
+		else{
+			//添加普通空项
+			Item.nFormat = DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS;
+			Item.strText.Format(_T(""), 2);
+		}
+		m_GridCtrl.SetItem(&Item);
+	}
+	m_GridCtrl.Invalidate();
+
+	InitSpecCabInfo(defaultCabId);
+	return TRUE;
+}
+
+void CStartWorkDlg::updateAllRow()
+{
+	CString str;
+	GV_ITEM Item;
+	Item.mask = GVIF_TEXT | GVIF_FORMAT;
+	Item.col = 0;
+	Item.nFormat = DT_CENTER | DT_WORDBREAK;
+	for (int row = 1; row < m_GridCtrl.GetRowCount(); row++){
+		Item.row = row;
+		str.Format(_T("%d"), row);
+		Item.strText.Format(str);
+		m_GridCtrl.SetItem(&Item);
+	}
+}
+
+void CStartWorkDlg::CreateTimePath()
+{
+	wchar_t str[INT_LENGTH];
+	
+	time(&nowTimeInfo);
+	localtime_s(&nowTime, &nowTimeInfo);
+
+	int year = nowTime.tm_year + 1900;
+	int month = nowTime.tm_mon + 1;
+	int day = nowTime.tm_mday;
+	int hour = nowTime.tm_hour;
+	int minute = nowTime.tm_min;
+	int second = nowTime.tm_sec;
+
+	CString yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr;
+
+
+	_itow_s(year, str, INT_LENGTH); yearStr = str;
+	_itow_s(month, str, INT_LENGTH); monthStr = str; monthStr = month < 10 ? _T("0") + monthStr : monthStr;
+	_itow_s(day, str, INT_LENGTH); dayStr = str; dayStr = day < 10 ? _T("0") + dayStr : dayStr;
+	_itow_s(hour, str, INT_LENGTH); hourStr = str; hourStr = hour < 10 ? _T("0") + hourStr : hourStr;
+	_itow_s(minute, str, INT_LENGTH); minuteStr = str; minuteStr = minute < 10 ? _T("0") + minuteStr : minuteStr;
+	_itow_s(second, str, INT_LENGTH); secondStr = str; secondStr = second < 10 ? _T("0") + secondStr : secondStr;
+
+	timePath = yearStr + _T("_") + monthStr + "\\"
+		+ dayStr + _T("_") + hourStr + minuteStr + secondStr + _T("_");
+
+}
+
+void CStartWorkDlg::InitColorSet()
+{
+	colorPath = CBatteryUtils::GetConfigPath(_T("\\config\\init\\color.ini"));
+	
+	int constAvVal = GetPrivateProfileInt(_T("iniColor"), _T("iniVaCharge"), 0, colorPath);
+	int constAVal = GetPrivateProfileInt(_T("iniColor"), _T("iniCharge"), 0, colorPath);
+	int constADisVal = GetPrivateProfileInt(_T("iniColor"), _T("iniDischarge"), 0, colorPath);
+	int layVal = GetPrivateProfileInt(_T("iniColor"), _T("iniLay"), 0, colorPath);
+	int overVal = GetPrivateProfileInt(_T("iniColor"), _T("iniStop"), 0, colorPath);
+	int cycleVal = GetPrivateProfileInt(_T("iniColor"), _T("iniRecycle"), 0, colorPath);
+	int storVal = GetPrivateProfileInt(_T("iniColor"), _T("iniStor"), 0, colorPath);
+	int unstorVal = GetPrivateProfileInt(_T("iniColor"), _T("iniUnstor"), 0, colorPath);
+
+	stepColors.clear();
+	stepColors.push_back(RGB(constAvVal / 1000000, (constAvVal / 1000) % 1000, constAvVal % 1000));
+	stepColors.push_back(RGB(constAVal / 1000000, (constAVal / 1000) % 1000, constAVal % 1000));
+	stepColors.push_back(RGB(constADisVal / 1000000, (constADisVal / 1000) % 1000, constADisVal % 1000));
+	stepColors.push_back(RGB(layVal / 1000000, (layVal / 1000) % 1000, layVal % 1000));
+	
+	stepColors.push_back(RGB(overVal / 1000000, (overVal / 1000) % 1000, overVal % 1000));
+	stepColors.push_back(RGB(cycleVal / 1000000, (cycleVal / 1000) % 1000, cycleVal % 1000));
+	stepColors.push_back(RGB(storVal / 1000000, (storVal / 1000) % 1000, storVal % 1000));
+	stepColors.push_back(RGB(unstorVal / 1000000, (unstorVal / 1000) % 1000, unstorVal % 1000));
+
+}
+
+//  初始化 机柜选项标签
+void CStartWorkDlg::InitCabLinks()
+{
+	cabInitPath = CBatteryUtils::GetConfigPath(_T("\\config\\init\\cabinet.ini"));
+	//cabInitPath = _T("E:\\项目\\番禺电池\\BatteryManage\\Debug\\config\\init\\cabinet.ini");
+	wchar_t str[MAX_PATH_LENGTH];
+
+
+	GetPrivateProfileString(_T("cabDbPath"), _T("basepath"), _T("E:\battery"), str, MAX_PATH_LENGTH, cabInitPath);
+	defaultBasePath = str;
+
+	GetPrivateProfileString(_T("cabs"), _T("cabSels"), _T("0"), str, MAX_PATH_LENGTH,
+		cabInitPath);
+
+	defaultCabId = -1;
+	CRect rect;
+	CRect rect1;
+	cabLink1.GetWindowRect(rect);
+	ScreenToClient(rect);
+
+	for (int idx = 0; idx < MAX_SCREEN_NUM; ++idx)
+	{
+		
+		cabLinks[idx]->ShowWindow(str[idx] == '1' ? SW_NORMAL : SW_HIDE);
+		if (str[idx] == '1')
+			defaultCabId = defaultCabId == -1 ? idx + 1 : defaultCabId;
+		
+		if (idx >= 1)
+		{
+			rect.left += 40;
+			rect.right += 40;
+		}
+		cabLinks[idx]->MoveWindow(rect,TRUE);
+		CString str;
+		cabLinks[idx]->GetWindowTextW(str);
+		//MessageBox(str);
+		rect1 = rect;
+		rect1.top += 18;
+		rect1.bottom = rect1.top + 12;
+		rect1.left += 2;
+		rect1.right = rect1.left + 12;
+
+		cabRects.push_back(rect1);
+	}
+	str[MAX_SCREEN_NUM] = '\0';
+
+	if (defaultCabId > 0)
+	{
+		cabSel.SetIcon(theApp.selIcon);
+		cabSel.MoveWindow(cabRects[defaultCabId - 1], TRUE);
+	}
+}
+
+// 初始化CEDIT 标签中的内容
+void CStartWorkDlg::InitOtherInfo()
+{
+	if (defaultCabId <= 0) return;
+
+	wchar_t str[MAX_PATH_LENGTH];
+	CString defaultCabIdStr;
+	_itow_s(defaultCabId, str, INT_LENGTH);
+	defaultCabIdStr = str;
+	otherInitPath = CBatteryUtils::GetConfigPath(_T("\\config\\step\\") + defaultCabIdStr + _T("\\other.ini"));
+	
+	batCapVal = GetPrivateProfileInt(_T("other"), _T("batCap"), 0, otherInitPath);
+	warnCapVal = GetPrivateProfileInt(_T("other"), _T("warnCap"), 0, otherInitPath);
+	vseperateVal = GetPrivateProfileInt(_T("other"), _T("vseperate"), 0, otherInitPath);
+	vcycleVal = GetPrivateProfileInt(_T("other"), _T("vcycleNum"), 0, otherInitPath);
+	stopStepNumVal = GetPrivateProfileInt(_T("other"), _T("stopStepNum"), 0, otherInitPath);
+	stopCycleVal = GetPrivateProfileInt(_T("other"), _T("stopCycle"), 0, otherInitPath);
+	vpointVal = GetPrivateProfileInt(_T("other"), _T("vpoint"), 0, otherInitPath);
+
+	tpointVal = GetPrivateProfileInt(_T("other"), _T("tpoint"), 0, otherInitPath);
+	featureVal1 = GetPrivateProfileInt(_T("other"), _T("feature1"), 0, otherInitPath);
+	featureVal2 = GetPrivateProfileInt(_T("other"), _T("feature2"), 0, otherInitPath);
+	featureVal3 = GetPrivateProfileInt(_T("other"), _T("feature3"), 0, otherInitPath);
+	featureVal4 = GetPrivateProfileInt(_T("other"), _T("feature4"), 0, otherInitPath);
+	featureVal5 = GetPrivateProfileInt(_T("other"), _T("feature5"), 0, otherInitPath);
+
+	GetPrivateProfileString(_T("basepath"), _T("defBasePath"), _T("E:\battery"), str, MAX_PATH_LENGTH, cabInitPath);
+	defaultBasePath = str;
+
+	defaultCabIdStr = defaultCabId < 10 ? _T("0") + defaultCabIdStr : defaultCabIdStr;
+
+	defaultDbPath = defaultBasePath + _T("\\") + timePath + defaultCabIdStr;
+
+
+	// 初始化相关标签
+	((CButton *)GetDlgItem(IDC_RADIO_SW_VOLT))->SetCheck(vpointVal == 1 ? TRUE : FALSE);
+	((CButton *)GetDlgItem(IDC_RADIO_SW_TIME))->SetCheck(tpointVal == 1 ? TRUE : FALSE);
+	
+	_itow_s(batCapVal, str, INT_LENGTH);
+	batCapEdit.SetWindowTextW(str);
+	
+	_itow_s(warnCapVal, str, INT_LENGTH);
+	warnCapEdit.SetWindowTextW(str);
+
+	_itow_s(vseperateVal, str, INT_LENGTH);
+	vseperateEdit.SetWindowTextW(str);
+
+	_itow_s(vcycleVal, str, INT_LENGTH);
+	vcycleEdit.SetWindowTextW(str);
+
+	_itow_s(stopStepNumVal, str, INT_LENGTH);
+	stopStepNumEdit.SetWindowTextW(str);
+
+	_itow_s(stopCycleVal, str, INT_LENGTH);
+	stopCycleEdit.SetWindowTextW(str);
+	
+	_itow_s(featureVal1, str, INT_LENGTH);
+	featureEdit1.SetWindowTextW(str);
+
+	_itow_s(featureVal2, str, INT_LENGTH);
+	featureEdit2.SetWindowTextW(str);
+	
+	_itow_s(featureVal3, str, INT_LENGTH);
+	featureEdit3.SetWindowTextW(str);
+	
+	_itow_s(featureVal4, str, INT_LENGTH);
+	featureEdit4.SetWindowTextW(str);
+
+	_itow_s(featureVal5, str, INT_LENGTH);
+	featureEdit5.SetWindowTextW(str);
+	
+	dataFileEdit.SetWindowTextW(defaultDbPath);
+	fileRemarkEdit.SetWindowTextW(fileRemarkVal);
+}
+
+
+void CStartWorkDlg::m_InsertRow(int nRow)
+{
+	CString str;
+	str.Format(_T("%d"), nRow);
+	m_GridCtrl.InsertRow(str, nRow);
+	m_GridCtrl.Invalidate();
+	//对每一行第一个Cell设置为Combo控件
+	//m_GridCtrl.SetCellType(nRow, 1, RUNTIME_CLASS(CGridCell));
+	//m_GridCtrl.Invalidate();
+	m_GridCtrl.SetCellType(nRow, 1, RUNTIME_CLASS(CGridCellCombo));
+	CStringArray options;
+	options.Add(_T("恒流恒压充电"));
+	options.Add(_T("恒流充电"));
+	options.Add(_T("恒流放电"));
+	options.Add(_T("搁置"));
+	options.Add(_T("结束"));
+	options.Add(_T("循环"));
+	CGridCellCombo *pCell = (CGridCellCombo*)m_GridCtrl.GetCell(nRow, 1);
+	pCell->SetOptions(options);
+	pCell->SetStyle(CBS_DROPDOWN);
+
+	updateAllRow();
+}
+
+void CStartWorkDlg::AddOneRow()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	int focusRow = m_GridCtrl.GetFocusCell().row;
+	//防止出现获取不到focus的行
+	focusRow = (focusRow > 0) ? focusRow : 1;
+	if (m_GridCtrl.GetRowCount() <= 1)
+	{
+		m_GridCtrl.SetRowCount(2); //表格小于1行的时候，增加一行
+		for (int col = 0; col < m_GridCtrl.GetColumnCount(); col++)
+		{
+			//设置表格显示属性
+			GV_ITEM Item;
+			Item.mask = GVIF_TEXT | GVIF_FORMAT;
+			Item.row = 1;
+			Item.col = col;
+			//设置各行高
+			m_GridCtrl.SetRowHeight(1, GRID_ROW_HEIGHT);
+			//设置列宽 
+			if (col == 1)
+				m_GridCtrl.SetColumnWidth(col, GRID_SEL_WIDTH);
+			else
+				m_GridCtrl.SetColumnWidth(col, GRID_COL_WIDTH);
+
+			if (col < 1)
+			{
+				Item.nFormat = DT_CENTER | DT_WORDBREAK;
+				Item.strText.Format(_T("%d"), 1);
+			}
+			else if (col < 2)
+			{
+				//m_GridCtrl.SetCellType(1, col, RUNTIME_CLASS(CGridCell));
+				//m_GridCtrl.Invalidate();
+				m_GridCtrl.SetCellType(1, col, RUNTIME_CLASS(CGridCellCombo));
+				CStringArray options;
+				options.Add(_T("恒流恒压充电"));
+				options.Add(_T("恒流充电"));
+				options.Add(_T("恒流放电"));
+				options.Add(_T("搁置"));
+				options.Add(_T("结束"));
+				options.Add(_T("循环"));
+				CGridCellCombo *pCell = (CGridCellCombo*)m_GridCtrl.GetCell(1, col);
+				pCell->SetOptions(options);
+				pCell->SetStyle(CBS_DROPDOWN);
+
+				continue;
+			}
+			else{
+				Item.nFormat = DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS;
+				Item.strText.Format(_T(""), 2);
+			}
+			m_GridCtrl.SetItem(&Item);
+		}
+	}
+	else
+	{
+		m_InsertRow(focusRow);
+	}
+}
+
+void CStartWorkDlg::DelOneRow()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	int focusRow = m_GridCtrl.GetFocusCell().row;
+	if (focusRow >= 0)
+	{
+		m_GridCtrl.DeleteRow(focusRow);
+		m_GridCtrl.Invalidate();
+	}
+	updateAllRow();
+}
+
+
+void CStartWorkDlg::AddMultiRow()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	if (addrowNumDlg == NULL){
+		addrowNumDlg = new CSW_AddRowNumDlg();
+	}
+
+	int addrow = 0;
+	int focusrow = m_GridCtrl.GetFocusCell().row;
+
+	if (addrowNumDlg->DoModal() == IDOK)
+	{
+		addrow = addrowNumDlg->rowNum;
+		focusrow = (focusrow > 0) ? focusrow : 1;
+		AddOneRow();
+
+		for (int i = 0; i < addrow - 1; ++i)
+		{
+			m_InsertRow(focusrow);
+		}
+	}
+}
+
+void CStartWorkDlg::DelMultiRow()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	if (delrowNumDlg == NULL)
+	{
+		delrowNumDlg = new CSW_DelRowNumDlg();
+	}
+
+	int delRowNum = 0;
+	int focusrow = m_GridCtrl.GetFocusCell().row;
+
+	if (delrowNumDlg->DoModal() == IDOK)
+	{
+		if (focusrow < 1) return;
+		delRowNum = delrowNumDlg->deleteRowNum;
+		if (delRowNum < m_GridCtrl.GetRowCount() - 1)
+		{
+			//focusrow 以后有大于delRowNum数目的行数则全删
+			if ((m_GridCtrl.GetRowCount() - (focusrow + 1)) > delRowNum)
+			{
+				for (int i = 0; i < delRowNum; ++i)
+				{
+					m_GridCtrl.DeleteRow(focusrow);
+					m_GridCtrl.Invalidate();
+				}
+			}
+			else
+			{
+				focusrow = m_GridCtrl.GetRowCount() - delRowNum;
+				for (int i = 0; i < delRowNum; ++i)
+				{
+					m_GridCtrl.DeleteRow(focusrow);
+					m_GridCtrl.Invalidate();
+				}
+			}
+		}
+		else
+		{
+			//删除全部行
+			focusrow = 1;
+			delRowNum = m_GridCtrl.GetRowCount() - 1;
+			for (int i = 0; i < delRowNum; ++i)
+			{
+				m_GridCtrl.DeleteRow(focusrow);
+				m_GridCtrl.Invalidate();
+			}
+		}
+	}
+	m_GridCtrl.Invalidate();
+	updateAllRow();
+}
+
+
+
+BEGIN_MESSAGE_MAP(CStartWorkDlg, CDialog)
+	ON_NOTIFY(NM_RCLICK, IDC_SW_GIRD, OnGridRClick)
+//	ON_COMMAND(ID_SW_RC_ADDONEROW, &CStartWorkDlg::OnSwRcAddonerow)
+//	ON_COMMAND(ID_SW_RC_ADDMULROW, &CStartWorkDlg::OnSwRcAddmulrow)
+//	ON_COMMAND(ID_SW_RC_DELONEROW, &CStartWorkDlg::OnSwRcDelonerow)
+//	ON_COMMAND(ID_SW_RC_DELMULROW, &CStartWorkDlg::OnSwRcDelmulrow)
+ON_BN_CLICKED(IDC_BTN_SW_OPENPROC, &CStartWorkDlg::OnBnClickedBtnSwOpenproc)
+ON_BN_CLICKED(IDC_BTN_SW_SAVEPROC, &CStartWorkDlg::OnBnClickedBtnSwSaveproc)
+ON_BN_CLICKED(IDC_BTN_SW_COPYPARAMETER, &CStartWorkDlg::OnBnClickedBtnSwCopyparameter)
+ON_BN_CLICKED(IDC_BTN_SW_BATTERY_NUM, &CStartWorkDlg::OnBnClickedBtnSwBatteryNum)
+ON_BN_CLICKED(IDC_BTN_SW_SEND, &CStartWorkDlg::OnBnClickedBtnSwSend)
+//ON_WM_MOUSEMOVE()
+ON_WM_LBUTTONDOWN()
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK1, &CStartWorkDlg::OnNMClickCabLink1)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK2, &CStartWorkDlg::OnNMClickCabLink2)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK3, &CStartWorkDlg::OnNMClickCabLink3)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK4, &CStartWorkDlg::OnNMClickCabLink4)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK5, &CStartWorkDlg::OnNMClickCabLink5)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK6, &CStartWorkDlg::OnNMClickCabLink6)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK7, &CStartWorkDlg::OnNMClickCabLink7)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK8, &CStartWorkDlg::OnNMClickCabLink8)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK9, &CStartWorkDlg::OnNMClickCabLink9)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK10, &CStartWorkDlg::OnNMClickCabLink10)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK11, &CStartWorkDlg::OnNMClickCabLink11)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK12, &CStartWorkDlg::OnNMClickCabLink12)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK13, &CStartWorkDlg::OnNMClickCabLink13)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK14, &CStartWorkDlg::OnNMClickCabLink14)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK15, &CStartWorkDlg::OnNMClickCabLink15)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK16, &CStartWorkDlg::OnNMClickCabLink16)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK17, &CStartWorkDlg::OnNMClickCabLink17)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK18, &CStartWorkDlg::OnNMClickCabLink18)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK19, &CStartWorkDlg::OnNMClickCabLink19)
+ON_NOTIFY(NM_CLICK, IDC_CAB_LINK20, &CStartWorkDlg::OnNMClickCabLink20)
+ON_BN_CLICKED(IDC_CREATE_DATABASE, &CStartWorkDlg::OnBnClickedCreateDatabase)
+END_MESSAGE_MAP()
+
+
+// CStartWorkDlg 消息处理程序
+
+void CStartWorkDlg::OnGridRClick(NMHDR *pNotifyStruct, LRESULT* /*pResult*/)
+{
+	NM_GRIDVIEW* pItem = (NM_GRIDVIEW*)pNotifyStruct;
+	CMenu   menu;   //定义下面要用到的cmenu对象
+	menu.LoadMenu(IDR_SW_RIGHTCLICK); //装载自定义的右键菜单 
+	CMenu   *pContextMenu = menu.GetSubMenu(0); //获取第一个弹出菜单，所以第一个菜单必须有子菜单 
+	CPoint point1;//定义一个用于确定光标位置的位置  
+	GetCursorPos(&point1);//获取当前光标的位置，以便使得菜单可以跟随光标  
+	pContextMenu->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON, point1.x, point1.y, AfxGetMainWnd()); //在指定位置显示弹出菜单
+}
+
+//void CStartWorkDlg::OnSwRcAddonerow()
+//{
+//	// TODO:  在此添加命令处理程序代码
+//	AddOneRow();
+//}
+
+
+//void CStartWorkDlg::OnSwRcAddmulrow()
+//{
+//	// TODO:  在此添加命令处理程序代码
+//	AddMultiRow();
+//}
+
+
+//void CStartWorkDlg::OnSwRcDelonerow()
+//{
+//	// TODO:  在此添加命令处理程序代码
+//	DelOneRow();
+//}
+
+
+//void CStartWorkDlg::OnSwRcDelmulrow()
+//{
+//	// TODO:  在此添加命令处理程序代码
+//	DelMultiRow();
+//}
+
+void CStartWorkDlg::InitSpecCabInfo(int cabId)
+{
+	wchar_t str[MAX_PATH_LENGTH];
+	CString cabIdStr;
+	_itow_s(cabId, str, INT_LENGTH);
+	cabIdStr = str;
+	
+	cabSel.MoveWindow(cabRects[cabId - 1], TRUE);
+
+	CString tmpPath = CBatteryUtils::GetConfigPath(_T("\\config\\step\\") 
+		+ cabIdStr + _T("\\preStepPath.ini"));
+	GetPrivateProfileString(_T("stepFilePath"), _T("path"), _T("error"), str, MAX_PATH_LENGTH, tmpPath);
+	stepInitPath = str;
+
+	otherInitPath = CBatteryUtils::GetConfigPath(_T("\\config\\step\\") + cabIdStr + _T("\\other.ini"));
+
+	InitSpecStepInfo(stepInitPath);
+	InitOtherInfo(cabId, otherInitPath);
+	
+}
+
+void CStartWorkDlg::InitOtherInfo(int cabId, CString otherInitPath)
+{
+	CString cabIdStr;
+	wchar_t str[MAX_PATH_LENGTH];
+
+	_itow_s(cabId, str, INT_LENGTH);
+	cabIdStr = str;
+
+	batCapVal = GetPrivateProfileInt(_T("other"), _T("batCap"), 0, otherInitPath);
+	warnCapVal = GetPrivateProfileInt(_T("other"), _T("warnCap"), 0, otherInitPath);
+	vseperateVal = GetPrivateProfileInt(_T("other"), _T("vseperate"), 0, otherInitPath);
+	vcycleVal = GetPrivateProfileInt(_T("other"), _T("vcycleNum"), 0, otherInitPath);
+	stopStepNumVal = GetPrivateProfileInt(_T("other"), _T("stopStepNum"), 0, otherInitPath);
+	stopCycleVal = GetPrivateProfileInt(_T("other"), _T("stopCycle"), 0, otherInitPath);
+	vpointVal = GetPrivateProfileInt(_T("other"), _T("vpoint"), 0, otherInitPath);
+
+	tpointVal = GetPrivateProfileInt(_T("other"), _T("tpoint"), 0, otherInitPath);
+	featureVal1 = GetPrivateProfileInt(_T("other"), _T("feature1"), 0, otherInitPath);
+	featureVal2 = GetPrivateProfileInt(_T("other"), _T("feature2"), 0, otherInitPath);
+	featureVal3 = GetPrivateProfileInt(_T("other"), _T("feature3"), 0, otherInitPath);
+	featureVal4 = GetPrivateProfileInt(_T("other"), _T("feature4"), 0, otherInitPath);
+	featureVal5 = GetPrivateProfileInt(_T("other"), _T("feature5"), 0, otherInitPath);
+
+	GetPrivateProfileString(_T("basepath"), _T("defBasePath"), _T("E:\battery"), str, MAX_PATH_LENGTH, cabInitPath);
+	defaultBasePath = str;
+
+	// defaultDbPath = defaultBasePath + _T("\\") + year_month + "\\" + day_time_cabId
+	int year = nowTime.tm_year + 1900;
+	int month = nowTime.tm_mon + 1;
+	int day = nowTime.tm_mday;
+	int hour = nowTime.tm_hour;
+	int minute = nowTime.tm_min;
+	int second = nowTime.tm_sec;
+
+	CString yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr;
+
+
+	_itow_s(year, str, INT_LENGTH); yearStr = str;
+	_itow_s(month, str, INT_LENGTH); monthStr = str; monthStr = month < 10 ? _T("0") + monthStr : monthStr;
+	_itow_s(day, str, INT_LENGTH); dayStr = str; dayStr = day < 10 ? _T("0") + dayStr : dayStr;
+	_itow_s(hour, str, INT_LENGTH); hourStr = str; hourStr = hour < 10 ? _T("0") + hourStr : hourStr;
+	_itow_s(minute, str, INT_LENGTH); minuteStr = str; minuteStr = minute < 10 ? _T("0") + minuteStr : minuteStr;
+	_itow_s(second, str, INT_LENGTH); secondStr = str; secondStr = second < 10 ? _T("0") + secondStr : secondStr;
+
+	cabIdStr = cabId < 10 ? _T("0") + cabIdStr : cabIdStr;
+
+	defaultDbPath = defaultBasePath + _T("\\") + timePath + cabIdStr;
+
+
+	// 初始化相关标签
+	((CButton *)GetDlgItem(IDC_RADIO_SW_VOLT))->SetCheck(vpointVal == 1 ? TRUE : FALSE);
+	((CButton *)GetDlgItem(IDC_RADIO_SW_TIME))->SetCheck(tpointVal == 1 ? TRUE : FALSE);
+
+	_itow_s(batCapVal, str, INT_LENGTH);
+	batCapEdit.SetWindowTextW(str);
+
+	_itow_s(warnCapVal, str, INT_LENGTH);
+	warnCapEdit.SetWindowTextW(str);
+
+	_itow_s(vseperateVal, str, INT_LENGTH);
+	vseperateEdit.SetWindowTextW(str);
+
+	_itow_s(vcycleVal, str, INT_LENGTH);
+	vcycleEdit.SetWindowTextW(str);
+
+	_itow_s(stopStepNumVal, str, INT_LENGTH);
+	stopStepNumEdit.SetWindowTextW(str);
+
+	_itow_s(stopCycleVal, str, INT_LENGTH);
+	stopCycleEdit.SetWindowTextW(str);
+
+	_itow_s(featureVal1, str, INT_LENGTH);
+	featureEdit1.SetWindowTextW(str);
+
+	_itow_s(featureVal2, str, INT_LENGTH);
+	featureEdit2.SetWindowTextW(str);
+
+	_itow_s(featureVal3, str, INT_LENGTH);
+	featureEdit3.SetWindowTextW(str);
+
+	_itow_s(featureVal4, str, INT_LENGTH);
+	featureEdit4.SetWindowTextW(str);
+
+	_itow_s(featureVal5, str, INT_LENGTH);
+	featureEdit5.SetWindowTextW(str);
+
+	dataFileEdit.SetWindowTextW(defaultDbPath);
+	fileRemarkEdit.SetWindowTextW(fileRemarkVal);
+}
+
+void CStartWorkDlg::InitSpecStepInfo(CString filePath)
+{
+	std::ifstream in(filePath);
+	if (in.is_open())
+	{
+		string line;
+		int nRow, nCol;
+		// 文件第一行为工步名称
+		// 第二行为型号
+		//文件第三行为表格行数，第四行为表格列数
+		getline(in, line);
+		workProcVal= line.c_str();
+		workProcEdit.SetWindowTextW(workProcVal);
+
+		getline(in, line);
+		modelVal = line.c_str();
+		modelEdit.SetWindowTextW(modelVal);
+		
+		getline(in, line);
+		nRow = std::stoi(line);
+		getline(in, line);
+		nCol = std::stoi(line);
+
+		if (nRow - m_GridCtrl.GetRowCount() > 0){
+			int tmp_RowCount = m_GridCtrl.GetRowCount();
+			for (int i = 0; i < nRow - tmp_RowCount; ++i)
+			{
+				AddOneRow();
+			}
+		}
+
+		GV_ITEM Item;
+		Item.mask = GVIF_TEXT | GVIF_FORMAT;
+		for (int i = 1; i < nRow; ++i)
+		{
+			getline(in, line);
+			int spaceidx = 0;
+
+			//  如果stepName 有效 则继续，首先寻找StepName
+			CString stepName((line.substr(0, line.find(' '))).c_str());
+			BOOL valideStepFlag = FALSE;
+
+			COLORREF stepColor = defaultStepColor;
+			for (int i = 0; i < stepNames.size(); ++i)
+			{
+				if (stepNames[i] == stepName)
+				{
+					stepColor = stepColors[i];
+					valideStepFlag = TRUE;
+					break;
+				}
+			}
+			if (!valideStepFlag)
+				break;
+			for (int j = 1; j < nCol - 1; j++)
+			{
+				spaceidx = line.find(' ');
+				int len = line.length();
+				string tmp = line.substr(0, spaceidx);
+				CString ctmp(tmp.c_str());
+
+				Item.row = i;
+				Item.col = j;
+				Item.strText.Format(ctmp);
+				Item.crBkClr = stepColor;
+				Item.crFgClr = stepColor;
+				
+				m_GridCtrl.SetItem(&Item);
+				line = line.substr(spaceidx + 1, len - spaceidx - 1);
+			}
+
+			CString ctmp(line.c_str());
+			Item.row = i;
+			Item.col = nCol - 1;
+			Item.strText.Format(ctmp);
+			m_GridCtrl.SetItem(&Item);
+
+		}
+		m_GridCtrl.Invalidate();
+		return;
+	}
+}
+
+void CStartWorkDlg::OnBnClickedBtnSwOpenproc()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	BOOL isOpen = TRUE;
+	CString defaultDirPath = CBatteryUtils::GetConfigPath(_T("\\config\\step\\procPath.ini"));
+	// 从procPath获取默认路径
+	wchar_t pathStr[MAX_PATH_LENGTH+1];
+	CString defaultDir;
+	GetPrivateProfileString(_T("openPath"), _T("path"), _T("D:\\"), pathStr, MAX_PATH_LENGTH, defaultDirPath);
+	//sprintf_s(defaultDir.GetBuffer(MAX_PATH_LENGTH), "%ws", pathStr);
+	defaultDir = pathStr;
+
+	CString fileName = L"";
+	CString filter = L"文件(*.txt)|*.txt||";
+	CFileDialog openFileDlg(isOpen, defaultDir, fileName, OFN_HIDEREADONLY | OFN_READONLY, filter, NULL);
+	openFileDlg.GetOFN().lpstrInitialDir = defaultDir;
+	CString filePath;
+
+	if (openFileDlg.DoModal() == IDOK)
+	{
+		filePath = openFileDlg.GetPathName();
+	}
+	else
+	{
+		return;
+	}
+
+	std::ifstream in(filePath);
+	if (in.is_open())
+	{
+		string line;
+		int nRow, nCol;
+		// 文件第一行为工步名称
+		// 第二行为型号
+		//文件第三行为表格行数，第四行为表格列数
+		getline(in, line);
+		workProcVal = line.c_str();
+		workProcEdit.SetWindowTextW(workProcVal);
+
+		getline(in, line);
+		modelVal = line.c_str();
+		modelEdit.SetWindowTextW(modelVal);
+
+		getline(in, line);
+		nRow = std::stoi(line);
+		getline(in, line);
+		nCol = std::stoi(line);
+
+		if (nRow - m_GridCtrl.GetRowCount() > 0){
+			int tmp_RowCount = m_GridCtrl.GetRowCount();
+			for (int i = 0; i < nRow - tmp_RowCount; ++i)
+			{
+				AddOneRow();
+			}
+		}
+
+		GV_ITEM Item;
+		Item.mask = GVIF_TEXT | GVIF_FORMAT;
+		for (int i = 1; i < nRow; ++i)
+		{
+			getline(in, line);
+			int spaceidx = 0;
+			for (int j = 1; j < nCol - 1; j++)
+			{
+				spaceidx = line.find(' ');
+				int len = line.length();
+
+				string tmp = line.substr(0, spaceidx);
+				CString ctmp(tmp.c_str());
+
+				Item.row = i;
+				Item.col = j;
+				Item.strText.Format(ctmp);
+				m_GridCtrl.SetItem(&Item);
+				line = line.substr(spaceidx + 1, len - spaceidx - 1);
+			}
+
+			CString ctmp(line.c_str());
+			Item.row = i;
+			Item.col = nCol - 1;
+			Item.strText.Format(ctmp);
+			
+			m_GridCtrl.SetItem(&Item);
+
+		}
+		m_GridCtrl.Invalidate();
+		return;
+	}
+}
+
+
+void CStartWorkDlg::OnBnClickedBtnSwSaveproc()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	BOOL isOpen = FALSE;
+	CString defaultDir = L"C:\\";
+	CString fileName = L"test.txt";
+	CString filter = L"文件(*.txt)|*.txt||";
+	CFileDialog openFileDlg(isOpen, defaultDir, fileName, OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT, filter, NULL);
+	openFileDlg.GetOFN().lpstrInitialDir = L"C:\\test.txt";
+	CString filePath = defaultDir + fileName;
+	if (openFileDlg.DoModal() == IDOK)
+	{
+		filePath = openFileDlg.GetPathName();
+	}
+	else
+	{
+		return;
+	}
+	std::wofstream out(filePath);
+	if (out.is_open())
+	{
+		int nRow = m_GridCtrl.GetRowCount();
+		int nCol = m_GridCtrl.GetColumnCount();
+
+		CString str;
+		GV_ITEM Item;
+		Item.mask = GVIF_TEXT | GVIF_FORMAT;
+
+		workProcEdit.GetWindowTextW(workProcVal);
+		modelEdit.GetWindowTextW(modelVal);
+
+		out << CT2A(workProcVal) << std::endl;
+		out << CT2A(modelVal) << std::endl;
+		out << nRow << std::endl;
+		out << nCol << std::endl;
+		for (int i = 1; i < nRow; ++i)
+		{
+			for (int j = 1; j < nCol - 1; ++j)
+			{
+				str = m_GridCtrl.GetItemText(i, j);
+				//http://stackoverflow.com/questions/5550838/how-to-convert-cstring-to-ofstream
+				out << CT2A(str) << " ";
+			}
+			str = m_GridCtrl.GetItemText(i, nCol - 1);
+			out << CT2A(str) << endl;
+		}
+		out.close();
+	}
+	
+	CString cabIdStr = (LPCTSTR)cabIds[curCabId - 1];
+	CString preCabPath = CBatteryUtils::GetConfigPath(
+		_T("\\config\\step\\") + cabIdStr + _T("\\preStepPath.ini"));
+	CString curCabPath;
+
+	WritePrivateProfileString(_T("stepFilePath"), _T("path"), filePath, preCabPath);
+}
+
+
+void CStartWorkDlg::OnBnClickedBtnSwCopyparameter()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	if (NULL == cpDlg)
+	{
+		cpDlg = new CSW_CopyParameterDlg();
+	}
+	cpDlg->DoModal();
+}
+
+
+void CStartWorkDlg::OnBnClickedBtnSwBatteryNum()
+{
+
+	// TODO:  在此添加控件通知处理程序代码
+	if (NULL == numberingDlg)
+	{
+		numberingDlg = new CSW_NumberingDlg();
+	}
+	numberingDlg->DoModal();
+
+}
+
+
+void CStartWorkDlg::OnBnClickedBtnSwSend()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	if (NULL == sendDlg)
+	{
+		sendDlg = new CSW_SendDlg();
+	}
+	sendDlg->DoModal();
+}
+
+
+//void CStartWorkDlg::OnMouseMove(UINT nFlags, CPoint point)
+//{
+//	// TODO:  在此添加消息处理程序代码和/或调用默认值
+//	int idx;
+//	CString str;
+//	for (idx = 0; idx < cabLinks.size(); ++idx)
+//	{
+//		cabLinks[idx]->GetWindowTextW(str);
+//		if (point.x > cabRects[idx].left && point.x < cabRects[idx].right &&
+//			point.y > cabRects[idx].top && point.y < cabRects[idx].bottom)
+//		{
+//			if (str != hoverLinkNames[idx]) {
+//				cabLinks[idx]->SetWindowTextW(hoverLinkNames[idx]);
+//			}
+//		}
+//		else
+//		{
+//			if (str != linkNames[idx]) {
+//				cabLinks[idx]->SetWindowTextW(linkNames[idx]);
+//			}
+//		}
+//	}
+//	CDialog::OnMouseMove(nFlags, point);
+//}
+
+
+
+void CStartWorkDlg::OnNMClickCabLink1(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(1);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink2(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(2);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink3(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(3);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink4(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(4);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink5(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(5);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink6(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(6);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink7(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(7);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink8(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(8);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink9(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(9);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink10(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(10);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink11(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(11);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink12(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(12);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink13(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(13);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink14(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(14);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink15(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(15);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink16(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(16);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink17(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(17);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink18(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(18);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink19(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(19);
+}
+
+
+void CStartWorkDlg::OnNMClickCabLink20(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// TODO:  在此添加控件通知处理程序代码
+	*pResult = 0;
+	InitSpecCabInfo(20);
+}
+
+
+void CStartWorkDlg::OnBnClickedCreateDatabase()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	CString dbNameStr;
+	dataFileEdit.GetWindowTextW(dbNameStr);
+	dbNameStr += _T(".mdb");
+	CString dbSqlPath = _T("");
+
+	if (!CreateDataBase(dbNameStr))
+	{
+		MessageBox(_T("创建数据库文件") + dbNameStr + _T("失败!"));
+		return;
+	}
+	if (!CreateDbTables(dbNameStr))
+	{
+		MessageBox(_T("创建数据库表失败!"));
+	}
+	
+	pConnection->Close();
+	::CoUninitialize();
+
+	return;
+}
+
+BOOL CStartWorkDlg::CreateDataBase(CString dbNameStr)
+{
+	CString dbCatagory;
+	int catagoryIdx = dbNameStr.ReverseFind('\\');
+	dbCatagory = dbNameStr.Left(catagoryIdx + 1);
+
+	if (!CFileUtils::CreateMuliteDirectory(dbCatagory))
+		return FALSE;
+
+	CString mdbConnStr = _T("Provider='Microsoft.JET.OLEDB.4.0';Data source = ") + dbNameStr;
+	
+	//CString mdbConnStr = _T("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\\database\\battery\\BatteryManage2.mdb");
+	try
+	{
+		HRESULT hr = S_OK;
+		_CatalogPtr pCatalog = NULL;
+		_bstr_t cnnstring(mdbConnStr);
+
+		TESTHR(hr = pCatalog.CreateInstance(__uuidof (Catalog)));
+		pCatalog->Create(cnnstring);
+	}
+	catch (_com_error e)
+	{
+		_bstr_t bstrDescription(e.Description());
+		CString strErro = CString(_T("创建ACCEESS数据库出错: "))
+			+ (LPCSTR)e.Description()
+			+ CString(_T("Create ACCESS DB error: "))
+			+ (LPCSTR)e.Description();
+		AfxMessageBox(strErro);
+		return FALSE;
+	}
+	::CoUninitialize();
+	return TRUE;
+}
+
+
+
+BOOL CStartWorkDlg::CreateDbTables(CString dbNameStr)
+{
+	if (!ConnectToDatabase(dbNameStr))
+		return FALSE;
+	CDbSql *dbSql = CDbSql::GetInstance();
+	if (!CreateTable(dbNameStr, _T("TEST_INFO"), dbSql->createTestInfoStr))
+	{
+		return FALSE;
+	}
+	if (!CreateTable(dbNameStr, _T("CHANNEL_STEP"), dbSql->createChlStepStr))
+	{
+		return FALSE;
+	}
+	if (!CreateTable(dbNameStr, _T("CHANNEL_INFO"), dbSql->createChlInfoStr))
+	{
+		return FALSE;
+	}
+	if (!CreateTable(dbNameStr, _T("CHANNEL_CURVE"), dbSql->createChlCurveStr))
+	{
+		return FALSE;
+	}
+	return TRUE;
+}
+
+BOOL CStartWorkDlg::ConnectToDatabase(CString dbNameStr)
+{
+	_bstr_t sqlStr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" +
+		(_bstr_t)dbNameStr;
+	try
+	{
+		//先创建连接实例
+		HRESULT hr = pConnection.CreateInstance(__uuidof(Connection));//创建Connection对象
+		if (SUCCEEDED(hr))
+		{
+			// 打开本地Access库Demo.mdb
+			hr = pConnection->Open(sqlStr, "", "", adModeUnknown);
+			return TRUE;
+		}
+	}
+	catch (_com_error e)///捕捉异常
+	{
+		CString strMsg;
+		strMsg.Format(_T("错误描述：%s\n错误消息%s"),
+			(LPCTSTR)e.Description(),
+			(LPCTSTR)e.ErrorMessage());
+		AfxMessageBox(strMsg);
+		return FALSE;
+	}
+	return FALSE;
+}
+
+BOOL CStartWorkDlg::CreateTable(CString dbNameStr, CString tableNameStr, CString &createTestInfoStr)
+{
+	CString strConn;
+	if (tableNameStr != _T("") && dbNameStr != _T(""))
+	{
+		_CatalogPtr m_pCatalog = NULL;
+		_TablePtr m_pTable = NULL;
+		dbNameStr = _T("Provider='Microsoft.JET.OLEDB.4.0';Data source = ") + dbNameStr;
+
+		try
+		{
+			m_pCatalog.CreateInstance(__uuidof(Catalog));
+			m_pCatalog->PutActiveConnection(_bstr_t(dbNameStr));
+			int tableCount = m_pCatalog->Tables->Count;
+			int i = 0;
+			while (i<tableCount)
+			{
+				m_pTable = (_TablePtr)m_pCatalog->Tables->GetItem((long)i);
+				CString tableName = (wchar_t *)_bstr_t(m_pTable->Name);
+				if (tableName == tableNameStr)
+				{
+					AfxMessageBox(_T("该表已经存在!"));
+					return FALSE;
+				}
+				i++;
+			}
+		}
+		catch (_com_error &e)
+		{
+			return FALSE;
+		}
+
+		_ConnectionPtr m_pConnection;
+		_variant_t RecordsAffected;
+		try
+		{
+			m_pConnection.CreateInstance(__uuidof(Connection));
+
+
+			m_pConnection->Open((_bstr_t)dbNameStr, "", "", adModeUnknown);
+		}
+		catch (_com_error e)
+		{
+			CString errormessage;
+			errormessage.Format(_T("连接数据库失败!\r错误信息:%s"), e.ErrorMessage());
+			AfxMessageBox(errormessage);
+			return FALSE;
+		}
+		try
+		{
+			m_pConnection->Execute(_bstr_t(createTestInfoStr), &RecordsAffected, adCmdText);
+			if (m_pConnection->State)
+				m_pConnection->Close();
+		}
+		catch (_com_error &e)
+		{
+			AfxMessageBox(e.Description());
+			return FALSE;
+		}
+	}
+	return TRUE;
+}
