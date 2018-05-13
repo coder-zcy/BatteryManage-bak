@@ -213,6 +213,7 @@ public:
 	//afx_msg void OnAutoPartCap();
 	afx_msg void OnOpertorManage();
 	
+	
 };
 
 extern CBatteryManageApp theApp;

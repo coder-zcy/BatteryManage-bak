@@ -47,6 +47,8 @@ public:
 
 public:
 
+	CImageList imageList;
+
 	afx_msg void OnWindowCascade();
 	afx_msg void OnWindowTileHorz();
 	afx_msg void OnWindowTileVert();
@@ -57,6 +59,7 @@ public:
 
 	LRESULT OnCloseDateFileView(WPARAM wParam, LPARAM lParam);
 	afx_msg void OnClose();
+	afx_msg void OnExitProgram();
 };
 
 

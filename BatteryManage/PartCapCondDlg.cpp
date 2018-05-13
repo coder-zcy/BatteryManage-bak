@@ -620,3 +620,73 @@ void CPartCapCondDlg::OnStnClickedColorPic16()
 	COLORREF color = colorArray.GetAt(1);
 	SetColor(capShowType, 15, color);
 }
+
+
+BOOL CPartCapCondDlg::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO:  在此添加专用代码和/或调用基类
+
+	if (WM_KEYDOWN == pMsg->message && VK_RETURN == pMsg->wParam)
+	{
+		CWnd* focus = GetFocus();
+
+		if (focus == GetDlgItem(IDC_MIN_EDIT1) || focus == GetDlgItem(IDC_MIN_EDIT2) || focus == GetDlgItem(IDC_MIN_EDIT3) || focus == GetDlgItem(IDC_MIN_EDIT4)
+			|| focus == GetDlgItem(IDC_MIN_EDIT5) || focus == GetDlgItem(IDC_MIN_EDIT6) || focus == GetDlgItem(IDC_MIN_EDIT7) || focus == GetDlgItem(IDC_MIN_EDIT8)
+			|| focus == GetDlgItem(IDC_MIN_EDIT9) || focus == GetDlgItem(IDC_MIN_EDIT10) || focus == GetDlgItem(IDC_MIN_EDIT11) || focus == GetDlgItem(IDC_MIN_EDIT12)
+			|| focus == GetDlgItem(IDC_MIN_EDIT13) || focus == GetDlgItem(IDC_MIN_EDIT14) || focus == GetDlgItem(IDC_MIN_EDIT15) || focus == GetDlgItem(IDC_MIN_EDIT16)
+			|| focus == GetDlgItem(IDC_MAX_EDIT1) || focus == GetDlgItem(IDC_MAX_EDIT2) || focus == GetDlgItem(IDC_MAX_EDIT3) || focus == GetDlgItem(IDC_MAX_EDIT4)
+			|| focus == GetDlgItem(IDC_MAX_EDIT5) || focus == GetDlgItem(IDC_MAX_EDIT6) || focus == GetDlgItem(IDC_MAX_EDIT7) || focus == GetDlgItem(IDC_MAX_EDIT8)
+			|| focus == GetDlgItem(IDC_MAX_EDIT9) || focus == GetDlgItem(IDC_MAX_EDIT10) || focus == GetDlgItem(IDC_MAX_EDIT11) || focus == GetDlgItem(IDC_MAX_EDIT12)
+			|| focus == GetDlgItem(IDC_MAX_EDIT13) || focus == GetDlgItem(IDC_MAX_EDIT14) || focus == GetDlgItem(IDC_MAX_EDIT15) || focus == GetDlgItem(IDC_MAX_EDIT16))
+		{
+			UpdateRelativeEdits(focus);
+		}
+		return TRUE;
+	}
+	else
+	{
+		return CDialog::PreTranslateMessage(pMsg);
+	}
+}
+
+void CPartCapCondDlg::UpdateRelativeEditsByDown(CWnd *focus)
+{
+
+}
+
+void CPartCapCondDlg::UpdateRelativeEdits(CWnd* focus)
+{
+	CapShowType *capShowType = CapShowType::GetInstance();
+	int idx = 0;
+	int editId = 0;
+	for (idx = 0; idx < minEdits.size(); ++idx)
+	{
+		if (focus == minEdits[idx] || focus == maxEdits[idx])
+		{
+			editId = idx;
+			break;
+		}
+	}
+	CString startStr, endStr;
+	int startVal, endVal, disVal;
+
+	if (editId >= 0 && editId < 16)
+	{
+		minEdits[editId]->GetWindowTextW(startStr);
+		maxEdits[editId]->GetWindowTextW(endStr);
+		startVal = _ttoi(startStr);
+		endVal = _ttoi(endStr);
+		disVal = endVal - startVal;
+		
+		for (idx = editId + 1; idx < capShowType->validenum; ++idx)
+		{
+			startVal = endVal+1;
+			endVal += startVal + disVal;
+			startStr.Format(_T("%d"), startVal);
+			endStr.Format(_T("%d"), endVal);
+
+			minEdits[idx]->SetWindowText(startStr);
+			maxEdits[idx]->SetWindowTextW(endStr);
+		}
+	}
+}

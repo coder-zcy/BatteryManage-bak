@@ -53,7 +53,6 @@ END_MESSAGE_MAP()
 void CGradeContentDlg::OnBnClickedOk()
 {
 	//发送信息给BatCapGrade
-
 	CString flag = L"";
 	for (int idx = 0; idx < fileStepData.stepNum; ++idx)
 	{
@@ -69,7 +68,6 @@ void CGradeContentDlg::OnBnClickedOk()
 	::SendNotifyMessage(theApp.capacityGradingDlg->m_hWnd, WM_UPDATE_BAT_CAP_GRID_MSG, WPARAM(flag.AllocSysString()), NULL);
 
 	MessageBox(_T("分容条件设置成功!"));
-
 	CDialog::OnOK();
 }
 
@@ -84,6 +82,8 @@ void CGradeContentDlg::InitStepListBox()
 
 	for (int idx = 0; idx < fileStepData.stepNum; ++idx)
 	{
+		str = L"";
+		workDesStr = L"";
 		WorkProcInfo workProcInfo = fileStepData.workProcInfos[idx];
 		str2.Format(_T("%d"), idx+1);
 		if (workProcInfo.workStepName == CA_WORKNAME_STR)
@@ -133,7 +133,7 @@ void CGradeContentDlg::InitStepListBox()
 		}
 		else if (str2[0] != '&')
 		{
-			str2 = str2 = L"    " + str2 + L" : (1) " + workDesStr;
+			str2 = str2 = L"     " + str2 + L" : (1) " + workDesStr;
 		}
 		else 
 		{

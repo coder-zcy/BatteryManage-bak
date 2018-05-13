@@ -70,6 +70,7 @@ vector<string> StringUtils::SplitByStr(const string &s, const string &seperator)
 
 vector<CString> StringUtils::SplitByCstr(const CString &s, const CString &seperator){
 	vector<CString> result;
+	if (s.GetLength() == 0) return result;
 	int i = 0;
 
 	while (i != s.GetLength()){

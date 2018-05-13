@@ -2154,6 +2154,8 @@ CBatCapInfo CDbUtils::CreateBatCapInfoByRecordSet(_RecordsetPtr recordset)
 
 	CBatCapInfo batCapInfo;
 
+	CString str;
+	double t;
 	var = recordset->GetCollect(_T("TESTITEM"));
 	batCapInfo.cabIdCstr = var.vt != NULL ? CString(var) : 0;
 
@@ -2165,7 +2167,9 @@ CBatCapInfo CDbUtils::CreateBatCapInfoByRecordSet(_RecordsetPtr recordset)
 	batCapInfo.capacityCstr = var.vt != NULL ? CString(var) : 0;
 
 	var = recordset->GetCollect(_T("AVG_VOLT"));
-	batCapInfo.avgVoltCstr = var.vt != NULL ? CString(var) : 0;
+	t = var.vt != NULL ? double(var) : 0.0;
+	str.Format(_T("%.2f"), t);
+	batCapInfo.avgVoltCstr = str;
 
 	var = recordset->GetCollect(_T("OPEN_VOLT"));
 	batCapInfo.openVoltCstr = var.vt != NULL ? CString(var) : 0;
@@ -2180,7 +2184,9 @@ CBatCapInfo CDbUtils::CreateBatCapInfoByRecordSet(_RecordsetPtr recordset)
 	batCapInfo.energyCstr = var.vt != NULL ? CString(var) : 0;
 
 	var = recordset->GetCollect(_T("MID_VOLT"));
-	batCapInfo.midVoltCstr = var.vt != NULL ? CString(var) : 0;
+	t = var.vt != NULL ? double(var) : 0.0;
+	str.Format(_T("%.2f"), t);
+	batCapInfo.midVoltCstr = str;
 
 	return batCapInfo;
 }

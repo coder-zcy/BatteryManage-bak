@@ -1096,9 +1096,12 @@
 #define IDD_DIALOG2                     358
 #define IDD_STARTWORK_DLG               359
 #define IDR_SW_RIGHTCLICK               360
+#define IDI_CLOSE_ICON                  360
 #define IDD_SW_ADDROW_DLG               361
 #define IDD_SW_DELROWNUM                362
 #define IDD_SW_CPPARAMETER_DLG          363
+#define IDI_ICON3                       363
+#define IDI_CLOSE2_ICON                 363
 #define IDD_SW_SEND                     364
 #define IDD_SW_NUMBERING_DLG            365
 #define IDD_CURVE_DATA_DLG              367
@@ -2299,6 +2302,7 @@
 #define ID_AUTO_PART_CAP                32820
 #define ID_OPERTOR_ADMIN                32821
 #define ID_OPERTOR_MANAGE               32822
+#define ID_EXIT_PROGRAM                 32825
 #define ID_BAT_PIC_STYLE                32832
 #define ID_BAT_TABLE_STYLE              32834
 #define ID_BAT_COMP_STYLE               32836
@@ -2347,8 +2351,8 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        360
-#define _APS_NEXT_COMMAND_VALUE         32823
+#define _APS_NEXT_RESOURCE_VALUE        364
+#define _APS_NEXT_COMMAND_VALUE         32826
 #define _APS_NEXT_CONTROL_VALUE         1156
 #define _APS_NEXT_SYMED_VALUE           310
 #endif

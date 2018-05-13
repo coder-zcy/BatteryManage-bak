@@ -31,6 +31,7 @@ ON_WM_CHILDACTIVATE()
 ON_MESSAGE(WM_COLSE_DATAFILEVIEW_MSG, &CMainFrame::OnCloseDateFileView)
 
 ON_WM_CLOSE()
+ON_COMMAND(ID_EXIT_PROGRAM, &CMainFrame::OnExitProgram)
 END_MESSAGE_MAP()
 
 static UINT indicators[] =
@@ -83,6 +84,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;      // 未能创建
 	}
 
+
 	if (!m_wndStatusBar.Create(this))
 	{
 		TRACE0("未能创建状态栏\n");
@@ -94,7 +96,6 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockControlBar(&m_wndToolBar);
-
 
 	return 0;
 }
@@ -257,4 +258,14 @@ void CMainFrame::OnClose()
 	// TODO:  在此添加消息处理程序代码和/或调用默认值
 
 	//CMDIFrameWnd::OnClose();
+}
+
+
+void CMainFrame::OnExitProgram()
+{
+	// TODO:  在此添加命令处理程序代码
+	if (MessageBox(_T("确定要退出龙精电池管理系统么？"), _T("提示"), MB_OKCANCEL | MB_ICONWARNING) == IDOK)
+	{
+		CMDIFrameWnd::OnClose();
+	}
 }

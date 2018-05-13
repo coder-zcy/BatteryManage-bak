@@ -142,4 +142,8 @@ public:
 
 	void SetColor(CapShowType *capShowType, int idx, COLORREF color);
 	void UpdateSegData();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	void UpdateRelativeEditsByDown(CWnd *focus);
+	void UpdateRelativeEdits(CWnd* focus);
+
 };

@@ -538,7 +538,7 @@ int CCompDlg::FillGridContentByBatData(int colIdx, int workProcsLength, vector<W
 				GV_ITEM capacityItem = CGridUtils::CreateGridItem(rowIdx, ++colIdx, GVIF_TEXT | GVIF_FORMAT, DT_CENTER | DT_WORDBREAK, str);
 				compGrid.SetItem(&capacityItem);
 				// 终止电流
-				str.Format(_T("%d"), int(batStepInfos[idx].endStepInfo.curnt));
+				str.Format(_T("%d"), int(abs(batStepInfos[idx].endStepInfo.curnt)));
 				GV_ITEM endCurrentItem = CGridUtils::CreateGridItem(rowIdx, ++colIdx, GVIF_TEXT | GVIF_FORMAT, DT_CENTER | DT_WORDBREAK, str);
 				compGrid.SetItem(&endCurrentItem);
 
@@ -615,7 +615,7 @@ int CCompDlg::FillGridContentByBatData(int colIdx, int workProcsLength, vector<W
 
 void CCompDlg::InitCombox()
 {
-	CString attrArrays[ATTR_COUNT] = { L"容量", L"时间", L"开路电压", L"平均电压", L"终止电压", L"容量", L"终止电流" };
+	CString attrArrays[ATTR_COUNT] = { L"容量", L"时间", L"开路电压", L"平均电压", L"终止电压", L"电量", L"终止电流" };
 
 	for (int idx = 0; idx < ATTR_COUNT; ++idx)
 	{

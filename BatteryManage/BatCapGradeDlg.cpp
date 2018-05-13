@@ -290,8 +290,11 @@ LRESULT CBatCapGradeDlg::OnUpdateBatCapGrid(WPARAM wParam, LPARAM lParam)
 		int stepIds[MAX_STEP_NUM];
 		for (int idx = 0; idx < paraStr.GetLength(); ++idx)
 		{
-			count += paraStr[idx] - '0';
-			stepId = idx + 1;
+			if (paraStr[idx] != '0') 
+			{
+				count += paraStr[idx] - '0';
+				stepId = idx + 1;
+			}
 		}
 		// 只有一个分容条件
 		if (count == 1) 
@@ -620,7 +623,7 @@ void CBatCapGradeDlg::CalCapGrade()
 
 			gradeNum = 0;
 			capacity = _ttoi(batCapInfos[idx].capacityCstr);
-			gradeNum = (capacity - gradeDetailInfo.startArrays[0] + gradeDetailInfo.disArrays[0]) / (gradeDetailInfo.disArrays[0]);
+			gradeNum = (capacity - gradeDetailInfo.startArrays[0] + gradeDetailInfo.defDisArrays[0]) / (gradeDetailInfo.defDisArrays[0]);
 
 			if (gradeNum >= 1 && gradeNum <= gradeDetailInfo.levelCount) levelNum[gradeNum - 1] ++;
 			batLevelStats[batCapInfos[idx].batId - 1] = gradeNum;

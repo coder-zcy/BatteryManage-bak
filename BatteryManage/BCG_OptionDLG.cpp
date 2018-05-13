@@ -125,7 +125,8 @@ void CBCG_OptionDLG::InitCondGrid()
 	condGrid.SetEditable(true);
 	condGrid.SetTextBkColor(RGB(0xFF, 0xFF, 0xE0));//黄色背景
 	//初始化列表，设定初始行列数，以及冻结的行列数
-	CGradeDetailInfo gradeDetailInfo = capGradeConf->gradeDetailInfos[capGradeConf->codeSel];
+	CGradeDetailInfo gradeDetailInfo;
+	gradeDetailInfo = capGradeConf->gradeDetailInfos[capGradeConf->codeSel];
 	int colCount = 0, idx = 0, jdx = 0, colIdx = 0;
 
 	for (idx = 0; idx < gradeDetailInfo.para.GetLength(); ++idx)
@@ -269,6 +270,7 @@ void CBCG_OptionDLG::InitCondGrid()
 	}
 
 	CString seqCstr, gradeNameCstr;
+	int kdx = 0;
 	for (idx = 1; idx < condGrid.GetRowCount(); ++idx)
 	{
 		seqCstr.Format(_T("%d"), idx);
@@ -285,11 +287,16 @@ void CBCG_OptionDLG::InitCondGrid()
 
 			if (gradeDetailInfo.para[jdx] == '1')
 			{
-				startVal = gradeDetailInfo.startArrays[jdx];
-				startVal = startVal + (idx - 1)*gradeDetailInfo.disArrays[jdx];
-				endVal = startVal + gradeDetailInfo.disArrays[jdx];
-				startCstr.Format(_T("%d"), startVal);
-				endCstr.Format(_T("%d"), endVal);
+				//startVal = gradeDetailInfo.startArrays[jdx];
+				//startVal = startVal + (idx - 1)*gradeDetailInfo.defDisArrays[jdx];
+				//endVal = startVal + gradeDetailInfo.defDisArrays[jdx];
+				//startCstr.Format(_T("%d"), startVal);
+				//endCstr.Format(_T("%d"), endVal);
+				kdx = (colIdx - 2) / 2;
+
+				startCstr = idx == 1 ? gradeDetailInfo.startArraysStr[gradeDetailInfo.startIdxs[kdx]] : gradeDetailInfo.endArraysStr[kdx][idx - 2];
+
+				endCstr = gradeDetailInfo.endArraysStr[kdx][idx-1];
 
 				switch (jdx)
 				{
@@ -298,51 +305,51 @@ void CBCG_OptionDLG::InitCondGrid()
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case TIME_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case OPEN_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case AVG_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case POINT1_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case POINT2_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case POINT3_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case POINT4_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case POINT5_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case END_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case RESIST_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case SD_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				case MID_DIS_IDX:
-					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, record_col2idx[idx]);
+					startItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, startCstr);
 					endItem = CGridUtils::CreateGridItem(idx, colIdx++, itemMask, itemFormat, endCstr);
 					break;
 				default:
@@ -581,10 +588,9 @@ void CBCG_OptionDLG::reDrawGrid()
 	int itemFormat = DT_CENTER | DT_WORDBREAK;
 	CapGradeConf * capGradeConf = CapGradeConf::GetInstance();
 	CGradeDetailInfo gradeDetailInfo = capGradeConf->gradeDetailInfos[capGradeConf->codeSel];
-
+	int kdx = 0; // kdx 表示第几个有效数据组
 	for (idx = 1; idx < condGrid.GetRowCount(); ++idx)
 	{
-	
 		seqCstr.Format(_T("%d"), idx);
 		GV_ITEM seqItem = CGridUtils::CreateGridItem(idx, 0, itemMask, itemFormat, seqCstr);
 		GV_ITEM gradeNameItem = CGridUtils::CreateGridItem(idx, 1, itemMask, itemFormat, gradeDetailInfo.levelNames[idx - 1]);
@@ -597,11 +603,12 @@ void CBCG_OptionDLG::reDrawGrid()
 			GV_ITEM startItem, endItem;
 			int startVal, endVal;
 			CString startCstr, endCstr;
-			startVal = gradeDetailInfo.startArrays[jdx];
-			startVal = startVal + (idx - 1)*gradeDetailInfo.disArrays[jdx];
-			endVal = startVal + gradeDetailInfo.disArrays[jdx];
-			startCstr.Format(_T("%d"), startVal);
-			endCstr.Format(_T("%d"), endVal);
+			
+			kdx = (colIdx - 2) / 2;
+
+			startCstr = idx == 1 ? gradeDetailInfo.startArraysStr[gradeDetailInfo.startIdxs[kdx]] : gradeDetailInfo.endArraysStr[kdx][idx-2];
+			
+			endCstr = gradeDetailInfo.endArraysStr[kdx][idx-1];
 
 			switch (jdx)
 			{
@@ -687,7 +694,8 @@ void CBCG_OptionDLG::InitDlgAssembly()
 	// 初始化全局变量level
 	level = levelComb.GetCurSel() + 1;
 	
-	CGradeDetailInfo gradeDetailInfo = capGradeConf->gradeDetailInfos[capGradeConf->codeSel];
+	CGradeDetailInfo gradeDetailInfo;
+	gradeDetailInfo = capGradeConf->gradeDetailInfos[capGradeConf->codeSel];
 	CString para = gradeDetailInfo.para;
 
 	for (idx = 0; idx < para.GetLength(); ++idx)
@@ -958,10 +966,13 @@ void CBCG_OptionDLG::OnBnClickedMidCheck()
 
 void CBCG_OptionDLG::OnBnClickedOk()
 {
-	
-	CString flag = L"1";
-	::SendNotifyMessage(theApp.capacityGradingDlg->m_hWnd, WM_CAL_GRADE_MSG, WPARAM(flag.AllocSysString()), NULL);
-	CDialog::OnOK();
+	if (MessageBox(_T("确定要保存分容选项并使之生效么？"), _T("提示"), MB_OKCANCEL | MB_ICONWARNING) == IDOK)
+	{
+		this->OnBnClickedBcgSaveBtn();
+		CString flag = L"1";
+		::SendNotifyMessage(theApp.capacityGradingDlg->m_hWnd, WM_CAL_GRADE_MSG, WPARAM(flag.AllocSysString()), NULL);
+		CDialog::OnOK();
+	}
 }
 
 
@@ -975,6 +986,7 @@ void CBCG_OptionDLG::OnBnClickedBcgSaveBtn()
 {
 	// 保存就是新增  明天继续
 	CString curCodeName;
+	int idx, jdx;
 	codeComb.GetWindowTextW(curCodeName);
 
 	CapGradeConf *capGradeConf = CapGradeConf::GetInstance();
@@ -1004,16 +1016,25 @@ void CBCG_OptionDLG::OnBnClickedBcgSaveBtn()
 		? capGradeConf->gradeDetailInfos[codeSel - 1] : helpDetailInfo;
 
 	codeComb.GetWindowTextW(gradeDetailInfo.codeName);
-	memcpy(&(gradeDetailInfo.disArrays), &(helpDetailInfo.disArrays), sizeof(int)* MAX_DIS_NUM);
-	gradeDetailInfo.disArraysStr = helpDetailInfo.disArraysStr;
+	memcpy(&(gradeDetailInfo.defDisArrays), &(helpDetailInfo.defDisArrays), sizeof(int)* MAX_DIS_NUM);
+	for (idx = 0; idx < MAX_DIS_NUM; ++idx)
+	{
+		gradeDetailInfo.defDisArraysStr[idx] = helpDetailInfo.defDisArraysStr[idx];
+	}
 
 	gradeDetailInfo.levelCount = condGrid.GetRowCount() - 1;
-	int idx, jdx;
 
-	for (idx = 0; idx < disChecks.size(); ++idx)
+
+	memset(gradeDetailInfo.startIdxs, -1, sizeof(int)*MAX_DIS_NUM);
+	helpDetailInfo.selCount = 0;
+	for (idx = 0, jdx = 0; idx < disChecks.size(); ++idx)
 	{
 		if (disChecks[idx]->GetCheck() == BST_CHECKED)
+		{
 			gradeDetailInfo.para.SetAt(idx, '1');
+			gradeDetailInfo.startIdxs[jdx++] = idx;
+			helpDetailInfo.selCount++;
+		}
 		else
 			gradeDetailInfo.para.SetAt(idx, '0');
 	}
@@ -1023,9 +1044,39 @@ void CBCG_OptionDLG::OnBnClickedBcgSaveBtn()
 		str = condGrid.GetItemText(idx, 1);
 		gradeDetailInfo.levelNames[idx - 1] = str;
 	}
+	int rowIdx, colIdx;
+	int rowCount = condGrid.GetRowCount();
+	int colCount = condGrid.GetColumnCount();
 
+	// 更新相关的startArraysStr 和 startArrays, endArraysStr
+	helpDetailInfo.endArraysStr.clear();
+	for (colIdx = 2; colIdx < colCount; colIdx += 2)
+	{
+		vector<CString> vec;
+		for (rowIdx = 1; rowIdx < rowCount; ++rowIdx)
+		{
+			if (rowIdx == 1)
+			{
+				helpDetailInfo.startArraysStr[rowIdx-1] = condGrid.GetItemText(rowIdx, colIdx);
+				helpDetailInfo.startArrays[idx] = helpDetailInfo.startArraysStr[idx] 
+					== L"" ? 0 : _ttoi(helpDetailInfo.startArraysStr[idx]);
+				vec.push_back(condGrid.GetItemText(rowIdx, colIdx+1));
+			}
+			else
+			{
+				vec.push_back(condGrid.GetItemText(rowIdx, colIdx + 1));
+			}
+		}
+		helpDetailInfo.endArraysStr.push_back(vec);
+	}
+	gradeDetailInfo.endArraysStr = helpDetailInfo.endArraysStr;
+	gradeDetailInfo.selCount = helpDetailInfo.selCount;
 	memcpy(&(gradeDetailInfo.startArrays), &(helpDetailInfo.startArrays), sizeof(int)*MAX_DIS_NUM);
-	gradeDetailInfo.startArraysStr = helpDetailInfo.startArraysStr;
+	for (idx = 0; idx < MAX_DIS_NUM; ++idx)
+	{
+		gradeDetailInfo.startArraysStr[idx] = helpDetailInfo.startArraysStr[idx];
+	}
+
 
 	str = L"";
 
@@ -1037,14 +1088,15 @@ void CBCG_OptionDLG::OnBnClickedBcgSaveBtn()
 			gradeDetailInfo.startArraysStr[idx] = condGrid.GetItemText(1, jdx);
 			gradeDetailInfo.startArrays[idx] = _ttoi(gradeDetailInfo.startArraysStr[idx]);
 
-			gradeDetailInfo.disArraysStr[idx] = condGrid.GetItemText(1, jdx + 1);
-			gradeDetailInfo.disArrays[idx] = _ttoi(gradeDetailInfo.disArraysStr[idx]);
-			gradeDetailInfo.disArrays[idx] -= gradeDetailInfo.startArrays[idx];
+			gradeDetailInfo.defDisArraysStr[idx] = condGrid.GetItemText(1, jdx + 1);
+			gradeDetailInfo.defDisArrays[idx] = _ttoi(gradeDetailInfo.defDisArraysStr[idx]);
+			gradeDetailInfo.defDisArrays[idx] -= gradeDetailInfo.startArrays[idx];
 
-			gradeDetailInfo.disArraysStr[idx].Format(_T("%d"), gradeDetailInfo.disArrays[idx]);
+			gradeDetailInfo.defDisArraysStr[idx].Format(_T("%d"), gradeDetailInfo.defDisArrays[idx]);
 			jdx += 2;
 		}
 	}
+
 
 	capGradeConf->codeSel = codeSel;
 	capGradeConf->codeSelCount = preCodeSel < 0 ? capGradeConf->codeSelCount+1: capGradeConf->codeSelCount;
@@ -1143,6 +1195,7 @@ BOOL CBCG_OptionDLG::DestroyWindow()
 void CBCG_OptionDLG::OnGridEndEdit(NMHDR *pNotifyStruct, LRESULT* pResult)
 {
 	int colCount = this->condGrid.GetColumnCount();
+	
 	if (colCount <= 2) return;
 
 	// 当点击grid 第一行的可编辑数据时更新相关的差值和初始值等数据
@@ -1151,6 +1204,8 @@ void CBCG_OptionDLG::OnGridEndEdit(NMHDR *pNotifyStruct, LRESULT* pResult)
 
 	int rowIdx = pItem->iRow;
 	int colIdx = pItem->iColumn;
+	
+	if (colIdx < 2) return;
 	int idx;
 	CString startStr, endStr;
 	int startVal, endVal, disVal;
@@ -1176,9 +1231,9 @@ void CBCG_OptionDLG::OnGridEndEdit(NMHDR *pNotifyStruct, LRESULT* pResult)
 	endVal = _ttoi(endStr);
 	disVal = endVal - startVal;
 
-	startStr = condGrid.GetItemText(1, startColIdx);
+	//startStr = condGrid.GetItemText(rowIdx, startColIdx);
 	startVal = _ttoi(startStr);
-	for (idx = 1; idx < rowCount; ++idx)
+	for (idx = rowIdx; idx < rowCount; ++idx)
 	{			
 			
 		endVal = startVal + disVal;
@@ -1188,6 +1243,7 @@ void CBCG_OptionDLG::OnGridEndEdit(NMHDR *pNotifyStruct, LRESULT* pResult)
 		startVal = endVal;
 		startStr.Format(_T("%d"), startVal);
 	}
-	
+
+
 	condGrid.Invalidate();
 }

@@ -32,6 +32,7 @@ public:
 	CString codeName;
 	CString para;
 	int levelCount;
+	int selCount;
 	//int capDis;
 	//int	timeDis;
 	//int openDis;
@@ -45,11 +46,16 @@ public:
 	//int resistDis;
 	//int sdDis;
 	//int midDis;
-	int disArrays[MAX_DIS_NUM];
-	vector<CString> startArraysStr;
+	int defDisArrays[MAX_DIS_NUM];
+	CString startArraysStr[MAX_DIS_NUM];
+
 	int startArrays[MAX_DIS_NUM];
-	vector<CString> disArraysStr;
+	int startIdxs[MAX_DIS_NUM];
+	//vector<CString> defDisArraysStr;
+	CString defDisArraysStr[MAX_DIS_NUM];
+	vector<vector<CString> > endArraysStr;
 	vector<CString> levelNames;
+	
 
 	CGradeDetailInfo& operator=(const CGradeDetailInfo gradeDetailInfo);
 };

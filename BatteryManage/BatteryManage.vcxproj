@@ -390,6 +390,8 @@
     <None Include="res\BatteryManage.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Debug\config\images\close16.ico" />
+    <Image Include="..\Debug\config\images\close32.ico" />
     <Image Include="..\Debug\config\images\sel.ico" />
     <Image Include="..\Debug\config\images\sel2.ico" />
     <Image Include="res\BatteryManage.ico" />
@@ -400,6 +402,7 @@
     <Image Include="res\sel.png" />
     <Image Include="res\sel2.ico" />
     <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\toolbar1.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
